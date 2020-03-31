@@ -1,0 +1,452 @@
+ARM GAS  /tmp/ccFmyTBY.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 0
+  10              		.eabi_attribute 18, 4
+  11              		.file	"stm32f0xx_it.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text.NMI_Handler,"ax",%progbits
+  16              		.align	1
+  17              		.global	NMI_Handler
+  18              		.syntax unified
+  19              		.code	16
+  20              		.thumb_func
+  21              		.fpu softvfp
+  23              	NMI_Handler:
+  24              	.LFB43:
+  25              		.file 1 "Src/stm32f0xx_it.c"
+   1:Src/stm32f0xx_it.c **** /* USER CODE BEGIN Header */
+   2:Src/stm32f0xx_it.c **** /**
+   3:Src/stm32f0xx_it.c ****   ******************************************************************************
+   4:Src/stm32f0xx_it.c ****   * @file    stm32f0xx_it.c
+   5:Src/stm32f0xx_it.c ****   * @brief   Interrupt Service Routines.
+   6:Src/stm32f0xx_it.c ****   ******************************************************************************
+   7:Src/stm32f0xx_it.c ****   * @attention
+   8:Src/stm32f0xx_it.c ****   *
+   9:Src/stm32f0xx_it.c ****   * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
+  10:Src/stm32f0xx_it.c ****   * All rights reserved.</center></h2>
+  11:Src/stm32f0xx_it.c ****   *
+  12:Src/stm32f0xx_it.c ****   * This software component is licensed by ST under BSD 3-Clause license,
+  13:Src/stm32f0xx_it.c ****   * the "License"; You may not use this file except in compliance with the
+  14:Src/stm32f0xx_it.c ****   * License. You may obtain a copy of the License at:
+  15:Src/stm32f0xx_it.c ****   *                        opensource.org/licenses/BSD-3-Clause
+  16:Src/stm32f0xx_it.c ****   *
+  17:Src/stm32f0xx_it.c ****   ******************************************************************************
+  18:Src/stm32f0xx_it.c ****   */
+  19:Src/stm32f0xx_it.c **** /* USER CODE END Header */
+  20:Src/stm32f0xx_it.c **** 
+  21:Src/stm32f0xx_it.c **** /* Includes ------------------------------------------------------------------*/
+  22:Src/stm32f0xx_it.c **** #include "main.h"
+  23:Src/stm32f0xx_it.c **** #include "stm32f0xx_it.h"
+  24:Src/stm32f0xx_it.c **** /* Private includes ----------------------------------------------------------*/
+  25:Src/stm32f0xx_it.c **** /* USER CODE BEGIN Includes */
+  26:Src/stm32f0xx_it.c **** /* USER CODE END Includes */
+  27:Src/stm32f0xx_it.c **** extern PCD_HandleTypeDef hpcd;
+  28:Src/stm32f0xx_it.c **** 
+  29:Src/stm32f0xx_it.c **** /* Private typedef -----------------------------------------------------------*/
+  30:Src/stm32f0xx_it.c **** /* USER CODE BEGIN TD */
+  31:Src/stm32f0xx_it.c **** 
+  32:Src/stm32f0xx_it.c **** /* USER CODE END TD */
+  33:Src/stm32f0xx_it.c **** 
+ARM GAS  /tmp/ccFmyTBY.s 			page 2
+
+
+  34:Src/stm32f0xx_it.c **** /* Private define ------------------------------------------------------------*/
+  35:Src/stm32f0xx_it.c **** /* USER CODE BEGIN PD */
+  36:Src/stm32f0xx_it.c **** 
+  37:Src/stm32f0xx_it.c **** /* USER CODE END PD */
+  38:Src/stm32f0xx_it.c **** 
+  39:Src/stm32f0xx_it.c **** /* Private macro -------------------------------------------------------------*/
+  40:Src/stm32f0xx_it.c **** /* USER CODE BEGIN PM */
+  41:Src/stm32f0xx_it.c **** 
+  42:Src/stm32f0xx_it.c **** /* USER CODE END PM */
+  43:Src/stm32f0xx_it.c **** 
+  44:Src/stm32f0xx_it.c **** /* Private variables ---------------------------------------------------------*/
+  45:Src/stm32f0xx_it.c **** /* USER CODE BEGIN PV */
+  46:Src/stm32f0xx_it.c **** 
+  47:Src/stm32f0xx_it.c **** /* USER CODE END PV */
+  48:Src/stm32f0xx_it.c **** 
+  49:Src/stm32f0xx_it.c **** /* Private function prototypes -----------------------------------------------*/
+  50:Src/stm32f0xx_it.c **** /* USER CODE BEGIN PFP */
+  51:Src/stm32f0xx_it.c **** 
+  52:Src/stm32f0xx_it.c **** /* USER CODE END PFP */
+  53:Src/stm32f0xx_it.c **** 
+  54:Src/stm32f0xx_it.c **** /* Private user code ---------------------------------------------------------*/
+  55:Src/stm32f0xx_it.c **** /* USER CODE BEGIN 0 */
+  56:Src/stm32f0xx_it.c **** 
+  57:Src/stm32f0xx_it.c **** /* USER CODE END 0 */
+  58:Src/stm32f0xx_it.c **** 
+  59:Src/stm32f0xx_it.c **** /* External variables --------------------------------------------------------*/
+  60:Src/stm32f0xx_it.c **** extern DMA_HandleTypeDef hdma_adc;
+  61:Src/stm32f0xx_it.c **** /* USER CODE BEGIN EV */
+  62:Src/stm32f0xx_it.c **** 
+  63:Src/stm32f0xx_it.c **** /* USER CODE END EV */
+  64:Src/stm32f0xx_it.c **** 
+  65:Src/stm32f0xx_it.c **** /******************************************************************************/
+  66:Src/stm32f0xx_it.c **** /*           Cortex-M0 Processor Interruption and Exception Handlers          */
+  67:Src/stm32f0xx_it.c **** /******************************************************************************/
+  68:Src/stm32f0xx_it.c **** /**
+  69:Src/stm32f0xx_it.c ****   * @brief This function handles Non maskable interrupt.
+  70:Src/stm32f0xx_it.c ****   */
+  71:Src/stm32f0xx_it.c **** void NMI_Handler(void)
+  72:Src/stm32f0xx_it.c **** {
+  26              		.loc 1 72 0
+  27              		.cfi_startproc
+  28              		@ args = 0, pretend = 0, frame = 0
+  29              		@ frame_needed = 0, uses_anonymous_args = 0
+  30              		@ link register save eliminated.
+  73:Src/stm32f0xx_it.c ****   /* USER CODE BEGIN NonMaskableInt_IRQn 0 */
+  74:Src/stm32f0xx_it.c **** 
+  75:Src/stm32f0xx_it.c ****   /* USER CODE END NonMaskableInt_IRQn 0 */
+  76:Src/stm32f0xx_it.c ****   /* USER CODE BEGIN NonMaskableInt_IRQn 1 */
+  77:Src/stm32f0xx_it.c **** 
+  78:Src/stm32f0xx_it.c ****   /* USER CODE END NonMaskableInt_IRQn 1 */
+  79:Src/stm32f0xx_it.c **** }
+  31              		.loc 1 79 0
+  32              		@ sp needed
+  33 0000 7047     		bx	lr
+  34              		.cfi_endproc
+  35              	.LFE43:
+  37              		.section	.text.HardFault_Handler,"ax",%progbits
+ARM GAS  /tmp/ccFmyTBY.s 			page 3
+
+
+  38              		.align	1
+  39              		.global	HardFault_Handler
+  40              		.syntax unified
+  41              		.code	16
+  42              		.thumb_func
+  43              		.fpu softvfp
+  45              	HardFault_Handler:
+  46              	.LFB44:
+  80:Src/stm32f0xx_it.c **** 
+  81:Src/stm32f0xx_it.c **** /**
+  82:Src/stm32f0xx_it.c ****   * @brief This function handles Hard fault interrupt.
+  83:Src/stm32f0xx_it.c ****   */
+  84:Src/stm32f0xx_it.c **** void HardFault_Handler(void)
+  85:Src/stm32f0xx_it.c **** {
+  47              		.loc 1 85 0
+  48              		.cfi_startproc
+  49              		@ Volatile: function does not return.
+  50              		@ args = 0, pretend = 0, frame = 0
+  51              		@ frame_needed = 0, uses_anonymous_args = 0
+  52 0000 70B5     		push	{r4, r5, r6, lr}
+  53              	.LCFI0:
+  54              		.cfi_def_cfa_offset 16
+  55              		.cfi_offset 4, -16
+  56              		.cfi_offset 5, -12
+  57              		.cfi_offset 6, -8
+  58              		.cfi_offset 14, -4
+  59              	.L3:
+  86:Src/stm32f0xx_it.c ****   /* USER CODE BEGIN HardFault_IRQn 0 */
+  87:Src/stm32f0xx_it.c **** 
+  88:Src/stm32f0xx_it.c ****   /* USER CODE END HardFault_IRQn 0 */
+  89:Src/stm32f0xx_it.c ****   while (1)
+  90:Src/stm32f0xx_it.c ****   {
+  91:Src/stm32f0xx_it.c ****     HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,1);
+  60              		.loc 1 91 0 discriminator 1
+  61 0002 8025     		movs	r5, #128
+  62 0004 AD01     		lsls	r5, r5, #6
+  63 0006 094C     		ldr	r4, .L4
+  64 0008 0122     		movs	r2, #1
+  65 000a 2900     		movs	r1, r5
+  66 000c 2000     		movs	r0, r4
+  67 000e FFF7FEFF 		bl	HAL_GPIO_WritePin
+  68              	.LVL0:
+  92:Src/stm32f0xx_it.c ****     HAL_Delay(100);
+  69              		.loc 1 92 0 discriminator 1
+  70 0012 6420     		movs	r0, #100
+  71 0014 FFF7FEFF 		bl	HAL_Delay
+  72              	.LVL1:
+  93:Src/stm32f0xx_it.c ****     HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,0);
+  73              		.loc 1 93 0 discriminator 1
+  74 0018 0022     		movs	r2, #0
+  75 001a 2900     		movs	r1, r5
+  76 001c 2000     		movs	r0, r4
+  77 001e FFF7FEFF 		bl	HAL_GPIO_WritePin
+  78              	.LVL2:
+  94:Src/stm32f0xx_it.c ****     HAL_Delay(100);
+  79              		.loc 1 94 0 discriminator 1
+  80 0022 6420     		movs	r0, #100
+ARM GAS  /tmp/ccFmyTBY.s 			page 4
+
+
+  81 0024 FFF7FEFF 		bl	HAL_Delay
+  82              	.LVL3:
+  83 0028 EBE7     		b	.L3
+  84              	.L5:
+  85 002a C046     		.align	2
+  86              	.L4:
+  87 002c 00040048 		.word	1207960576
+  88              		.cfi_endproc
+  89              	.LFE44:
+  91              		.section	.text.SVC_Handler,"ax",%progbits
+  92              		.align	1
+  93              		.global	SVC_Handler
+  94              		.syntax unified
+  95              		.code	16
+  96              		.thumb_func
+  97              		.fpu softvfp
+  99              	SVC_Handler:
+ 100              	.LFB45:
+  95:Src/stm32f0xx_it.c ****   }
+  96:Src/stm32f0xx_it.c **** }
+  97:Src/stm32f0xx_it.c **** 
+  98:Src/stm32f0xx_it.c **** /**
+  99:Src/stm32f0xx_it.c ****   * @brief This function handles System service call via SWI instruction.
+ 100:Src/stm32f0xx_it.c ****   */
+ 101:Src/stm32f0xx_it.c **** void SVC_Handler(void)
+ 102:Src/stm32f0xx_it.c **** {
+ 101              		.loc 1 102 0
+ 102              		.cfi_startproc
+ 103              		@ args = 0, pretend = 0, frame = 0
+ 104              		@ frame_needed = 0, uses_anonymous_args = 0
+ 105              		@ link register save eliminated.
+ 103:Src/stm32f0xx_it.c ****   /* USER CODE BEGIN SVC_IRQn 0 */
+ 104:Src/stm32f0xx_it.c **** 
+ 105:Src/stm32f0xx_it.c ****   /* USER CODE END SVC_IRQn 0 */
+ 106:Src/stm32f0xx_it.c ****   /* USER CODE BEGIN SVC_IRQn 1 */
+ 107:Src/stm32f0xx_it.c **** 
+ 108:Src/stm32f0xx_it.c ****   /* USER CODE END SVC_IRQn 1 */
+ 109:Src/stm32f0xx_it.c **** }
+ 106              		.loc 1 109 0
+ 107              		@ sp needed
+ 108 0000 7047     		bx	lr
+ 109              		.cfi_endproc
+ 110              	.LFE45:
+ 112              		.section	.text.PendSV_Handler,"ax",%progbits
+ 113              		.align	1
+ 114              		.global	PendSV_Handler
+ 115              		.syntax unified
+ 116              		.code	16
+ 117              		.thumb_func
+ 118              		.fpu softvfp
+ 120              	PendSV_Handler:
+ 121              	.LFB46:
+ 110:Src/stm32f0xx_it.c **** 
+ 111:Src/stm32f0xx_it.c **** /**
+ 112:Src/stm32f0xx_it.c ****   * @brief This function handles Pendable request for system service.
+ 113:Src/stm32f0xx_it.c ****   */
+ 114:Src/stm32f0xx_it.c **** void PendSV_Handler(void)
+ARM GAS  /tmp/ccFmyTBY.s 			page 5
+
+
+ 115:Src/stm32f0xx_it.c **** {
+ 122              		.loc 1 115 0
+ 123              		.cfi_startproc
+ 124              		@ args = 0, pretend = 0, frame = 0
+ 125              		@ frame_needed = 0, uses_anonymous_args = 0
+ 126              		@ link register save eliminated.
+ 116:Src/stm32f0xx_it.c ****   /* USER CODE BEGIN PendSV_IRQn 0 */
+ 117:Src/stm32f0xx_it.c **** 
+ 118:Src/stm32f0xx_it.c ****   /* USER CODE END PendSV_IRQn 0 */
+ 119:Src/stm32f0xx_it.c ****   /* USER CODE BEGIN PendSV_IRQn 1 */
+ 120:Src/stm32f0xx_it.c **** 
+ 121:Src/stm32f0xx_it.c ****   /* USER CODE END PendSV_IRQn 1 */
+ 122:Src/stm32f0xx_it.c **** }
+ 127              		.loc 1 122 0
+ 128              		@ sp needed
+ 129 0000 7047     		bx	lr
+ 130              		.cfi_endproc
+ 131              	.LFE46:
+ 133              		.section	.text.SysTick_Handler,"ax",%progbits
+ 134              		.align	1
+ 135              		.global	SysTick_Handler
+ 136              		.syntax unified
+ 137              		.code	16
+ 138              		.thumb_func
+ 139              		.fpu softvfp
+ 141              	SysTick_Handler:
+ 142              	.LFB47:
+ 123:Src/stm32f0xx_it.c **** 
+ 124:Src/stm32f0xx_it.c **** /**
+ 125:Src/stm32f0xx_it.c ****   * @brief This function handles System tick timer.
+ 126:Src/stm32f0xx_it.c ****   */
+ 127:Src/stm32f0xx_it.c **** void SysTick_Handler(void)
+ 128:Src/stm32f0xx_it.c **** {
+ 143              		.loc 1 128 0
+ 144              		.cfi_startproc
+ 145              		@ args = 0, pretend = 0, frame = 0
+ 146              		@ frame_needed = 0, uses_anonymous_args = 0
+ 147 0000 10B5     		push	{r4, lr}
+ 148              	.LCFI1:
+ 149              		.cfi_def_cfa_offset 8
+ 150              		.cfi_offset 4, -8
+ 151              		.cfi_offset 14, -4
+ 129:Src/stm32f0xx_it.c ****   /* USER CODE BEGIN SysTick_IRQn 0 */
+ 130:Src/stm32f0xx_it.c **** 
+ 131:Src/stm32f0xx_it.c ****   /* USER CODE END SysTick_IRQn 0 */
+ 132:Src/stm32f0xx_it.c ****   HAL_IncTick();
+ 152              		.loc 1 132 0
+ 153 0002 FFF7FEFF 		bl	HAL_IncTick
+ 154              	.LVL4:
+ 133:Src/stm32f0xx_it.c ****   /* USER CODE BEGIN SysTick_IRQn 1 */
+ 134:Src/stm32f0xx_it.c **** 
+ 135:Src/stm32f0xx_it.c ****   /* USER CODE END SysTick_IRQn 1 */
+ 136:Src/stm32f0xx_it.c **** }
+ 155              		.loc 1 136 0
+ 156              		@ sp needed
+ 157 0006 10BD     		pop	{r4, pc}
+ 158              		.cfi_endproc
+ARM GAS  /tmp/ccFmyTBY.s 			page 6
+
+
+ 159              	.LFE47:
+ 161              		.section	.text.DMA1_Channel1_IRQHandler,"ax",%progbits
+ 162              		.align	1
+ 163              		.global	DMA1_Channel1_IRQHandler
+ 164              		.syntax unified
+ 165              		.code	16
+ 166              		.thumb_func
+ 167              		.fpu softvfp
+ 169              	DMA1_Channel1_IRQHandler:
+ 170              	.LFB48:
+ 137:Src/stm32f0xx_it.c **** 
+ 138:Src/stm32f0xx_it.c **** /******************************************************************************/
+ 139:Src/stm32f0xx_it.c **** /* STM32F0xx Peripheral Interrupt Handlers                                    */
+ 140:Src/stm32f0xx_it.c **** /* Add here the Interrupt Handlers for the used peripherals.                  */
+ 141:Src/stm32f0xx_it.c **** /* For the available peripheral interrupt handler names,                      */
+ 142:Src/stm32f0xx_it.c **** /* please refer to the startup file (startup_stm32f0xx.s).                    */
+ 143:Src/stm32f0xx_it.c **** /******************************************************************************/
+ 144:Src/stm32f0xx_it.c **** 
+ 145:Src/stm32f0xx_it.c **** /**
+ 146:Src/stm32f0xx_it.c ****   * @brief This function handles DMA1 channel 1 global interrupt.
+ 147:Src/stm32f0xx_it.c ****   */
+ 148:Src/stm32f0xx_it.c **** void DMA1_Channel1_IRQHandler(void)
+ 149:Src/stm32f0xx_it.c **** {
+ 171              		.loc 1 149 0
+ 172              		.cfi_startproc
+ 173              		@ args = 0, pretend = 0, frame = 0
+ 174              		@ frame_needed = 0, uses_anonymous_args = 0
+ 175 0000 10B5     		push	{r4, lr}
+ 176              	.LCFI2:
+ 177              		.cfi_def_cfa_offset 8
+ 178              		.cfi_offset 4, -8
+ 179              		.cfi_offset 14, -4
+ 150:Src/stm32f0xx_it.c ****   /* USER CODE BEGIN DMA1_Channel1_IRQn 0 */
+ 151:Src/stm32f0xx_it.c **** 
+ 152:Src/stm32f0xx_it.c ****   /* USER CODE END DMA1_Channel1_IRQn 0 */
+ 153:Src/stm32f0xx_it.c ****   HAL_DMA_IRQHandler(&hdma_adc);
+ 180              		.loc 1 153 0
+ 181 0002 0248     		ldr	r0, .L10
+ 182 0004 FFF7FEFF 		bl	HAL_DMA_IRQHandler
+ 183              	.LVL5:
+ 154:Src/stm32f0xx_it.c ****   /* USER CODE BEGIN DMA1_Channel1_IRQn 1 */
+ 155:Src/stm32f0xx_it.c **** 
+ 156:Src/stm32f0xx_it.c ****   /* USER CODE END DMA1_Channel1_IRQn 1 */
+ 157:Src/stm32f0xx_it.c **** }
+ 184              		.loc 1 157 0
+ 185              		@ sp needed
+ 186 0008 10BD     		pop	{r4, pc}
+ 187              	.L11:
+ 188 000a C046     		.align	2
+ 189              	.L10:
+ 190 000c 00000000 		.word	hdma_adc
+ 191              		.cfi_endproc
+ 192              	.LFE48:
+ 194              		.section	.text.USB_IRQHandler,"ax",%progbits
+ 195              		.align	1
+ 196              		.global	USB_IRQHandler
+ 197              		.syntax unified
+ARM GAS  /tmp/ccFmyTBY.s 			page 7
+
+
+ 198              		.code	16
+ 199              		.thumb_func
+ 200              		.fpu softvfp
+ 202              	USB_IRQHandler:
+ 203              	.LFB49:
+ 158:Src/stm32f0xx_it.c **** 
+ 159:Src/stm32f0xx_it.c **** /* USER CODE BEGIN 1 */
+ 160:Src/stm32f0xx_it.c **** void USB_IRQHandler(void)
+ 161:Src/stm32f0xx_it.c **** {
+ 204              		.loc 1 161 0
+ 205              		.cfi_startproc
+ 206              		@ args = 0, pretend = 0, frame = 0
+ 207              		@ frame_needed = 0, uses_anonymous_args = 0
+ 208 0000 10B5     		push	{r4, lr}
+ 209              	.LCFI3:
+ 210              		.cfi_def_cfa_offset 8
+ 211              		.cfi_offset 4, -8
+ 212              		.cfi_offset 14, -4
+ 162:Src/stm32f0xx_it.c ****   HAL_PCD_IRQHandler(&hpcd);
+ 213              		.loc 1 162 0
+ 214 0002 0248     		ldr	r0, .L13
+ 215 0004 FFF7FEFF 		bl	HAL_PCD_IRQHandler
+ 216              	.LVL6:
+ 163:Src/stm32f0xx_it.c **** }
+ 217              		.loc 1 163 0
+ 218              		@ sp needed
+ 219 0008 10BD     		pop	{r4, pc}
+ 220              	.L14:
+ 221 000a C046     		.align	2
+ 222              	.L13:
+ 223 000c 00000000 		.word	hpcd
+ 224              		.cfi_endproc
+ 225              	.LFE49:
+ 227              		.comm	UserTxBuffer,512,4
+ 228              		.comm	UserRxBuffer,512,4
+ 229              		.text
+ 230              	.Letext0:
+ 231              		.file 2 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/machin
+ 232              		.file 3 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/_s
+ 233              		.file 4 "Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h"
+ 234              		.file 5 "Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h"
+ 235              		.file 6 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h"
+ 236              		.file 7 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h"
+ 237              		.file 8 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usb.h"
+ 238              		.file 9 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h"
+ 239              		.file 10 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h"
+ 240              		.file 11 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/l
+ 241              		.file 12 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/_
+ 242              		.file 13 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/lib/gcc/arm-none-eabi/7.3.1
+ 243              		.file 14 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/r
+ 244              		.file 15 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/stdli
+ 245              		.file 16 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h"
+ 246              		.file 17 "Inc/usbd_desc.h"
+ 247              		.file 18 "Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h"
+ 248              		.file 19 "Inc/usbd_cdc_interface.h"
+ 249              		.file 20 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h"
+ARM GAS  /tmp/ccFmyTBY.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 stm32f0xx_it.c
+     /tmp/ccFmyTBY.s:16     .text.NMI_Handler:0000000000000000 $t
+     /tmp/ccFmyTBY.s:23     .text.NMI_Handler:0000000000000000 NMI_Handler
+     /tmp/ccFmyTBY.s:38     .text.HardFault_Handler:0000000000000000 $t
+     /tmp/ccFmyTBY.s:45     .text.HardFault_Handler:0000000000000000 HardFault_Handler
+     /tmp/ccFmyTBY.s:87     .text.HardFault_Handler:000000000000002c $d
+     /tmp/ccFmyTBY.s:92     .text.SVC_Handler:0000000000000000 $t
+     /tmp/ccFmyTBY.s:99     .text.SVC_Handler:0000000000000000 SVC_Handler
+     /tmp/ccFmyTBY.s:113    .text.PendSV_Handler:0000000000000000 $t
+     /tmp/ccFmyTBY.s:120    .text.PendSV_Handler:0000000000000000 PendSV_Handler
+     /tmp/ccFmyTBY.s:134    .text.SysTick_Handler:0000000000000000 $t
+     /tmp/ccFmyTBY.s:141    .text.SysTick_Handler:0000000000000000 SysTick_Handler
+     /tmp/ccFmyTBY.s:162    .text.DMA1_Channel1_IRQHandler:0000000000000000 $t
+     /tmp/ccFmyTBY.s:169    .text.DMA1_Channel1_IRQHandler:0000000000000000 DMA1_Channel1_IRQHandler
+     /tmp/ccFmyTBY.s:190    .text.DMA1_Channel1_IRQHandler:000000000000000c $d
+     /tmp/ccFmyTBY.s:195    .text.USB_IRQHandler:0000000000000000 $t
+     /tmp/ccFmyTBY.s:202    .text.USB_IRQHandler:0000000000000000 USB_IRQHandler
+     /tmp/ccFmyTBY.s:223    .text.USB_IRQHandler:000000000000000c $d
+                            *COM*:0000000000000200 UserTxBuffer
+                            *COM*:0000000000000200 UserRxBuffer
+
+UNDEFINED SYMBOLS
+HAL_GPIO_WritePin
+HAL_Delay
+HAL_IncTick
+HAL_DMA_IRQHandler
+hdma_adc
+HAL_PCD_IRQHandler
+hpcd

@@ -1,0 +1,1319 @@
+ARM GAS  /tmp/ccH4oDXT.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 0
+  10              		.eabi_attribute 18, 4
+  11              		.file	"curebuffer.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text.cureRingBufferU8Free,"ax",%progbits
+  16              		.align	1
+  17              		.global	cureRingBufferU8Free
+  18              		.syntax unified
+  19              		.code	16
+  20              		.thumb_func
+  21              		.fpu softvfp
+  23              	cureRingBufferU8Free:
+  24              	.LFB1:
+  25              		.file 1 "Src/curelib_src/curebuffer.c"
+   1:Src/curelib_src/curebuffer.c **** /*
+   2:Src/curelib_src/curebuffer.c ****  *******************************************************************************
+   3:Src/curelib_src/curebuffer.c ****  *  [curebuffer.c]
+   4:Src/curelib_src/curebuffer.c ****  *  This module is for FIFO buffer.
+   5:Src/curelib_src/curebuffer.c ****  *
+   6:Src/curelib_src/curebuffer.c ****  *  This program is under the terms of the GPLv3.
+   7:Src/curelib_src/curebuffer.c ****  *  https://www.gnu.org/licenses/gpl-3.0.html
+   8:Src/curelib_src/curebuffer.c ****  *
+   9:Src/curelib_src/curebuffer.c ****  *  Copyright(c) 2017 Keshikan (www.keshikan.net)
+  10:Src/curelib_src/curebuffer.c ****  *******************************************************************************
+  11:Src/curelib_src/curebuffer.c ****  */
+  12:Src/curelib_src/curebuffer.c **** 
+  13:Src/curelib_src/curebuffer.c **** #include "curebuffer.h"
+  14:Src/curelib_src/curebuffer.c **** #include <stdint.h>
+  15:Src/curelib_src/curebuffer.c **** #include <stdlib.h>
+  16:Src/curelib_src/curebuffer.c **** 
+  17:Src/curelib_src/curebuffer.c **** 
+  18:Src/curelib_src/curebuffer.c **** /////////////////////////////
+  19:Src/curelib_src/curebuffer.c **** //methods for uint8_t FIFO.
+  20:Src/curelib_src/curebuffer.c **** /////////////////////////////
+  21:Src/curelib_src/curebuffer.c **** 
+  22:Src/curelib_src/curebuffer.c **** BUFFER_STATUS cureRingBufferU8Init(RingBufferU8 *rbuf, uint16_t buflen)
+  23:Src/curelib_src/curebuffer.c **** {
+  24:Src/curelib_src/curebuffer.c **** 
+  25:Src/curelib_src/curebuffer.c **** 	uint32_t i;
+  26:Src/curelib_src/curebuffer.c **** 
+  27:Src/curelib_src/curebuffer.c **** 	cureRingBufferU8Free(rbuf);
+  28:Src/curelib_src/curebuffer.c **** 
+  29:Src/curelib_src/curebuffer.c **** 		rbuf->buffer = (uint8_t *)malloc( buflen * sizeof(uint8_t) );
+  30:Src/curelib_src/curebuffer.c **** 		if(NULL == rbuf->buffer){
+  31:Src/curelib_src/curebuffer.c **** 			return BUFFER_FAILURE;
+  32:Src/curelib_src/curebuffer.c **** 		}
+  33:Src/curelib_src/curebuffer.c **** 		for(i=0; i<buflen; i++){
+ARM GAS  /tmp/ccH4oDXT.s 			page 2
+
+
+  34:Src/curelib_src/curebuffer.c **** 			rbuf->buffer[i] = 0;
+  35:Src/curelib_src/curebuffer.c **** 		}
+  36:Src/curelib_src/curebuffer.c **** 
+  37:Src/curelib_src/curebuffer.c **** 	rbuf->length = buflen;
+  38:Src/curelib_src/curebuffer.c **** 
+  39:Src/curelib_src/curebuffer.c **** 	return BUFFER_SUCCESS;
+  40:Src/curelib_src/curebuffer.c **** }
+  41:Src/curelib_src/curebuffer.c **** 
+  42:Src/curelib_src/curebuffer.c **** BUFFER_STATUS cureRingBufferU8Free(RingBufferU8 *rbuf)
+  43:Src/curelib_src/curebuffer.c **** {
+  26              		.loc 1 43 0
+  27              		.cfi_startproc
+  28              		@ args = 0, pretend = 0, frame = 0
+  29              		@ frame_needed = 0, uses_anonymous_args = 0
+  30              	.LVL0:
+  31 0000 10B5     		push	{r4, lr}
+  32              	.LCFI0:
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 4, -8
+  35              		.cfi_offset 14, -4
+  36 0002 0400     		movs	r4, r0
+  44:Src/curelib_src/curebuffer.c **** 	if(NULL != rbuf->buffer){
+  37              		.loc 1 44 0
+  38 0004 8068     		ldr	r0, [r0, #8]
+  39              	.LVL1:
+  40 0006 0028     		cmp	r0, #0
+  41 0008 01D0     		beq	.L2
+  45:Src/curelib_src/curebuffer.c **** 		free(rbuf->buffer);
+  42              		.loc 1 45 0
+  43 000a FFF7FEFF 		bl	free
+  44              	.LVL2:
+  45              	.L2:
+  46:Src/curelib_src/curebuffer.c **** 	}
+  47:Src/curelib_src/curebuffer.c **** 
+  48:Src/curelib_src/curebuffer.c **** 	rbuf->idx_front = rbuf->idx_rear = 0;
+  46              		.loc 1 48 0
+  47 000e 0023     		movs	r3, #0
+  48 0010 6380     		strh	r3, [r4, #2]
+  49 0012 2380     		strh	r3, [r4]
+  49:Src/curelib_src/curebuffer.c **** 	rbuf->length = 0;
+  50              		.loc 1 49 0
+  51 0014 A380     		strh	r3, [r4, #4]
+  50:Src/curelib_src/curebuffer.c **** 
+  51:Src/curelib_src/curebuffer.c **** 	return BUFFER_SUCCESS;
+  52:Src/curelib_src/curebuffer.c **** }
+  52              		.loc 1 52 0
+  53 0016 0120     		movs	r0, #1
+  54              		@ sp needed
+  55              	.LVL3:
+  56 0018 10BD     		pop	{r4, pc}
+  57              		.cfi_endproc
+  58              	.LFE1:
+  60              		.section	.text.cureRingBufferU8Init,"ax",%progbits
+  61              		.align	1
+  62              		.global	cureRingBufferU8Init
+  63              		.syntax unified
+  64              		.code	16
+ARM GAS  /tmp/ccH4oDXT.s 			page 3
+
+
+  65              		.thumb_func
+  66              		.fpu softvfp
+  68              	cureRingBufferU8Init:
+  69              	.LFB0:
+  23:Src/curelib_src/curebuffer.c **** 
+  70              		.loc 1 23 0
+  71              		.cfi_startproc
+  72              		@ args = 0, pretend = 0, frame = 0
+  73              		@ frame_needed = 0, uses_anonymous_args = 0
+  74              	.LVL4:
+  75 0000 70B5     		push	{r4, r5, r6, lr}
+  76              	.LCFI1:
+  77              		.cfi_def_cfa_offset 16
+  78              		.cfi_offset 4, -16
+  79              		.cfi_offset 5, -12
+  80              		.cfi_offset 6, -8
+  81              		.cfi_offset 14, -4
+  82 0002 0500     		movs	r5, r0
+  83 0004 0C00     		movs	r4, r1
+  27:Src/curelib_src/curebuffer.c **** 
+  84              		.loc 1 27 0
+  85 0006 FFF7FEFF 		bl	cureRingBufferU8Free
+  86              	.LVL5:
+  29:Src/curelib_src/curebuffer.c **** 		if(NULL == rbuf->buffer){
+  87              		.loc 1 29 0
+  88 000a 2600     		movs	r6, r4
+  89 000c 2000     		movs	r0, r4
+  90 000e FFF7FEFF 		bl	malloc
+  91              	.LVL6:
+  92 0012 A860     		str	r0, [r5, #8]
+  30:Src/curelib_src/curebuffer.c **** 			return BUFFER_FAILURE;
+  93              		.loc 1 30 0
+  94 0014 0028     		cmp	r0, #0
+  95 0016 0BD0     		beq	.L7
+  33:Src/curelib_src/curebuffer.c **** 			rbuf->buffer[i] = 0;
+  96              		.loc 1 33 0
+  97 0018 0023     		movs	r3, #0
+  98 001a 04E0     		b	.L5
+  99              	.LVL7:
+ 100              	.L6:
+  34:Src/curelib_src/curebuffer.c **** 		}
+ 101              		.loc 1 34 0 discriminator 3
+ 102 001c AA68     		ldr	r2, [r5, #8]
+ 103 001e D218     		adds	r2, r2, r3
+ 104 0020 0021     		movs	r1, #0
+ 105 0022 1170     		strb	r1, [r2]
+  33:Src/curelib_src/curebuffer.c **** 			rbuf->buffer[i] = 0;
+ 106              		.loc 1 33 0 discriminator 3
+ 107 0024 0133     		adds	r3, r3, #1
+ 108              	.LVL8:
+ 109              	.L5:
+  33:Src/curelib_src/curebuffer.c **** 			rbuf->buffer[i] = 0;
+ 110              		.loc 1 33 0 is_stmt 0 discriminator 1
+ 111 0026 9E42     		cmp	r6, r3
+ 112 0028 F8D8     		bhi	.L6
+  37:Src/curelib_src/curebuffer.c **** 
+ 113              		.loc 1 37 0 is_stmt 1
+ARM GAS  /tmp/ccH4oDXT.s 			page 4
+
+
+ 114 002a AC80     		strh	r4, [r5, #4]
+  39:Src/curelib_src/curebuffer.c **** }
+ 115              		.loc 1 39 0
+ 116 002c 0120     		movs	r0, #1
+ 117              	.LVL9:
+ 118              	.L4:
+  40:Src/curelib_src/curebuffer.c **** 
+ 119              		.loc 1 40 0
+ 120              		@ sp needed
+ 121              	.LVL10:
+ 122 002e 70BD     		pop	{r4, r5, r6, pc}
+ 123              	.LVL11:
+ 124              	.L7:
+  31:Src/curelib_src/curebuffer.c **** 		}
+ 125              		.loc 1 31 0
+ 126 0030 0020     		movs	r0, #0
+ 127 0032 FCE7     		b	.L4
+ 128              		.cfi_endproc
+ 129              	.LFE0:
+ 131              		.section	.text.cureRingBufferU8Enqueue,"ax",%progbits
+ 132              		.align	1
+ 133              		.global	cureRingBufferU8Enqueue
+ 134              		.syntax unified
+ 135              		.code	16
+ 136              		.thumb_func
+ 137              		.fpu softvfp
+ 139              	cureRingBufferU8Enqueue:
+ 140              	.LFB2:
+  53:Src/curelib_src/curebuffer.c **** 
+  54:Src/curelib_src/curebuffer.c **** BUFFER_STATUS cureRingBufferU8Enqueue(RingBufferU8 *rbuf, uint8_t *inputc)
+  55:Src/curelib_src/curebuffer.c **** {
+ 141              		.loc 1 55 0
+ 142              		.cfi_startproc
+ 143              		@ args = 0, pretend = 0, frame = 0
+ 144              		@ frame_needed = 0, uses_anonymous_args = 0
+ 145              	.LVL12:
+ 146 0000 10B5     		push	{r4, lr}
+ 147              	.LCFI2:
+ 148              		.cfi_def_cfa_offset 8
+ 149              		.cfi_offset 4, -8
+ 150              		.cfi_offset 14, -4
+  56:Src/curelib_src/curebuffer.c **** 	if( ((rbuf->idx_front +1)&(rbuf->length -1)) == rbuf->idx_rear ){//buffer overrun error occurs.
+ 151              		.loc 1 56 0
+ 152 0002 0288     		ldrh	r2, [r0]
+ 153 0004 541C     		adds	r4, r2, #1
+ 154 0006 8388     		ldrh	r3, [r0, #4]
+ 155 0008 013B     		subs	r3, r3, #1
+ 156 000a 2340     		ands	r3, r4
+ 157 000c 4488     		ldrh	r4, [r0, #2]
+ 158 000e A342     		cmp	r3, r4
+ 159 0010 0CD0     		beq	.L10
+  57:Src/curelib_src/curebuffer.c **** 		return BUFFER_FAILURE;
+  58:Src/curelib_src/curebuffer.c **** 	}else{
+  59:Src/curelib_src/curebuffer.c **** 
+  60:Src/curelib_src/curebuffer.c **** 		rbuf->buffer[rbuf->idx_front]=  *inputc;
+ 160              		.loc 1 60 0
+ 161 0012 0B78     		ldrb	r3, [r1]
+ARM GAS  /tmp/ccH4oDXT.s 			page 5
+
+
+ 162 0014 8168     		ldr	r1, [r0, #8]
+ 163              	.LVL13:
+ 164 0016 8B54     		strb	r3, [r1, r2]
+  61:Src/curelib_src/curebuffer.c **** 		rbuf->idx_front++;
+ 165              		.loc 1 61 0
+ 166 0018 0388     		ldrh	r3, [r0]
+ 167 001a 0133     		adds	r3, r3, #1
+ 168 001c 9BB2     		uxth	r3, r3
+  62:Src/curelib_src/curebuffer.c **** 		rbuf->idx_front &= (rbuf->length -1);
+ 169              		.loc 1 62 0
+ 170 001e 8288     		ldrh	r2, [r0, #4]
+ 171 0020 013A     		subs	r2, r2, #1
+ 172 0022 12B2     		sxth	r2, r2
+ 173 0024 1340     		ands	r3, r2
+ 174 0026 0380     		strh	r3, [r0]
+  63:Src/curelib_src/curebuffer.c **** 		return BUFFER_SUCCESS;
+ 175              		.loc 1 63 0
+ 176 0028 0120     		movs	r0, #1
+ 177              	.LVL14:
+ 178              	.L9:
+  64:Src/curelib_src/curebuffer.c **** 	}
+  65:Src/curelib_src/curebuffer.c **** }
+ 179              		.loc 1 65 0
+ 180              		@ sp needed
+ 181 002a 10BD     		pop	{r4, pc}
+ 182              	.LVL15:
+ 183              	.L10:
+  57:Src/curelib_src/curebuffer.c **** 	}else{
+ 184              		.loc 1 57 0
+ 185 002c 0020     		movs	r0, #0
+ 186              	.LVL16:
+ 187 002e FCE7     		b	.L9
+ 188              		.cfi_endproc
+ 189              	.LFE2:
+ 191              		.section	.text.cureRingBufferU8Dequeue,"ax",%progbits
+ 192              		.align	1
+ 193              		.global	cureRingBufferU8Dequeue
+ 194              		.syntax unified
+ 195              		.code	16
+ 196              		.thumb_func
+ 197              		.fpu softvfp
+ 199              	cureRingBufferU8Dequeue:
+ 200              	.LFB3:
+  66:Src/curelib_src/curebuffer.c **** 
+  67:Src/curelib_src/curebuffer.c **** BUFFER_STATUS cureRingBufferU8Dequeue(RingBufferU8 *rbuf, uint8_t *ret)
+  68:Src/curelib_src/curebuffer.c **** {
+ 201              		.loc 1 68 0
+ 202              		.cfi_startproc
+ 203              		@ args = 0, pretend = 0, frame = 0
+ 204              		@ frame_needed = 0, uses_anonymous_args = 0
+ 205              		@ link register save eliminated.
+ 206              	.LVL17:
+  69:Src/curelib_src/curebuffer.c **** 	if(rbuf->idx_front == rbuf->idx_rear){//if buffer underrun error occurs.
+ 207              		.loc 1 69 0
+ 208 0000 0288     		ldrh	r2, [r0]
+ 209 0002 4388     		ldrh	r3, [r0, #2]
+ 210 0004 9A42     		cmp	r2, r3
+ARM GAS  /tmp/ccH4oDXT.s 			page 6
+
+
+ 211 0006 0CD0     		beq	.L13
+  70:Src/curelib_src/curebuffer.c **** 		return BUFFER_FAILURE;
+  71:Src/curelib_src/curebuffer.c **** 	}else{
+  72:Src/curelib_src/curebuffer.c **** 
+  73:Src/curelib_src/curebuffer.c **** 		*ret = (rbuf->buffer[rbuf->idx_rear]);
+ 212              		.loc 1 73 0
+ 213 0008 8268     		ldr	r2, [r0, #8]
+ 214 000a D35C     		ldrb	r3, [r2, r3]
+ 215 000c 0B70     		strb	r3, [r1]
+  74:Src/curelib_src/curebuffer.c **** 		rbuf->idx_rear++;
+ 216              		.loc 1 74 0
+ 217 000e 4388     		ldrh	r3, [r0, #2]
+ 218 0010 0133     		adds	r3, r3, #1
+ 219 0012 9BB2     		uxth	r3, r3
+  75:Src/curelib_src/curebuffer.c **** 		rbuf->idx_rear &= (rbuf->length -1);
+ 220              		.loc 1 75 0
+ 221 0014 8288     		ldrh	r2, [r0, #4]
+ 222 0016 013A     		subs	r2, r2, #1
+ 223 0018 12B2     		sxth	r2, r2
+ 224 001a 1340     		ands	r3, r2
+ 225 001c 4380     		strh	r3, [r0, #2]
+  76:Src/curelib_src/curebuffer.c **** 		return BUFFER_SUCCESS;
+ 226              		.loc 1 76 0
+ 227 001e 0120     		movs	r0, #1
+ 228              	.LVL18:
+ 229              	.L12:
+  77:Src/curelib_src/curebuffer.c **** 	}
+  78:Src/curelib_src/curebuffer.c **** }
+ 230              		.loc 1 78 0
+ 231              		@ sp needed
+ 232 0020 7047     		bx	lr
+ 233              	.LVL19:
+ 234              	.L13:
+  70:Src/curelib_src/curebuffer.c **** 	}else{
+ 235              		.loc 1 70 0
+ 236 0022 0020     		movs	r0, #0
+ 237              	.LVL20:
+ 238 0024 FCE7     		b	.L12
+ 239              		.cfi_endproc
+ 240              	.LFE3:
+ 242              		.section	.text._cureRingBufferU8GetUsedSize,"ax",%progbits
+ 243              		.align	1
+ 244              		.global	_cureRingBufferU8GetUsedSize
+ 245              		.syntax unified
+ 246              		.code	16
+ 247              		.thumb_func
+ 248              		.fpu softvfp
+ 250              	_cureRingBufferU8GetUsedSize:
+ 251              	.LFB4:
+  79:Src/curelib_src/curebuffer.c **** 
+  80:Src/curelib_src/curebuffer.c **** //debug
+  81:Src/curelib_src/curebuffer.c **** uint16_t _cureRingBufferU8GetUsedSize(RingBufferU8 *rbuf)
+  82:Src/curelib_src/curebuffer.c **** {
+ 252              		.loc 1 82 0
+ 253              		.cfi_startproc
+ 254              		@ args = 0, pretend = 0, frame = 0
+ 255              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  /tmp/ccH4oDXT.s 			page 7
+
+
+ 256              		@ link register save eliminated.
+ 257              	.LVL21:
+  83:Src/curelib_src/curebuffer.c **** 	if(rbuf->idx_front >= rbuf->idx_rear){
+ 258              		.loc 1 83 0
+ 259 0000 0388     		ldrh	r3, [r0]
+ 260 0002 4288     		ldrh	r2, [r0, #2]
+ 261 0004 9342     		cmp	r3, r2
+ 262 0006 05D2     		bcs	.L17
+  84:Src/curelib_src/curebuffer.c **** 		return rbuf->idx_front - rbuf->idx_rear;
+  85:Src/curelib_src/curebuffer.c **** 	}else{
+  86:Src/curelib_src/curebuffer.c **** 		return rbuf->idx_front + rbuf->length - rbuf->idx_rear;
+ 263              		.loc 1 86 0
+ 264 0008 8088     		ldrh	r0, [r0, #4]
+ 265              	.LVL22:
+ 266 000a 1818     		adds	r0, r3, r0
+ 267 000c 80B2     		uxth	r0, r0
+ 268 000e 801A     		subs	r0, r0, r2
+ 269 0010 80B2     		uxth	r0, r0
+ 270              	.L16:
+  87:Src/curelib_src/curebuffer.c **** 	}
+  88:Src/curelib_src/curebuffer.c **** 
+  89:Src/curelib_src/curebuffer.c **** }
+ 271              		.loc 1 89 0
+ 272              		@ sp needed
+ 273 0012 7047     		bx	lr
+ 274              	.LVL23:
+ 275              	.L17:
+  84:Src/curelib_src/curebuffer.c **** 		return rbuf->idx_front - rbuf->idx_rear;
+ 276              		.loc 1 84 0
+ 277 0014 981A     		subs	r0, r3, r2
+ 278              	.LVL24:
+ 279 0016 80B2     		uxth	r0, r0
+ 280 0018 FBE7     		b	.L16
+ 281              		.cfi_endproc
+ 282              	.LFE4:
+ 284              		.section	.text.cureRingBuffer16Free,"ax",%progbits
+ 285              		.align	1
+ 286              		.global	cureRingBuffer16Free
+ 287              		.syntax unified
+ 288              		.code	16
+ 289              		.thumb_func
+ 290              		.fpu softvfp
+ 292              	cureRingBuffer16Free:
+ 293              	.LFB6:
+  90:Src/curelib_src/curebuffer.c **** 
+  91:Src/curelib_src/curebuffer.c **** /////////////////////////////
+  92:Src/curelib_src/curebuffer.c **** //methods for int16_t FIFO.
+  93:Src/curelib_src/curebuffer.c **** /////////////////////////////
+  94:Src/curelib_src/curebuffer.c **** 
+  95:Src/curelib_src/curebuffer.c **** BUFFER_STATUS cureRingBuffer16Init(RingBuffer16 *rbuf, uint16_t buflen)
+  96:Src/curelib_src/curebuffer.c **** {
+  97:Src/curelib_src/curebuffer.c **** 
+  98:Src/curelib_src/curebuffer.c **** 	uint32_t i;
+  99:Src/curelib_src/curebuffer.c **** 
+ 100:Src/curelib_src/curebuffer.c **** 	cureRingBuffer16Free(rbuf);
+ 101:Src/curelib_src/curebuffer.c **** 
+ 102:Src/curelib_src/curebuffer.c **** 		rbuf->buffer = (int16_t *)malloc( buflen * sizeof(int16_t) );
+ARM GAS  /tmp/ccH4oDXT.s 			page 8
+
+
+ 103:Src/curelib_src/curebuffer.c **** 		if(NULL == rbuf->buffer){
+ 104:Src/curelib_src/curebuffer.c **** 			return BUFFER_FAILURE;
+ 105:Src/curelib_src/curebuffer.c **** 		}
+ 106:Src/curelib_src/curebuffer.c **** 		for(i=0; i<buflen; i++){
+ 107:Src/curelib_src/curebuffer.c **** 			rbuf->buffer[i] = 0;
+ 108:Src/curelib_src/curebuffer.c **** 		}
+ 109:Src/curelib_src/curebuffer.c **** 	rbuf->length = buflen;
+ 110:Src/curelib_src/curebuffer.c **** 	return BUFFER_SUCCESS;
+ 111:Src/curelib_src/curebuffer.c **** }
+ 112:Src/curelib_src/curebuffer.c **** 
+ 113:Src/curelib_src/curebuffer.c **** BUFFER_STATUS cureRingBuffer16Free(RingBuffer16 *rbuf)
+ 114:Src/curelib_src/curebuffer.c **** {
+ 294              		.loc 1 114 0
+ 295              		.cfi_startproc
+ 296              		@ args = 0, pretend = 0, frame = 0
+ 297              		@ frame_needed = 0, uses_anonymous_args = 0
+ 298              	.LVL25:
+ 299 0000 10B5     		push	{r4, lr}
+ 300              	.LCFI3:
+ 301              		.cfi_def_cfa_offset 8
+ 302              		.cfi_offset 4, -8
+ 303              		.cfi_offset 14, -4
+ 304 0002 0400     		movs	r4, r0
+ 115:Src/curelib_src/curebuffer.c **** 	if(NULL != rbuf->buffer){
+ 305              		.loc 1 115 0
+ 306 0004 8068     		ldr	r0, [r0, #8]
+ 307              	.LVL26:
+ 308 0006 0028     		cmp	r0, #0
+ 309 0008 01D0     		beq	.L19
+ 116:Src/curelib_src/curebuffer.c **** 		free(rbuf->buffer);
+ 310              		.loc 1 116 0
+ 311 000a FFF7FEFF 		bl	free
+ 312              	.LVL27:
+ 313              	.L19:
+ 117:Src/curelib_src/curebuffer.c **** 	}
+ 118:Src/curelib_src/curebuffer.c **** 
+ 119:Src/curelib_src/curebuffer.c **** 	rbuf->idx_front = rbuf->idx_rear = 0;
+ 314              		.loc 1 119 0
+ 315 000e 0023     		movs	r3, #0
+ 316 0010 6380     		strh	r3, [r4, #2]
+ 317 0012 2380     		strh	r3, [r4]
+ 120:Src/curelib_src/curebuffer.c **** 	rbuf->length = 0;
+ 318              		.loc 1 120 0
+ 319 0014 A380     		strh	r3, [r4, #4]
+ 121:Src/curelib_src/curebuffer.c **** 
+ 122:Src/curelib_src/curebuffer.c **** 	return BUFFER_SUCCESS;
+ 123:Src/curelib_src/curebuffer.c **** }
+ 320              		.loc 1 123 0
+ 321 0016 0120     		movs	r0, #1
+ 322              		@ sp needed
+ 323              	.LVL28:
+ 324 0018 10BD     		pop	{r4, pc}
+ 325              		.cfi_endproc
+ 326              	.LFE6:
+ 328              		.section	.text.cureRingBuffer16Init,"ax",%progbits
+ 329              		.align	1
+ 330              		.global	cureRingBuffer16Init
+ARM GAS  /tmp/ccH4oDXT.s 			page 9
+
+
+ 331              		.syntax unified
+ 332              		.code	16
+ 333              		.thumb_func
+ 334              		.fpu softvfp
+ 336              	cureRingBuffer16Init:
+ 337              	.LFB5:
+  96:Src/curelib_src/curebuffer.c **** 
+ 338              		.loc 1 96 0
+ 339              		.cfi_startproc
+ 340              		@ args = 0, pretend = 0, frame = 0
+ 341              		@ frame_needed = 0, uses_anonymous_args = 0
+ 342              	.LVL29:
+ 343 0000 70B5     		push	{r4, r5, r6, lr}
+ 344              	.LCFI4:
+ 345              		.cfi_def_cfa_offset 16
+ 346              		.cfi_offset 4, -16
+ 347              		.cfi_offset 5, -12
+ 348              		.cfi_offset 6, -8
+ 349              		.cfi_offset 14, -4
+ 350 0002 0400     		movs	r4, r0
+ 351 0004 0E00     		movs	r6, r1
+ 100:Src/curelib_src/curebuffer.c **** 
+ 352              		.loc 1 100 0
+ 353 0006 FFF7FEFF 		bl	cureRingBuffer16Free
+ 354              	.LVL30:
+ 102:Src/curelib_src/curebuffer.c **** 		if(NULL == rbuf->buffer){
+ 355              		.loc 1 102 0
+ 356 000a 3500     		movs	r5, r6
+ 357 000c 7000     		lsls	r0, r6, #1
+ 358 000e FFF7FEFF 		bl	malloc
+ 359              	.LVL31:
+ 360 0012 A060     		str	r0, [r4, #8]
+ 103:Src/curelib_src/curebuffer.c **** 			return BUFFER_FAILURE;
+ 361              		.loc 1 103 0
+ 362 0014 0028     		cmp	r0, #0
+ 363 0016 0DD0     		beq	.L24
+ 106:Src/curelib_src/curebuffer.c **** 			rbuf->buffer[i] = 0;
+ 364              		.loc 1 106 0
+ 365 0018 0023     		movs	r3, #0
+ 366 001a 06E0     		b	.L22
+ 367              	.LVL32:
+ 368              	.L23:
+ 107:Src/curelib_src/curebuffer.c **** 		}
+ 369              		.loc 1 107 0 discriminator 3
+ 370 001c 5A00     		lsls	r2, r3, #1
+ 371 001e A168     		ldr	r1, [r4, #8]
+ 372 0020 8C46     		mov	ip, r1
+ 373 0022 6244     		add	r2, r2, ip
+ 374 0024 0021     		movs	r1, #0
+ 375 0026 1180     		strh	r1, [r2]
+ 106:Src/curelib_src/curebuffer.c **** 			rbuf->buffer[i] = 0;
+ 376              		.loc 1 106 0 discriminator 3
+ 377 0028 0133     		adds	r3, r3, #1
+ 378              	.LVL33:
+ 379              	.L22:
+ 106:Src/curelib_src/curebuffer.c **** 			rbuf->buffer[i] = 0;
+ 380              		.loc 1 106 0 is_stmt 0 discriminator 1
+ARM GAS  /tmp/ccH4oDXT.s 			page 10
+
+
+ 381 002a 9D42     		cmp	r5, r3
+ 382 002c F6D8     		bhi	.L23
+ 109:Src/curelib_src/curebuffer.c **** 	return BUFFER_SUCCESS;
+ 383              		.loc 1 109 0 is_stmt 1
+ 384 002e A680     		strh	r6, [r4, #4]
+ 110:Src/curelib_src/curebuffer.c **** }
+ 385              		.loc 1 110 0
+ 386 0030 0120     		movs	r0, #1
+ 387              	.LVL34:
+ 388              	.L21:
+ 111:Src/curelib_src/curebuffer.c **** 
+ 389              		.loc 1 111 0
+ 390              		@ sp needed
+ 391              	.LVL35:
+ 392 0032 70BD     		pop	{r4, r5, r6, pc}
+ 393              	.LVL36:
+ 394              	.L24:
+ 104:Src/curelib_src/curebuffer.c **** 		}
+ 395              		.loc 1 104 0
+ 396 0034 0020     		movs	r0, #0
+ 397 0036 FCE7     		b	.L21
+ 398              		.cfi_endproc
+ 399              	.LFE5:
+ 401              		.section	.text.cureRingBuffer16Enqueue,"ax",%progbits
+ 402              		.align	1
+ 403              		.global	cureRingBuffer16Enqueue
+ 404              		.syntax unified
+ 405              		.code	16
+ 406              		.thumb_func
+ 407              		.fpu softvfp
+ 409              	cureRingBuffer16Enqueue:
+ 410              	.LFB7:
+ 124:Src/curelib_src/curebuffer.c **** 
+ 125:Src/curelib_src/curebuffer.c **** BUFFER_STATUS cureRingBuffer16Enqueue(RingBuffer16 *rbuf, int16_t *inputc)
+ 126:Src/curelib_src/curebuffer.c **** {
+ 411              		.loc 1 126 0
+ 412              		.cfi_startproc
+ 413              		@ args = 0, pretend = 0, frame = 0
+ 414              		@ frame_needed = 0, uses_anonymous_args = 0
+ 415              	.LVL37:
+ 416 0000 10B5     		push	{r4, lr}
+ 417              	.LCFI5:
+ 418              		.cfi_def_cfa_offset 8
+ 419              		.cfi_offset 4, -8
+ 420              		.cfi_offset 14, -4
+ 127:Src/curelib_src/curebuffer.c **** 	if( ((rbuf->idx_front +1)&(rbuf->length -1)) == rbuf->idx_rear ){//buffer overrun error occurs.
+ 421              		.loc 1 127 0
+ 422 0002 0288     		ldrh	r2, [r0]
+ 423 0004 541C     		adds	r4, r2, #1
+ 424 0006 8388     		ldrh	r3, [r0, #4]
+ 425 0008 013B     		subs	r3, r3, #1
+ 426 000a 2340     		ands	r3, r4
+ 427 000c 4488     		ldrh	r4, [r0, #2]
+ 428 000e A342     		cmp	r3, r4
+ 429 0010 0ED0     		beq	.L27
+ 128:Src/curelib_src/curebuffer.c **** 		return BUFFER_FAILURE;
+ 129:Src/curelib_src/curebuffer.c **** 	}else{
+ARM GAS  /tmp/ccH4oDXT.s 			page 11
+
+
+ 130:Src/curelib_src/curebuffer.c **** 		rbuf->buffer[rbuf->idx_front]=  *inputc;
+ 430              		.loc 1 130 0
+ 431 0012 5200     		lsls	r2, r2, #1
+ 432 0014 0023     		movs	r3, #0
+ 433 0016 CB5E     		ldrsh	r3, [r1, r3]
+ 434              	.LVL38:
+ 435 0018 8168     		ldr	r1, [r0, #8]
+ 436 001a 8B52     		strh	r3, [r1, r2]
+ 131:Src/curelib_src/curebuffer.c **** 		rbuf->idx_front++;
+ 437              		.loc 1 131 0
+ 438 001c 0388     		ldrh	r3, [r0]
+ 439 001e 0133     		adds	r3, r3, #1
+ 440 0020 9BB2     		uxth	r3, r3
+ 132:Src/curelib_src/curebuffer.c **** 		rbuf->idx_front &= (rbuf->length -1);
+ 441              		.loc 1 132 0
+ 442 0022 8288     		ldrh	r2, [r0, #4]
+ 443 0024 013A     		subs	r2, r2, #1
+ 444 0026 12B2     		sxth	r2, r2
+ 445 0028 1340     		ands	r3, r2
+ 446 002a 0380     		strh	r3, [r0]
+ 133:Src/curelib_src/curebuffer.c **** 		return BUFFER_SUCCESS;
+ 447              		.loc 1 133 0
+ 448 002c 0120     		movs	r0, #1
+ 449              	.LVL39:
+ 450              	.L26:
+ 134:Src/curelib_src/curebuffer.c **** 	}
+ 135:Src/curelib_src/curebuffer.c **** }
+ 451              		.loc 1 135 0
+ 452              		@ sp needed
+ 453 002e 10BD     		pop	{r4, pc}
+ 454              	.LVL40:
+ 455              	.L27:
+ 128:Src/curelib_src/curebuffer.c **** 	}else{
+ 456              		.loc 1 128 0
+ 457 0030 0020     		movs	r0, #0
+ 458              	.LVL41:
+ 459 0032 FCE7     		b	.L26
+ 460              		.cfi_endproc
+ 461              	.LFE7:
+ 463              		.section	.text.cureRingBuffer16EnqueueIgnoreErr,"ax",%progbits
+ 464              		.align	1
+ 465              		.global	cureRingBuffer16EnqueueIgnoreErr
+ 466              		.syntax unified
+ 467              		.code	16
+ 468              		.thumb_func
+ 469              		.fpu softvfp
+ 471              	cureRingBuffer16EnqueueIgnoreErr:
+ 472              	.LFB8:
+ 136:Src/curelib_src/curebuffer.c **** 
+ 137:Src/curelib_src/curebuffer.c **** BUFFER_STATUS cureRingBuffer16EnqueueIgnoreErr(RingBuffer16 *rbuf, int16_t *inputc)
+ 138:Src/curelib_src/curebuffer.c **** {
+ 473              		.loc 1 138 0
+ 474              		.cfi_startproc
+ 475              		@ args = 0, pretend = 0, frame = 0
+ 476              		@ frame_needed = 0, uses_anonymous_args = 0
+ 477              		@ link register save eliminated.
+ 478              	.LVL42:
+ARM GAS  /tmp/ccH4oDXT.s 			page 12
+
+
+ 139:Src/curelib_src/curebuffer.c **** 
+ 140:Src/curelib_src/curebuffer.c **** 	rbuf->buffer[rbuf->idx_front]= *inputc;
+ 479              		.loc 1 140 0
+ 480 0000 0388     		ldrh	r3, [r0]
+ 481 0002 5B00     		lsls	r3, r3, #1
+ 482 0004 0022     		movs	r2, #0
+ 483 0006 8A5E     		ldrsh	r2, [r1, r2]
+ 484              	.LVL43:
+ 485 0008 8168     		ldr	r1, [r0, #8]
+ 486 000a CA52     		strh	r2, [r1, r3]
+ 141:Src/curelib_src/curebuffer.c **** 	rbuf->idx_front++;
+ 487              		.loc 1 141 0
+ 488 000c 0388     		ldrh	r3, [r0]
+ 489 000e 0133     		adds	r3, r3, #1
+ 490 0010 9BB2     		uxth	r3, r3
+ 142:Src/curelib_src/curebuffer.c **** 	rbuf->idx_front &= (rbuf->length -1);
+ 491              		.loc 1 142 0
+ 492 0012 8288     		ldrh	r2, [r0, #4]
+ 493 0014 013A     		subs	r2, r2, #1
+ 494 0016 12B2     		sxth	r2, r2
+ 495 0018 1340     		ands	r3, r2
+ 496 001a 0380     		strh	r3, [r0]
+ 143:Src/curelib_src/curebuffer.c **** 	return BUFFER_SUCCESS;
+ 144:Src/curelib_src/curebuffer.c **** 
+ 145:Src/curelib_src/curebuffer.c **** }
+ 497              		.loc 1 145 0
+ 498 001c 0120     		movs	r0, #1
+ 499              	.LVL44:
+ 500              		@ sp needed
+ 501 001e 7047     		bx	lr
+ 502              		.cfi_endproc
+ 503              	.LFE8:
+ 505              		.section	.text.cureRingBuffer16Dequeue,"ax",%progbits
+ 506              		.align	1
+ 507              		.global	cureRingBuffer16Dequeue
+ 508              		.syntax unified
+ 509              		.code	16
+ 510              		.thumb_func
+ 511              		.fpu softvfp
+ 513              	cureRingBuffer16Dequeue:
+ 514              	.LFB9:
+ 146:Src/curelib_src/curebuffer.c **** 
+ 147:Src/curelib_src/curebuffer.c **** 
+ 148:Src/curelib_src/curebuffer.c **** BUFFER_STATUS cureRingBuffer16Dequeue(RingBuffer16 *rbuf, int16_t *ret)
+ 149:Src/curelib_src/curebuffer.c **** {
+ 515              		.loc 1 149 0
+ 516              		.cfi_startproc
+ 517              		@ args = 0, pretend = 0, frame = 0
+ 518              		@ frame_needed = 0, uses_anonymous_args = 0
+ 519              		@ link register save eliminated.
+ 520              	.LVL45:
+ 150:Src/curelib_src/curebuffer.c **** 	if(rbuf->idx_front == rbuf->idx_rear){//if buffer underrun error occurs.
+ 521              		.loc 1 150 0
+ 522 0000 0288     		ldrh	r2, [r0]
+ 523 0002 4388     		ldrh	r3, [r0, #2]
+ 524 0004 9A42     		cmp	r2, r3
+ 525 0006 0DD0     		beq	.L31
+ARM GAS  /tmp/ccH4oDXT.s 			page 13
+
+
+ 151:Src/curelib_src/curebuffer.c **** 		return BUFFER_FAILURE;
+ 152:Src/curelib_src/curebuffer.c **** 	}else{
+ 153:Src/curelib_src/curebuffer.c **** 		*ret = (rbuf->buffer[rbuf->idx_rear]);
+ 526              		.loc 1 153 0
+ 527 0008 5B00     		lsls	r3, r3, #1
+ 528 000a 8268     		ldr	r2, [r0, #8]
+ 529 000c 9B5E     		ldrsh	r3, [r3, r2]
+ 530 000e 0B80     		strh	r3, [r1]
+ 154:Src/curelib_src/curebuffer.c **** 		rbuf->idx_rear++;
+ 531              		.loc 1 154 0
+ 532 0010 4388     		ldrh	r3, [r0, #2]
+ 533 0012 0133     		adds	r3, r3, #1
+ 534 0014 9BB2     		uxth	r3, r3
+ 155:Src/curelib_src/curebuffer.c **** 		rbuf->idx_rear &= (rbuf->length -1);
+ 535              		.loc 1 155 0
+ 536 0016 8288     		ldrh	r2, [r0, #4]
+ 537 0018 013A     		subs	r2, r2, #1
+ 538 001a 12B2     		sxth	r2, r2
+ 539 001c 1340     		ands	r3, r2
+ 540 001e 4380     		strh	r3, [r0, #2]
+ 156:Src/curelib_src/curebuffer.c **** 		return BUFFER_SUCCESS;
+ 541              		.loc 1 156 0
+ 542 0020 0120     		movs	r0, #1
+ 543              	.LVL46:
+ 544              	.L30:
+ 157:Src/curelib_src/curebuffer.c **** 	}
+ 158:Src/curelib_src/curebuffer.c **** }
+ 545              		.loc 1 158 0
+ 546              		@ sp needed
+ 547 0022 7047     		bx	lr
+ 548              	.LVL47:
+ 549              	.L31:
+ 151:Src/curelib_src/curebuffer.c **** 	}else{
+ 550              		.loc 1 151 0
+ 551 0024 0020     		movs	r0, #0
+ 552              	.LVL48:
+ 553 0026 FCE7     		b	.L30
+ 554              		.cfi_endproc
+ 555              	.LFE9:
+ 557              		.section	.text.cureRingBuffer16GetElement,"ax",%progbits
+ 558              		.align	1
+ 559              		.global	cureRingBuffer16GetElement
+ 560              		.syntax unified
+ 561              		.code	16
+ 562              		.thumb_func
+ 563              		.fpu softvfp
+ 565              	cureRingBuffer16GetElement:
+ 566              	.LFB10:
+ 159:Src/curelib_src/curebuffer.c **** 
+ 160:Src/curelib_src/curebuffer.c **** 
+ 161:Src/curelib_src/curebuffer.c **** BUFFER_STATUS cureRingBuffer16GetElement(RingBuffer16 *rbuf, int16_t *ret, uint16_t delaynum, uint1
+ 162:Src/curelib_src/curebuffer.c **** {
+ 567              		.loc 1 162 0
+ 568              		.cfi_startproc
+ 569              		@ args = 0, pretend = 0, frame = 0
+ 570              		@ frame_needed = 0, uses_anonymous_args = 0
+ 571              	.LVL49:
+ARM GAS  /tmp/ccH4oDXT.s 			page 14
+
+
+ 572 0000 10B5     		push	{r4, lr}
+ 573              	.LCFI6:
+ 574              		.cfi_def_cfa_offset 8
+ 575              		.cfi_offset 4, -8
+ 576              		.cfi_offset 14, -4
+ 163:Src/curelib_src/curebuffer.c **** 
+ 164:Src/curelib_src/curebuffer.c **** 	if(rbuf->idx_front >= delaynum){
+ 577              		.loc 1 164 0
+ 578 0002 0488     		ldrh	r4, [r0]
+ 579 0004 9442     		cmp	r4, r2
+ 580 0006 0AD2     		bcs	.L35
+ 165:Src/curelib_src/curebuffer.c **** 		rbuf->idx_rear = rbuf->idx_front - delaynum;
+ 166:Src/curelib_src/curebuffer.c **** 	}else{
+ 167:Src/curelib_src/curebuffer.c **** 		rbuf->idx_rear = delay_buffer_length - (delaynum - rbuf->idx_front);
+ 581              		.loc 1 167 0
+ 582 0008 A41A     		subs	r4, r4, r2
+ 583 000a A4B2     		uxth	r4, r4
+ 584 000c E318     		adds	r3, r4, r3
+ 585              	.LVL50:
+ 586 000e 4380     		strh	r3, [r0, #2]
+ 587              	.L34:
+ 168:Src/curelib_src/curebuffer.c **** 	}
+ 169:Src/curelib_src/curebuffer.c **** 		*ret = (rbuf->buffer[rbuf->idx_rear]);
+ 588              		.loc 1 169 0
+ 589 0010 8268     		ldr	r2, [r0, #8]
+ 590              	.LVL51:
+ 591 0012 4388     		ldrh	r3, [r0, #2]
+ 592 0014 5B00     		lsls	r3, r3, #1
+ 593 0016 9B5E     		ldrsh	r3, [r3, r2]
+ 594 0018 0B80     		strh	r3, [r1]
+ 170:Src/curelib_src/curebuffer.c **** 		return BUFFER_SUCCESS;
+ 171:Src/curelib_src/curebuffer.c **** 
+ 172:Src/curelib_src/curebuffer.c **** }
+ 595              		.loc 1 172 0
+ 596 001a 0120     		movs	r0, #1
+ 597              	.LVL52:
+ 598              		@ sp needed
+ 599 001c 10BD     		pop	{r4, pc}
+ 600              	.LVL53:
+ 601              	.L35:
+ 165:Src/curelib_src/curebuffer.c **** 	}else{
+ 602              		.loc 1 165 0
+ 603 001e A41A     		subs	r4, r4, r2
+ 604 0020 4480     		strh	r4, [r0, #2]
+ 605 0022 F5E7     		b	.L34
+ 606              		.cfi_endproc
+ 607              	.LFE10:
+ 609              		.section	.text.cureRingBufferU32Free,"ax",%progbits
+ 610              		.align	1
+ 611              		.global	cureRingBufferU32Free
+ 612              		.syntax unified
+ 613              		.code	16
+ 614              		.thumb_func
+ 615              		.fpu softvfp
+ 617              	cureRingBufferU32Free:
+ 618              	.LFB12:
+ 173:Src/curelib_src/curebuffer.c **** 
+ARM GAS  /tmp/ccH4oDXT.s 			page 15
+
+
+ 174:Src/curelib_src/curebuffer.c **** /////////////////////////////
+ 175:Src/curelib_src/curebuffer.c **** //methods for uint32_t FIFO.
+ 176:Src/curelib_src/curebuffer.c **** /////////////////////////////
+ 177:Src/curelib_src/curebuffer.c **** 
+ 178:Src/curelib_src/curebuffer.c **** BUFFER_STATUS cureRingBufferU32Init(RingBuffer32 *rbuf, uint16_t buflen)
+ 179:Src/curelib_src/curebuffer.c **** {
+ 180:Src/curelib_src/curebuffer.c **** 
+ 181:Src/curelib_src/curebuffer.c **** 	uint32_t i;
+ 182:Src/curelib_src/curebuffer.c **** 
+ 183:Src/curelib_src/curebuffer.c **** 	cureRingBufferU32Free(rbuf);
+ 184:Src/curelib_src/curebuffer.c **** 
+ 185:Src/curelib_src/curebuffer.c **** 		rbuf->buffer = (uint32_t *)malloc( buflen * sizeof(uint32_t) );
+ 186:Src/curelib_src/curebuffer.c **** 		if(NULL == rbuf->buffer){
+ 187:Src/curelib_src/curebuffer.c **** 			return BUFFER_FAILURE;
+ 188:Src/curelib_src/curebuffer.c **** 		}
+ 189:Src/curelib_src/curebuffer.c **** 		for(i=0; i<buflen; i++){
+ 190:Src/curelib_src/curebuffer.c **** 			rbuf->buffer[i] = 0;
+ 191:Src/curelib_src/curebuffer.c **** 		}
+ 192:Src/curelib_src/curebuffer.c **** 	rbuf->length = buflen;
+ 193:Src/curelib_src/curebuffer.c **** 	return BUFFER_SUCCESS;
+ 194:Src/curelib_src/curebuffer.c **** }
+ 195:Src/curelib_src/curebuffer.c **** 
+ 196:Src/curelib_src/curebuffer.c **** BUFFER_STATUS cureRingBufferU32Free(RingBuffer32 *rbuf)
+ 197:Src/curelib_src/curebuffer.c **** {
+ 619              		.loc 1 197 0
+ 620              		.cfi_startproc
+ 621              		@ args = 0, pretend = 0, frame = 0
+ 622              		@ frame_needed = 0, uses_anonymous_args = 0
+ 623              	.LVL54:
+ 624 0000 10B5     		push	{r4, lr}
+ 625              	.LCFI7:
+ 626              		.cfi_def_cfa_offset 8
+ 627              		.cfi_offset 4, -8
+ 628              		.cfi_offset 14, -4
+ 629 0002 0400     		movs	r4, r0
+ 198:Src/curelib_src/curebuffer.c **** 	if(NULL != rbuf->buffer){
+ 630              		.loc 1 198 0
+ 631 0004 8068     		ldr	r0, [r0, #8]
+ 632              	.LVL55:
+ 633 0006 0028     		cmp	r0, #0
+ 634 0008 01D0     		beq	.L37
+ 199:Src/curelib_src/curebuffer.c **** 		free(rbuf->buffer);
+ 635              		.loc 1 199 0
+ 636 000a FFF7FEFF 		bl	free
+ 637              	.LVL56:
+ 638              	.L37:
+ 200:Src/curelib_src/curebuffer.c **** 	}
+ 201:Src/curelib_src/curebuffer.c **** 
+ 202:Src/curelib_src/curebuffer.c **** 	rbuf->idx_front = rbuf->idx_rear = 0;
+ 639              		.loc 1 202 0
+ 640 000e 0023     		movs	r3, #0
+ 641 0010 6380     		strh	r3, [r4, #2]
+ 642 0012 2380     		strh	r3, [r4]
+ 203:Src/curelib_src/curebuffer.c **** 	rbuf->length = 0;
+ 643              		.loc 1 203 0
+ 644 0014 A380     		strh	r3, [r4, #4]
+ 204:Src/curelib_src/curebuffer.c **** 
+ARM GAS  /tmp/ccH4oDXT.s 			page 16
+
+
+ 205:Src/curelib_src/curebuffer.c **** 	return BUFFER_SUCCESS;
+ 206:Src/curelib_src/curebuffer.c **** }
+ 645              		.loc 1 206 0
+ 646 0016 0120     		movs	r0, #1
+ 647              		@ sp needed
+ 648              	.LVL57:
+ 649 0018 10BD     		pop	{r4, pc}
+ 650              		.cfi_endproc
+ 651              	.LFE12:
+ 653              		.section	.text.cureRingBufferU32Init,"ax",%progbits
+ 654              		.align	1
+ 655              		.global	cureRingBufferU32Init
+ 656              		.syntax unified
+ 657              		.code	16
+ 658              		.thumb_func
+ 659              		.fpu softvfp
+ 661              	cureRingBufferU32Init:
+ 662              	.LFB11:
+ 179:Src/curelib_src/curebuffer.c **** 
+ 663              		.loc 1 179 0
+ 664              		.cfi_startproc
+ 665              		@ args = 0, pretend = 0, frame = 0
+ 666              		@ frame_needed = 0, uses_anonymous_args = 0
+ 667              	.LVL58:
+ 668 0000 70B5     		push	{r4, r5, r6, lr}
+ 669              	.LCFI8:
+ 670              		.cfi_def_cfa_offset 16
+ 671              		.cfi_offset 4, -16
+ 672              		.cfi_offset 5, -12
+ 673              		.cfi_offset 6, -8
+ 674              		.cfi_offset 14, -4
+ 675 0002 0400     		movs	r4, r0
+ 676 0004 0E00     		movs	r6, r1
+ 183:Src/curelib_src/curebuffer.c **** 
+ 677              		.loc 1 183 0
+ 678 0006 FFF7FEFF 		bl	cureRingBufferU32Free
+ 679              	.LVL59:
+ 185:Src/curelib_src/curebuffer.c **** 		if(NULL == rbuf->buffer){
+ 680              		.loc 1 185 0
+ 681 000a 3500     		movs	r5, r6
+ 682 000c B000     		lsls	r0, r6, #2
+ 683 000e FFF7FEFF 		bl	malloc
+ 684              	.LVL60:
+ 685 0012 A060     		str	r0, [r4, #8]
+ 186:Src/curelib_src/curebuffer.c **** 			return BUFFER_FAILURE;
+ 686              		.loc 1 186 0
+ 687 0014 0028     		cmp	r0, #0
+ 688 0016 0DD0     		beq	.L42
+ 189:Src/curelib_src/curebuffer.c **** 			rbuf->buffer[i] = 0;
+ 689              		.loc 1 189 0
+ 690 0018 0023     		movs	r3, #0
+ 691 001a 06E0     		b	.L40
+ 692              	.LVL61:
+ 693              	.L41:
+ 190:Src/curelib_src/curebuffer.c **** 		}
+ 694              		.loc 1 190 0 discriminator 3
+ 695 001c 9A00     		lsls	r2, r3, #2
+ARM GAS  /tmp/ccH4oDXT.s 			page 17
+
+
+ 696 001e A168     		ldr	r1, [r4, #8]
+ 697 0020 8C46     		mov	ip, r1
+ 698 0022 6244     		add	r2, r2, ip
+ 699 0024 0021     		movs	r1, #0
+ 700 0026 1160     		str	r1, [r2]
+ 189:Src/curelib_src/curebuffer.c **** 			rbuf->buffer[i] = 0;
+ 701              		.loc 1 189 0 discriminator 3
+ 702 0028 0133     		adds	r3, r3, #1
+ 703              	.LVL62:
+ 704              	.L40:
+ 189:Src/curelib_src/curebuffer.c **** 			rbuf->buffer[i] = 0;
+ 705              		.loc 1 189 0 is_stmt 0 discriminator 1
+ 706 002a 9D42     		cmp	r5, r3
+ 707 002c F6D8     		bhi	.L41
+ 192:Src/curelib_src/curebuffer.c **** 	return BUFFER_SUCCESS;
+ 708              		.loc 1 192 0 is_stmt 1
+ 709 002e A680     		strh	r6, [r4, #4]
+ 193:Src/curelib_src/curebuffer.c **** }
+ 710              		.loc 1 193 0
+ 711 0030 0120     		movs	r0, #1
+ 712              	.LVL63:
+ 713              	.L39:
+ 194:Src/curelib_src/curebuffer.c **** 
+ 714              		.loc 1 194 0
+ 715              		@ sp needed
+ 716              	.LVL64:
+ 717 0032 70BD     		pop	{r4, r5, r6, pc}
+ 718              	.LVL65:
+ 719              	.L42:
+ 187:Src/curelib_src/curebuffer.c **** 		}
+ 720              		.loc 1 187 0
+ 721 0034 0020     		movs	r0, #0
+ 722 0036 FCE7     		b	.L39
+ 723              		.cfi_endproc
+ 724              	.LFE11:
+ 726              		.section	.text.cureRingBufferU32Enqueue,"ax",%progbits
+ 727              		.align	1
+ 728              		.global	cureRingBufferU32Enqueue
+ 729              		.syntax unified
+ 730              		.code	16
+ 731              		.thumb_func
+ 732              		.fpu softvfp
+ 734              	cureRingBufferU32Enqueue:
+ 735              	.LFB13:
+ 207:Src/curelib_src/curebuffer.c **** 
+ 208:Src/curelib_src/curebuffer.c **** BUFFER_STATUS cureRingBufferU32Enqueue(RingBuffer32 *rbuf, uint32_t *inputc)
+ 209:Src/curelib_src/curebuffer.c **** {
+ 736              		.loc 1 209 0
+ 737              		.cfi_startproc
+ 738              		@ args = 0, pretend = 0, frame = 0
+ 739              		@ frame_needed = 0, uses_anonymous_args = 0
+ 740              	.LVL66:
+ 741 0000 10B5     		push	{r4, lr}
+ 742              	.LCFI9:
+ 743              		.cfi_def_cfa_offset 8
+ 744              		.cfi_offset 4, -8
+ 745              		.cfi_offset 14, -4
+ARM GAS  /tmp/ccH4oDXT.s 			page 18
+
+
+ 210:Src/curelib_src/curebuffer.c **** 	if( ((rbuf->idx_front +1)&(rbuf->length -1)) == rbuf->idx_rear ){//buffer overrun error occurs.
+ 746              		.loc 1 210 0
+ 747 0002 0288     		ldrh	r2, [r0]
+ 748 0004 541C     		adds	r4, r2, #1
+ 749 0006 8388     		ldrh	r3, [r0, #4]
+ 750 0008 013B     		subs	r3, r3, #1
+ 751 000a 2340     		ands	r3, r4
+ 752 000c 4488     		ldrh	r4, [r0, #2]
+ 753 000e A342     		cmp	r3, r4
+ 754 0010 0DD0     		beq	.L45
+ 211:Src/curelib_src/curebuffer.c **** 		return BUFFER_FAILURE;
+ 212:Src/curelib_src/curebuffer.c **** 	}else{
+ 213:Src/curelib_src/curebuffer.c **** 		rbuf->buffer[rbuf->idx_front]=  *inputc;
+ 755              		.loc 1 213 0
+ 756 0012 9200     		lsls	r2, r2, #2
+ 757 0014 0B68     		ldr	r3, [r1]
+ 758 0016 8168     		ldr	r1, [r0, #8]
+ 759              	.LVL67:
+ 760 0018 8B50     		str	r3, [r1, r2]
+ 214:Src/curelib_src/curebuffer.c **** 		rbuf->idx_front++;
+ 761              		.loc 1 214 0
+ 762 001a 0388     		ldrh	r3, [r0]
+ 763 001c 0133     		adds	r3, r3, #1
+ 764 001e 9BB2     		uxth	r3, r3
+ 215:Src/curelib_src/curebuffer.c **** 		rbuf->idx_front &= (rbuf->length -1);
+ 765              		.loc 1 215 0
+ 766 0020 8288     		ldrh	r2, [r0, #4]
+ 767 0022 013A     		subs	r2, r2, #1
+ 768 0024 12B2     		sxth	r2, r2
+ 769 0026 1340     		ands	r3, r2
+ 770 0028 0380     		strh	r3, [r0]
+ 216:Src/curelib_src/curebuffer.c **** 		return BUFFER_SUCCESS;
+ 771              		.loc 1 216 0
+ 772 002a 0120     		movs	r0, #1
+ 773              	.LVL68:
+ 774              	.L44:
+ 217:Src/curelib_src/curebuffer.c **** 	}
+ 218:Src/curelib_src/curebuffer.c **** }
+ 775              		.loc 1 218 0
+ 776              		@ sp needed
+ 777 002c 10BD     		pop	{r4, pc}
+ 778              	.LVL69:
+ 779              	.L45:
+ 211:Src/curelib_src/curebuffer.c **** 	}else{
+ 780              		.loc 1 211 0
+ 781 002e 0020     		movs	r0, #0
+ 782              	.LVL70:
+ 783 0030 FCE7     		b	.L44
+ 784              		.cfi_endproc
+ 785              	.LFE13:
+ 787              		.section	.text.cureRingBufferU32EnqueueIgnoreErr,"ax",%progbits
+ 788              		.align	1
+ 789              		.global	cureRingBufferU32EnqueueIgnoreErr
+ 790              		.syntax unified
+ 791              		.code	16
+ 792              		.thumb_func
+ 793              		.fpu softvfp
+ARM GAS  /tmp/ccH4oDXT.s 			page 19
+
+
+ 795              	cureRingBufferU32EnqueueIgnoreErr:
+ 796              	.LFB14:
+ 219:Src/curelib_src/curebuffer.c **** 
+ 220:Src/curelib_src/curebuffer.c **** BUFFER_STATUS cureRingBufferU32EnqueueIgnoreErr(RingBuffer32 *rbuf, uint32_t *inputc)
+ 221:Src/curelib_src/curebuffer.c **** {
+ 797              		.loc 1 221 0
+ 798              		.cfi_startproc
+ 799              		@ args = 0, pretend = 0, frame = 0
+ 800              		@ frame_needed = 0, uses_anonymous_args = 0
+ 801              		@ link register save eliminated.
+ 802              	.LVL71:
+ 222:Src/curelib_src/curebuffer.c **** 
+ 223:Src/curelib_src/curebuffer.c **** 	rbuf->buffer[rbuf->idx_front]= *inputc;
+ 803              		.loc 1 223 0
+ 804 0000 0388     		ldrh	r3, [r0]
+ 805 0002 9B00     		lsls	r3, r3, #2
+ 806 0004 0A68     		ldr	r2, [r1]
+ 807 0006 8168     		ldr	r1, [r0, #8]
+ 808              	.LVL72:
+ 809 0008 CA50     		str	r2, [r1, r3]
+ 224:Src/curelib_src/curebuffer.c **** 	rbuf->idx_front++;
+ 810              		.loc 1 224 0
+ 811 000a 0388     		ldrh	r3, [r0]
+ 812 000c 0133     		adds	r3, r3, #1
+ 813 000e 9BB2     		uxth	r3, r3
+ 225:Src/curelib_src/curebuffer.c **** 	rbuf->idx_front &= (rbuf->length -1);
+ 814              		.loc 1 225 0
+ 815 0010 8288     		ldrh	r2, [r0, #4]
+ 816 0012 013A     		subs	r2, r2, #1
+ 817 0014 12B2     		sxth	r2, r2
+ 818 0016 1340     		ands	r3, r2
+ 819 0018 0380     		strh	r3, [r0]
+ 226:Src/curelib_src/curebuffer.c **** 	return BUFFER_SUCCESS;
+ 227:Src/curelib_src/curebuffer.c **** 
+ 228:Src/curelib_src/curebuffer.c **** }
+ 820              		.loc 1 228 0
+ 821 001a 0120     		movs	r0, #1
+ 822              	.LVL73:
+ 823              		@ sp needed
+ 824 001c 7047     		bx	lr
+ 825              		.cfi_endproc
+ 826              	.LFE14:
+ 828              		.section	.text.cureRingBufferU32Dequeue,"ax",%progbits
+ 829              		.align	1
+ 830              		.global	cureRingBufferU32Dequeue
+ 831              		.syntax unified
+ 832              		.code	16
+ 833              		.thumb_func
+ 834              		.fpu softvfp
+ 836              	cureRingBufferU32Dequeue:
+ 837              	.LFB15:
+ 229:Src/curelib_src/curebuffer.c **** 
+ 230:Src/curelib_src/curebuffer.c **** 
+ 231:Src/curelib_src/curebuffer.c **** BUFFER_STATUS cureRingBufferU32Dequeue(RingBuffer32 *rbuf, uint32_t *ret)
+ 232:Src/curelib_src/curebuffer.c **** {
+ 838              		.loc 1 232 0
+ 839              		.cfi_startproc
+ARM GAS  /tmp/ccH4oDXT.s 			page 20
+
+
+ 840              		@ args = 0, pretend = 0, frame = 0
+ 841              		@ frame_needed = 0, uses_anonymous_args = 0
+ 842              		@ link register save eliminated.
+ 843              	.LVL74:
+ 233:Src/curelib_src/curebuffer.c **** 	if(rbuf->idx_front == rbuf->idx_rear){//if buffer underrun error occurs.
+ 844              		.loc 1 233 0
+ 845 0000 0288     		ldrh	r2, [r0]
+ 846 0002 4388     		ldrh	r3, [r0, #2]
+ 847 0004 9A42     		cmp	r2, r3
+ 848 0006 0DD0     		beq	.L49
+ 234:Src/curelib_src/curebuffer.c **** 		return BUFFER_FAILURE;
+ 235:Src/curelib_src/curebuffer.c **** 	}else{
+ 236:Src/curelib_src/curebuffer.c **** 		*ret = (rbuf->buffer[rbuf->idx_rear]);
+ 849              		.loc 1 236 0
+ 850 0008 8268     		ldr	r2, [r0, #8]
+ 851 000a 9B00     		lsls	r3, r3, #2
+ 852 000c 9B58     		ldr	r3, [r3, r2]
+ 853 000e 0B60     		str	r3, [r1]
+ 237:Src/curelib_src/curebuffer.c **** 		rbuf->idx_rear++;
+ 854              		.loc 1 237 0
+ 855 0010 4388     		ldrh	r3, [r0, #2]
+ 856 0012 0133     		adds	r3, r3, #1
+ 857 0014 9BB2     		uxth	r3, r3
+ 238:Src/curelib_src/curebuffer.c **** 		rbuf->idx_rear &= (rbuf->length -1);
+ 858              		.loc 1 238 0
+ 859 0016 8288     		ldrh	r2, [r0, #4]
+ 860 0018 013A     		subs	r2, r2, #1
+ 861 001a 12B2     		sxth	r2, r2
+ 862 001c 1340     		ands	r3, r2
+ 863 001e 4380     		strh	r3, [r0, #2]
+ 239:Src/curelib_src/curebuffer.c **** 		return BUFFER_SUCCESS;
+ 864              		.loc 1 239 0
+ 865 0020 0120     		movs	r0, #1
+ 866              	.LVL75:
+ 867              	.L48:
+ 240:Src/curelib_src/curebuffer.c **** 	}
+ 241:Src/curelib_src/curebuffer.c **** }
+ 868              		.loc 1 241 0
+ 869              		@ sp needed
+ 870 0022 7047     		bx	lr
+ 871              	.LVL76:
+ 872              	.L49:
+ 234:Src/curelib_src/curebuffer.c **** 	}else{
+ 873              		.loc 1 234 0
+ 874 0024 0020     		movs	r0, #0
+ 875              	.LVL77:
+ 876 0026 FCE7     		b	.L48
+ 877              		.cfi_endproc
+ 878              	.LFE15:
+ 880              		.section	.text.cureRingBufferU32GetElement,"ax",%progbits
+ 881              		.align	1
+ 882              		.global	cureRingBufferU32GetElement
+ 883              		.syntax unified
+ 884              		.code	16
+ 885              		.thumb_func
+ 886              		.fpu softvfp
+ 888              	cureRingBufferU32GetElement:
+ARM GAS  /tmp/ccH4oDXT.s 			page 21
+
+
+ 889              	.LFB16:
+ 242:Src/curelib_src/curebuffer.c **** 
+ 243:Src/curelib_src/curebuffer.c **** 
+ 244:Src/curelib_src/curebuffer.c **** BUFFER_STATUS cureRingBufferU32GetElement(RingBuffer32 *rbuf, uint32_t *ret, uint16_t delaynum, uin
+ 245:Src/curelib_src/curebuffer.c **** {
+ 890              		.loc 1 245 0
+ 891              		.cfi_startproc
+ 892              		@ args = 0, pretend = 0, frame = 0
+ 893              		@ frame_needed = 0, uses_anonymous_args = 0
+ 894              	.LVL78:
+ 895 0000 10B5     		push	{r4, lr}
+ 896              	.LCFI10:
+ 897              		.cfi_def_cfa_offset 8
+ 898              		.cfi_offset 4, -8
+ 899              		.cfi_offset 14, -4
+ 246:Src/curelib_src/curebuffer.c **** 	uint16_t buf;
+ 247:Src/curelib_src/curebuffer.c **** 
+ 248:Src/curelib_src/curebuffer.c **** 
+ 249:Src/curelib_src/curebuffer.c **** 	if(rbuf->idx_front >= delaynum){
+ 900              		.loc 1 249 0
+ 901 0002 0488     		ldrh	r4, [r0]
+ 902 0004 9442     		cmp	r4, r2
+ 903 0006 09D2     		bcs	.L53
+ 250:Src/curelib_src/curebuffer.c **** 		buf = rbuf->idx_front - delaynum;
+ 251:Src/curelib_src/curebuffer.c **** 	}else{
+ 252:Src/curelib_src/curebuffer.c **** 		buf = delay_buffer_length - (delaynum - rbuf->idx_front);
+ 904              		.loc 1 252 0
+ 905 0008 A41A     		subs	r4, r4, r2
+ 906 000a A4B2     		uxth	r4, r4
+ 907 000c E418     		adds	r4, r4, r3
+ 908 000e A4B2     		uxth	r4, r4
+ 909              	.LVL79:
+ 910              	.L52:
+ 253:Src/curelib_src/curebuffer.c **** 	}
+ 254:Src/curelib_src/curebuffer.c **** 		*ret = (rbuf->buffer[buf]);
+ 911              		.loc 1 254 0
+ 912 0010 8368     		ldr	r3, [r0, #8]
+ 913              	.LVL80:
+ 914 0012 A400     		lsls	r4, r4, #2
+ 915              	.LVL81:
+ 916 0014 E358     		ldr	r3, [r4, r3]
+ 917 0016 0B60     		str	r3, [r1]
+ 255:Src/curelib_src/curebuffer.c **** 		return BUFFER_SUCCESS;
+ 256:Src/curelib_src/curebuffer.c **** 
+ 257:Src/curelib_src/curebuffer.c **** }
+ 918              		.loc 1 257 0
+ 919 0018 0120     		movs	r0, #1
+ 920              	.LVL82:
+ 921              		@ sp needed
+ 922 001a 10BD     		pop	{r4, pc}
+ 923              	.LVL83:
+ 924              	.L53:
+ 250:Src/curelib_src/curebuffer.c **** 	}else{
+ 925              		.loc 1 250 0
+ 926 001c A41A     		subs	r4, r4, r2
+ 927 001e A4B2     		uxth	r4, r4
+ 928              	.LVL84:
+ARM GAS  /tmp/ccH4oDXT.s 			page 22
+
+
+ 929 0020 F6E7     		b	.L52
+ 930              		.cfi_endproc
+ 931              	.LFE16:
+ 933              		.text
+ 934              	.Letext0:
+ 935              		.file 2 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/machin
+ 936              		.file 3 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/_s
+ 937              		.file 4 "Inc/curelib_inc/curebuffer.h"
+ 938              		.file 5 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/lo
+ 939              		.file 6 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/_t
+ 940              		.file 7 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/lib/gcc/arm-none-eabi/7.3.1/
+ 941              		.file 8 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/re
+ 942              		.file 9 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/stdlib
+ARM GAS  /tmp/ccH4oDXT.s 			page 23
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 curebuffer.c
+     /tmp/ccH4oDXT.s:16     .text.cureRingBufferU8Free:0000000000000000 $t
+     /tmp/ccH4oDXT.s:23     .text.cureRingBufferU8Free:0000000000000000 cureRingBufferU8Free
+     /tmp/ccH4oDXT.s:61     .text.cureRingBufferU8Init:0000000000000000 $t
+     /tmp/ccH4oDXT.s:68     .text.cureRingBufferU8Init:0000000000000000 cureRingBufferU8Init
+     /tmp/ccH4oDXT.s:132    .text.cureRingBufferU8Enqueue:0000000000000000 $t
+     /tmp/ccH4oDXT.s:139    .text.cureRingBufferU8Enqueue:0000000000000000 cureRingBufferU8Enqueue
+     /tmp/ccH4oDXT.s:192    .text.cureRingBufferU8Dequeue:0000000000000000 $t
+     /tmp/ccH4oDXT.s:199    .text.cureRingBufferU8Dequeue:0000000000000000 cureRingBufferU8Dequeue
+     /tmp/ccH4oDXT.s:243    .text._cureRingBufferU8GetUsedSize:0000000000000000 $t
+     /tmp/ccH4oDXT.s:250    .text._cureRingBufferU8GetUsedSize:0000000000000000 _cureRingBufferU8GetUsedSize
+     /tmp/ccH4oDXT.s:285    .text.cureRingBuffer16Free:0000000000000000 $t
+     /tmp/ccH4oDXT.s:292    .text.cureRingBuffer16Free:0000000000000000 cureRingBuffer16Free
+     /tmp/ccH4oDXT.s:329    .text.cureRingBuffer16Init:0000000000000000 $t
+     /tmp/ccH4oDXT.s:336    .text.cureRingBuffer16Init:0000000000000000 cureRingBuffer16Init
+     /tmp/ccH4oDXT.s:402    .text.cureRingBuffer16Enqueue:0000000000000000 $t
+     /tmp/ccH4oDXT.s:409    .text.cureRingBuffer16Enqueue:0000000000000000 cureRingBuffer16Enqueue
+     /tmp/ccH4oDXT.s:464    .text.cureRingBuffer16EnqueueIgnoreErr:0000000000000000 $t
+     /tmp/ccH4oDXT.s:471    .text.cureRingBuffer16EnqueueIgnoreErr:0000000000000000 cureRingBuffer16EnqueueIgnoreErr
+     /tmp/ccH4oDXT.s:506    .text.cureRingBuffer16Dequeue:0000000000000000 $t
+     /tmp/ccH4oDXT.s:513    .text.cureRingBuffer16Dequeue:0000000000000000 cureRingBuffer16Dequeue
+     /tmp/ccH4oDXT.s:558    .text.cureRingBuffer16GetElement:0000000000000000 $t
+     /tmp/ccH4oDXT.s:565    .text.cureRingBuffer16GetElement:0000000000000000 cureRingBuffer16GetElement
+     /tmp/ccH4oDXT.s:610    .text.cureRingBufferU32Free:0000000000000000 $t
+     /tmp/ccH4oDXT.s:617    .text.cureRingBufferU32Free:0000000000000000 cureRingBufferU32Free
+     /tmp/ccH4oDXT.s:654    .text.cureRingBufferU32Init:0000000000000000 $t
+     /tmp/ccH4oDXT.s:661    .text.cureRingBufferU32Init:0000000000000000 cureRingBufferU32Init
+     /tmp/ccH4oDXT.s:727    .text.cureRingBufferU32Enqueue:0000000000000000 $t
+     /tmp/ccH4oDXT.s:734    .text.cureRingBufferU32Enqueue:0000000000000000 cureRingBufferU32Enqueue
+     /tmp/ccH4oDXT.s:788    .text.cureRingBufferU32EnqueueIgnoreErr:0000000000000000 $t
+     /tmp/ccH4oDXT.s:795    .text.cureRingBufferU32EnqueueIgnoreErr:0000000000000000 cureRingBufferU32EnqueueIgnoreErr
+     /tmp/ccH4oDXT.s:829    .text.cureRingBufferU32Dequeue:0000000000000000 $t
+     /tmp/ccH4oDXT.s:836    .text.cureRingBufferU32Dequeue:0000000000000000 cureRingBufferU32Dequeue
+     /tmp/ccH4oDXT.s:881    .text.cureRingBufferU32GetElement:0000000000000000 $t
+     /tmp/ccH4oDXT.s:888    .text.cureRingBufferU32GetElement:0000000000000000 cureRingBufferU32GetElement
+
+UNDEFINED SYMBOLS
+free
+malloc
