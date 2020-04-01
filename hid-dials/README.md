@@ -10,8 +10,11 @@ Works, currently hardcoded:
  - Dial 6: nothing
  - Dial 7: KiCAD change track width (w|W)
  - Dial 8: KiCAD zoom (+|-)
- 
+
+ Build with `make`
+
+ Flash with `dfu-util -a 0 -s 0x08000000:leave -D build/hid-dials.bin`
+
  Todo:
- 
+
   [ ] Add filesystem and csv alike config files
-  
