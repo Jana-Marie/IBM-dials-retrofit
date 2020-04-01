@@ -1,6 +1,6 @@
 # IBM-dials-retrofit
 
-This repo contains the firmware and hardware instructions to retrofit your *IBM Dials* with a full-speed USB interface, cabable of CDC, MIDI and HID. The mod uses an OtterPill, a STM32F072 devboard featuring USB-PD. This feature however is not needed and the PD-phy should be replaced with two 5.1k-ohm resistors. Additionally an IBM Dials and a 3D printed Otter-Pill mount is needed.
+This repo contains the firmware and hardware instructions to retrofit your *IBM Dials* with a full-speed USB interface, capable of CDC, MIDI and HID. The mod uses an OtterPill, a STM32F072 devboard featuring USB-PD. This feature however is not needed and the PD-phy should be replaced with two 5.1k-ohm resistors. Additionally an IBM Dials and a 3D printed Otter-Pill mount is needed.
 
 The firmware on the OtterPill can be customized and used for a variety of applications, e.g. [KiCAD](https://twitter.com/JanHenrikH/status/1245113168621449217).
 
@@ -18,7 +18,7 @@ Materials needed:
 
 #### 1 - Prepare your OtterPill
 
-Remove the FUSB302 and add two 5.1k ohm resistos to R1 and R2. Slide the board into the 3D printed part and secure with some glue if needed. Add two wires to DFU and 3.3V (break out the DFU-Button so you can boot into DFU-mode while the case is closed).
+Remove the FUSB302 and add two 5.1k ohm resistors to R1 and R2. Slide the board into the 3D printed part and secure with some glue if needed. Add two wires to DFU and 3.3V (break out the DFU-Button so you can boot into DFU-mode while the case is closed).
 
 ![](/images/b1.jpg | width=100)
 ![](/images/b2.jpg | width=100)
