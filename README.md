@@ -4,8 +4,6 @@ This repo contains the firmware and hardware instructions to retrofit your *IBM 
 
 The firmware on the OtterPill can be customized and used for a variety of applications, e.g. [KiCAD](https://twitter.com/JanHenrikH/status/1245113168621449217).
 
-**Documentation is WIP**
-
 ![](/images/1.jpeg)
 
 ## Building instructions
