@@ -17,4 +17,4 @@ Works, currently hardcoded:
 
  Todo:
 
-  [ ] Add filesystem and csv alike config files
+ - [ ] Add filesystem and csv alike config files
