@@ -8,7 +8,7 @@ The firmware on the OtterPill can be customized and used for a variety of applic
 
 ![](/images/1.jpeg)
 
-## Building instructions  STILL WIP
+## Building instructions
 
 Materials needed:
  - IBM Dials
