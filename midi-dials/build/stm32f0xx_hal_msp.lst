@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccB95Ag5.s 			page 1
+ARM GAS  /tmp/ccqkHb8J.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccB95Ag5.s 			page 1
   31:Src/stm32f0xx_hal_msp.c **** 
   32:Src/stm32f0xx_hal_msp.c **** /* USER CODE END TD */
   33:Src/stm32f0xx_hal_msp.c **** 
-ARM GAS  /tmp/ccB95Ag5.s 			page 2
+ARM GAS  /tmp/ccqkHb8J.s 			page 2
 
 
   34:Src/stm32f0xx_hal_msp.c **** /* Private define ------------------------------------------------------------*/
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccB95Ag5.s 			page 1
   42 000e 0A40     		ands	r2, r1
   43 0010 0092     		str	r2, [sp]
   44 0012 009A     		ldr	r2, [sp]
-ARM GAS  /tmp/ccB95Ag5.s 			page 3
+ARM GAS  /tmp/ccqkHb8J.s 			page 3
 
 
   45              	.LBE2:
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccB95Ag5.s 			page 1
   84 0000 30B5     		push	{r4, r5, lr}
   85              	.LCFI1:
   86              		.cfi_def_cfa_offset 12
-ARM GAS  /tmp/ccB95Ag5.s 			page 4
+ARM GAS  /tmp/ccqkHb8J.s 			page 4
 
 
   87              		.cfi_offset 4, -12
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccB95Ag5.s 			page 1
  123:Src/stm32f0xx_hal_msp.c ****     /* ADC Init */
  124:Src/stm32f0xx_hal_msp.c ****     hdma_adc.Instance = DMA1_Channel1;
  125:Src/stm32f0xx_hal_msp.c ****     hdma_adc.Init.Direction = DMA_PERIPH_TO_MEMORY;
-ARM GAS  /tmp/ccB95Ag5.s 			page 5
+ARM GAS  /tmp/ccqkHb8J.s 			page 5
 
 
  126:Src/stm32f0xx_hal_msp.c ****     hdma_adc.Init.PeriphInc = DMA_PINC_DISABLE;
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccB95Ag5.s 			page 1
   99:Src/stm32f0xx_hal_msp.c ****     /**ADC GPIO Configuration
  140              		.loc 1 99 0
  141 0042 5A69     		ldr	r2, [r3, #20]
-ARM GAS  /tmp/ccB95Ag5.s 			page 6
+ARM GAS  /tmp/ccqkHb8J.s 			page 6
 
 
  142 0044 8021     		movs	r1, #128
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccB95Ag5.s 			page 1
  185 0082 8023     		movs	r3, #128
  186 0084 C360     		str	r3, [r0, #12]
  128:Src/stm32f0xx_hal_msp.c ****     hdma_adc.Init.MemDataAlignment = DMA_MDATAALIGN_HALFWORD;
-ARM GAS  /tmp/ccB95Ag5.s 			page 7
+ARM GAS  /tmp/ccqkHb8J.s 			page 7
 
 
  187              		.loc 1 128 0
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccB95Ag5.s 			page 1
  237              	HAL_ADC_MspDeInit:
  238              	.LFB42:
  145:Src/stm32f0xx_hal_msp.c **** 
-ARM GAS  /tmp/ccB95Ag5.s 			page 8
+ARM GAS  /tmp/ccqkHb8J.s 			page 8
 
 
  146:Src/stm32f0xx_hal_msp.c **** /**
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccB95Ag5.s 			page 1
  182:Src/stm32f0xx_hal_msp.c ****   /* USER CODE END ADC1_MspDeInit 1 */
  183:Src/stm32f0xx_hal_msp.c ****   }
  184:Src/stm32f0xx_hal_msp.c **** 
-ARM GAS  /tmp/ccB95Ag5.s 			page 9
+ARM GAS  /tmp/ccqkHb8J.s 			page 9
 
 
  185:Src/stm32f0xx_hal_msp.c **** }
@@ -527,8 +527,8 @@ ARM GAS  /tmp/ccB95Ag5.s 			page 1
  295              	.LFE42:
  297              		.text
  298              	.Letext0:
- 299              		.file 2 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/machin
- 300              		.file 3 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/_s
+ 299              		.file 2 "/usr/include/newlib/machine/_default_types.h"
+ 300              		.file 3 "/usr/include/newlib/sys/_stdint.h"
  301              		.file 4 "Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h"
  302              		.file 5 "Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h"
  303              		.file 6 "Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h"
@@ -538,24 +538,24 @@ ARM GAS  /tmp/ccB95Ag5.s 			page 1
  307              		.file 10 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_adc.h"
  308              		.file 11 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h"
  309              		.file 12 "Inc/main.h"
-ARM GAS  /tmp/ccB95Ag5.s 			page 10
+ARM GAS  /tmp/ccqkHb8J.s 			page 10
 
 
  310              		.file 13 "<built-in>"
-ARM GAS  /tmp/ccB95Ag5.s 			page 11
+ARM GAS  /tmp/ccqkHb8J.s 			page 11
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f0xx_hal_msp.c
-     /tmp/ccB95Ag5.s:16     .text.HAL_MspInit:0000000000000000 $t
-     /tmp/ccB95Ag5.s:23     .text.HAL_MspInit:0000000000000000 HAL_MspInit
-     /tmp/ccB95Ag5.s:65     .text.HAL_MspInit:000000000000002c $d
-     /tmp/ccB95Ag5.s:70     .text.HAL_ADC_MspInit:0000000000000000 $t
-     /tmp/ccB95Ag5.s:77     .text.HAL_ADC_MspInit:0000000000000000 HAL_ADC_MspInit
-     /tmp/ccB95Ag5.s:221    .text.HAL_ADC_MspInit:00000000000000b0 $d
-     /tmp/ccB95Ag5.s:230    .text.HAL_ADC_MspDeInit:0000000000000000 $t
-     /tmp/ccB95Ag5.s:237    .text.HAL_ADC_MspDeInit:0000000000000000 HAL_ADC_MspDeInit
-     /tmp/ccB95Ag5.s:290    .text.HAL_ADC_MspDeInit:0000000000000034 $d
+     /tmp/ccqkHb8J.s:16     .text.HAL_MspInit:0000000000000000 $t
+     /tmp/ccqkHb8J.s:23     .text.HAL_MspInit:0000000000000000 HAL_MspInit
+     /tmp/ccqkHb8J.s:65     .text.HAL_MspInit:000000000000002c $d
+     /tmp/ccqkHb8J.s:70     .text.HAL_ADC_MspInit:0000000000000000 $t
+     /tmp/ccqkHb8J.s:77     .text.HAL_ADC_MspInit:0000000000000000 HAL_ADC_MspInit
+     /tmp/ccqkHb8J.s:221    .text.HAL_ADC_MspInit:00000000000000b0 $d
+     /tmp/ccqkHb8J.s:230    .text.HAL_ADC_MspDeInit:0000000000000000 $t
+     /tmp/ccqkHb8J.s:237    .text.HAL_ADC_MspDeInit:0000000000000000 HAL_ADC_MspDeInit
+     /tmp/ccqkHb8J.s:290    .text.HAL_ADC_MspDeInit:0000000000000034 $d
 
 UNDEFINED SYMBOLS
 memset

@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccDlv0Av.s 			page 1
+ARM GAS  /tmp/ccvOfDqw.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
   31:Src/usbd_conf.c ****   *    this license is void and will automatically terminate your rights under
   32:Src/usbd_conf.c ****   *    this license.
   33:Src/usbd_conf.c ****   *
-ARM GAS  /tmp/ccDlv0Av.s 			page 2
+ARM GAS  /tmp/ccvOfDqw.s 			page 2
 
 
   34:Src/usbd_conf.c ****   * THIS SOFTWARE IS PROVIDED BY STMICROELECTRONICS AND CONTRIBUTORS "AS IS"
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
   88:Src/usbd_conf.c **** 
   89:Src/usbd_conf.c **** /*******************************************************************************
   90:Src/usbd_conf.c ****                        LL Driver Callbacks (PCD -> USB Device Library)
-ARM GAS  /tmp/ccDlv0Av.s 			page 3
+ARM GAS  /tmp/ccvOfDqw.s 			page 3
 
 
   91:Src/usbd_conf.c **** *******************************************************************************/
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
   58 0018 0143     		orrs	r1, r0
   59 001a D161     		str	r1, [r2, #28]
   60 001c D369     		ldr	r3, [r2, #28]
-ARM GAS  /tmp/ccDlv0Av.s 			page 4
+ARM GAS  /tmp/ccvOfDqw.s 			page 4
 
 
   61 001e 0340     		ands	r3, r0
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
  111              	.L6:
  116:Src/usbd_conf.c ****   {
  117:Src/usbd_conf.c ****   /* USER CODE BEGIN USB_MspDeInit 0 */
-ARM GAS  /tmp/ccDlv0Av.s 			page 5
+ARM GAS  /tmp/ccvOfDqw.s 			page 5
 
 
  118:Src/usbd_conf.c **** 
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
  135:Src/usbd_conf.c ****   * @retval None
  136:Src/usbd_conf.c ****   */
  137:Src/usbd_conf.c **** void HAL_PCD_SetupStageCallback(PCD_HandleTypeDef *hpcd)
-ARM GAS  /tmp/ccDlv0Av.s 			page 6
+ARM GAS  /tmp/ccvOfDqw.s 			page 6
 
 
  138:Src/usbd_conf.c **** {
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
  193              	.LCFI4:
  194              		.cfi_def_cfa_offset 8
  195              		.cfi_offset 4, -8
-ARM GAS  /tmp/ccDlv0Av.s 			page 7
+ARM GAS  /tmp/ccvOfDqw.s 			page 7
 
 
  196              		.cfi_offset 14, -4
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
  240 0006 9200     		lsls	r2, r2, #2
  241 0008 8058     		ldr	r0, [r0, r2]
  242              	.LVL20:
-ARM GAS  /tmp/ccDlv0Av.s 			page 8
+ARM GAS  /tmp/ccvOfDqw.s 			page 8
 
 
  243 000a 4A01     		lsls	r2, r1, #5
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
  289              		.align	1
  290              		.global	HAL_PCD_ResetCallback
  291              		.syntax unified
-ARM GAS  /tmp/ccDlv0Av.s 			page 9
+ARM GAS  /tmp/ccvOfDqw.s 			page 9
 
 
  292              		.code	16
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
  322 0012 FFF7FEFF 		bl	USBD_LL_Reset
  323              	.LVL30:
  198:Src/usbd_conf.c **** }
-ARM GAS  /tmp/ccDlv0Av.s 			page 10
+ARM GAS  /tmp/ccvOfDqw.s 			page 10
 
 
  324              		.loc 1 198 0
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
  363              		.loc 1 215 0
  364 0014 024A     		ldr	r2, .L18
  365 0016 1369     		ldr	r3, [r2, #16]
-ARM GAS  /tmp/ccDlv0Av.s 			page 11
+ARM GAS  /tmp/ccvOfDqw.s 			page 11
 
 
  366 0018 0621     		movs	r1, #6
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
  406 0008 FFF7FEFF 		bl	USBD_LL_Resume
  407              	.LVL38:
  232:Src/usbd_conf.c **** }
-ARM GAS  /tmp/ccDlv0Av.s 			page 12
+ARM GAS  /tmp/ccvOfDqw.s 			page 12
 
 
  408              		.loc 1 232 0
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
  455              	HAL_PCD_ISOINIncompleteCallback:
  456              	.LFB53:
  244:Src/usbd_conf.c **** 
-ARM GAS  /tmp/ccDlv0Av.s 			page 13
+ARM GAS  /tmp/ccvOfDqw.s 			page 13
 
 
  245:Src/usbd_conf.c **** /**
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
  495 0000 10B5     		push	{r4, lr}
  496              	.LCFI12:
  497              		.cfi_def_cfa_offset 8
-ARM GAS  /tmp/ccDlv0Av.s 			page 14
+ARM GAS  /tmp/ccvOfDqw.s 			page 14
 
 
  498              		.cfi_offset 4, -8
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
  542 000c 10BD     		pop	{r4, pc}
  543              		.cfi_endproc
  544              	.LFE55:
-ARM GAS  /tmp/ccDlv0Av.s 			page 15
+ARM GAS  /tmp/ccvOfDqw.s 			page 15
 
 
  546              		.section	.text.USBD_LL_Init,"ax",%progbits
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
  582              		.loc 1 293 0
  583 0016 0823     		movs	r3, #8
  584 0018 4360     		str	r3, [r0, #4]
-ARM GAS  /tmp/ccDlv0Av.s 			page 16
+ARM GAS  /tmp/ccvOfDqw.s 			page 16
 
 
  294:Src/usbd_conf.c ****   hpcd_USB_FS.Init.speed = PCD_SPEED_FULL;
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
  624 0052 8823     		movs	r3, #136
  625 0054 5B00     		lsls	r3, r3, #1
  626 0056 0022     		movs	r2, #0
-ARM GAS  /tmp/ccDlv0Av.s 			page 17
+ARM GAS  /tmp/ccvOfDqw.s 			page 17
 
 
  627 0058 0121     		movs	r1, #1
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
  672              	.LVL61:
  320:Src/usbd_conf.c ****   HAL_StatusTypeDef hal_status = HAL_OK;
  321:Src/usbd_conf.c ****   USBD_StatusTypeDef usb_status = USBD_OK;
-ARM GAS  /tmp/ccDlv0Av.s 			page 18
+ARM GAS  /tmp/ccvOfDqw.s 			page 18
 
 
  322:Src/usbd_conf.c **** 
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
  334:Src/usbd_conf.c ****     case HAL_TIMEOUT :
  703              		.loc 1 334 0
  704 001e FAE7     		b	.L29
-ARM GAS  /tmp/ccDlv0Av.s 			page 19
+ARM GAS  /tmp/ccvOfDqw.s 			page 19
 
 
  705              		.cfi_endproc
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
  742 0014 0220     		movs	r0, #2
  743              	.LVL73:
  744              	.L35:
-ARM GAS  /tmp/ccDlv0Av.s 			page 20
+ARM GAS  /tmp/ccvOfDqw.s 			page 20
 
 
  363:Src/usbd_conf.c ****     break;
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
  777              		@ frame_needed = 0, uses_anonymous_args = 0
  778              	.LVL78:
  779 0000 10B5     		push	{r4, lr}
-ARM GAS  /tmp/ccDlv0Av.s 			page 21
+ARM GAS  /tmp/ccvOfDqw.s 			page 21
 
 
  780              	.LCFI17:
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
  809 001a FCE7     		b	.L41
  810              	.LVL85:
  811              	.L43:
-ARM GAS  /tmp/ccDlv0Av.s 			page 22
+ARM GAS  /tmp/ccvOfDqw.s 			page 22
 
 
  397:Src/usbd_conf.c ****     break;
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
  851              	.LVL91:
  423:Src/usbd_conf.c **** 
  424:Src/usbd_conf.c ****   switch (hal_status) {
-ARM GAS  /tmp/ccDlv0Av.s 			page 23
+ARM GAS  /tmp/ccvOfDqw.s 			page 23
 
 
  852              		.loc 1 424 0
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
  886              		.fpu softvfp
  888              	USBD_LL_CloseEP:
  889              	.LFB61:
-ARM GAS  /tmp/ccDlv0Av.s 			page 24
+ARM GAS  /tmp/ccvOfDqw.s 			page 24
 
 
  443:Src/usbd_conf.c **** 
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
  470:Src/usbd_conf.c ****     default :
  471:Src/usbd_conf.c ****       usb_status = USBD_FAIL;
  472:Src/usbd_conf.c ****     break;
-ARM GAS  /tmp/ccDlv0Av.s 			page 25
+ARM GAS  /tmp/ccvOfDqw.s 			page 25
 
 
  473:Src/usbd_conf.c ****   }
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
  486:Src/usbd_conf.c ****   USBD_StatusTypeDef usb_status = USBD_OK;
  487:Src/usbd_conf.c **** 
  488:Src/usbd_conf.c ****   hal_status = HAL_PCD_EP_Flush(pdev->pData, ep_addr);
-ARM GAS  /tmp/ccDlv0Av.s 			page 26
+ARM GAS  /tmp/ccvOfDqw.s 			page 26
 
 
  957              		.loc 1 488 0
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
  988 001e FAE7     		b	.L59
  989              		.cfi_endproc
  990              	.LFE62:
-ARM GAS  /tmp/ccDlv0Av.s 			page 27
+ARM GAS  /tmp/ccvOfDqw.s 			page 27
 
 
  992              		.section	.text.USBD_LL_StallEP,"ax",%progbits
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
  1027              	.LVL119:
  1028              	.L65:
  529:Src/usbd_conf.c ****     break;
-ARM GAS  /tmp/ccDlv0Av.s 			page 28
+ARM GAS  /tmp/ccvOfDqw.s 			page 28
 
 
  530:Src/usbd_conf.c ****     case HAL_BUSY :
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
  1061              		@ frame_needed = 0, uses_anonymous_args = 0
  1062              	.LVL124:
  1063 0000 10B5     		push	{r4, lr}
-ARM GAS  /tmp/ccDlv0Av.s 			page 29
+ARM GAS  /tmp/ccvOfDqw.s 			page 29
 
 
  1064              	.LCFI22:
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
  1093 001a FCE7     		b	.L71
  1094              	.LVL131:
  1095              	.L73:
-ARM GAS  /tmp/ccDlv0Av.s 			page 30
+ARM GAS  /tmp/ccvOfDqw.s 			page 30
 
 
  564:Src/usbd_conf.c ****     break;
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
  1132              	.LVL135:
  1133 0010 1140     		ands	r1, r2
  1134 0012 4901     		lsls	r1, r1, #5
-ARM GAS  /tmp/ccDlv0Av.s 			page 31
+ARM GAS  /tmp/ccvOfDqw.s 			page 31
 
 
  1135 0014 5B18     		adds	r3, r3, r1
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
  1179              		.cfi_offset 14, -4
  1180              	.LVL142:
  604:Src/usbd_conf.c ****   HAL_StatusTypeDef hal_status = HAL_OK;
-ARM GAS  /tmp/ccDlv0Av.s 			page 32
+ARM GAS  /tmp/ccvOfDqw.s 			page 32
 
 
  605:Src/usbd_conf.c ****   USBD_StatusTypeDef usb_status = USBD_OK;
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
  1210              	.LVL149:
  618:Src/usbd_conf.c ****     case HAL_TIMEOUT :
  1211              		.loc 1 618 0
-ARM GAS  /tmp/ccDlv0Av.s 			page 33
+ARM GAS  /tmp/ccvOfDqw.s 			page 33
 
 
  1212 001e FAE7     		b	.L81
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
  647:Src/usbd_conf.c ****     break;
  648:Src/usbd_conf.c ****     case HAL_ERROR :
  649:Src/usbd_conf.c ****       usb_status = USBD_FAIL;
-ARM GAS  /tmp/ccDlv0Av.s 			page 34
+ARM GAS  /tmp/ccvOfDqw.s 			page 34
 
 
  1249              		.loc 1 649 0
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
  670:Src/usbd_conf.c ****   * @retval USBD status
  671:Src/usbd_conf.c ****   */
  672:Src/usbd_conf.c **** USBD_StatusTypeDef USBD_LL_PrepareReceive(USBD_HandleTypeDef *pdev, uint8_t ep_addr, uint8_t *pbuf,
-ARM GAS  /tmp/ccDlv0Av.s 			page 35
+ARM GAS  /tmp/ccvOfDqw.s 			page 35
 
 
  673:Src/usbd_conf.c **** {
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
  1311 0016 10BD     		pop	{r4, pc}
  1312              	.LVL164:
  1313              	.L94:
-ARM GAS  /tmp/ccDlv0Av.s 			page 36
+ARM GAS  /tmp/ccvOfDqw.s 			page 36
 
 
  681:Src/usbd_conf.c ****     break;
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
  1356              		@ sp needed
  1357 000c 10BD     		pop	{r4, pc}
  1358              		.cfi_endproc
-ARM GAS  /tmp/ccDlv0Av.s 			page 37
+ARM GAS  /tmp/ccvOfDqw.s 			page 37
 
 
  1359              	.LFE69:
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
  726:Src/usbd_conf.c **** //{
  727:Src/usbd_conf.c **** //  static uint32_t mem[(sizeof(USBD_CDC_HandleTypeDef)/4)+1];/* On 32-bit boundary */
  728:Src/usbd_conf.c **** //  return mem;
-ARM GAS  /tmp/ccDlv0Av.s 			page 38
+ARM GAS  /tmp/ccvOfDqw.s 			page 38
 
 
  729:Src/usbd_conf.c **** //}
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
  1424              		@ args = 0, pretend = 0, frame = 0
  1425              		@ frame_needed = 0, uses_anonymous_args = 0
  1426              		@ link register save eliminated.
-ARM GAS  /tmp/ccDlv0Av.s 			page 39
+ARM GAS  /tmp/ccvOfDqw.s 			page 39
 
 
  1427              	.LVL174:
@@ -2303,8 +2303,8 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
  1434              		.comm	hpcd_USB_FS,628,4
  1435              		.text
  1436              	.Letext0:
- 1437              		.file 2 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/machin
- 1438              		.file 3 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/_s
+ 1437              		.file 2 "/usr/include/newlib/machine/_default_types.h"
+ 1438              		.file 3 "/usr/include/newlib/sys/_stdint.h"
  1439              		.file 4 "Drivers/CMSIS/Include/core_cm0.h"
  1440              		.file 5 "Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h"
  1441              		.file 6 "Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h"
@@ -2313,88 +2313,88 @@ ARM GAS  /tmp/ccDlv0Av.s 			page 1
  1444              		.file 9 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usb.h"
  1445              		.file 10 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h"
  1446              		.file 11 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h"
- 1447              		.file 12 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/l
- 1448              		.file 13 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/_
- 1449              		.file 14 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/lib/gcc/arm-none-eabi/7.3.1
- 1450              		.file 15 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/r
- 1451              		.file 16 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/stdli
+ 1447              		.file 12 "/usr/include/newlib/sys/lock.h"
+ 1448              		.file 13 "/usr/include/newlib/sys/_types.h"
+ 1449              		.file 14 "/usr/lib/gcc/arm-none-eabi/7.3.1/include/stddef.h"
+ 1450              		.file 15 "/usr/include/newlib/sys/reent.h"
+ 1451              		.file 16 "/usr/include/newlib/stdlib.h"
  1452              		.file 17 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h"
  1453              		.file 18 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h"
  1454              		.file 19 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h"
  1455              		.file 20 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h"
-ARM GAS  /tmp/ccDlv0Av.s 			page 40
+ARM GAS  /tmp/ccvOfDqw.s 			page 40
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 usbd_conf.c
-     /tmp/ccDlv0Av.s:16     .text.HAL_PCD_MspInit:0000000000000000 $t
-     /tmp/ccDlv0Av.s:23     .text.HAL_PCD_MspInit:0000000000000000 HAL_PCD_MspInit
-     /tmp/ccDlv0Av.s:80     .text.HAL_PCD_MspInit:0000000000000038 $d
-     /tmp/ccDlv0Av.s:86     .text.HAL_PCD_MspDeInit:0000000000000000 $t
-     /tmp/ccDlv0Av.s:93     .text.HAL_PCD_MspDeInit:0000000000000000 HAL_PCD_MspDeInit
-     /tmp/ccDlv0Av.s:133    .text.HAL_PCD_MspDeInit:0000000000000020 $d
-     /tmp/ccDlv0Av.s:140    .text.HAL_PCD_SetupStageCallback:0000000000000000 $t
-     /tmp/ccDlv0Av.s:147    .text.HAL_PCD_SetupStageCallback:0000000000000000 HAL_PCD_SetupStageCallback
-     /tmp/ccDlv0Av.s:178    .text.HAL_PCD_DataOutStageCallback:0000000000000000 $t
-     /tmp/ccDlv0Av.s:185    .text.HAL_PCD_DataOutStageCallback:0000000000000000 HAL_PCD_DataOutStageCallback
-     /tmp/ccDlv0Av.s:218    .text.HAL_PCD_DataInStageCallback:0000000000000000 $t
-     /tmp/ccDlv0Av.s:225    .text.HAL_PCD_DataInStageCallback:0000000000000000 HAL_PCD_DataInStageCallback
-     /tmp/ccDlv0Av.s:256    .text.HAL_PCD_SOFCallback:0000000000000000 $t
-     /tmp/ccDlv0Av.s:263    .text.HAL_PCD_SOFCallback:0000000000000000 HAL_PCD_SOFCallback
-     /tmp/ccDlv0Av.s:289    .text.HAL_PCD_ResetCallback:0000000000000000 $t
-     /tmp/ccDlv0Av.s:296    .text.HAL_PCD_ResetCallback:0000000000000000 HAL_PCD_ResetCallback
-     /tmp/ccDlv0Av.s:332    .text.HAL_PCD_SuspendCallback:0000000000000000 $t
-     /tmp/ccDlv0Av.s:339    .text.HAL_PCD_SuspendCallback:0000000000000000 HAL_PCD_SuspendCallback
-     /tmp/ccDlv0Av.s:377    .text.HAL_PCD_SuspendCallback:0000000000000020 $d
-     /tmp/ccDlv0Av.s:382    .text.HAL_PCD_ResumeCallback:0000000000000000 $t
-     /tmp/ccDlv0Av.s:389    .text.HAL_PCD_ResumeCallback:0000000000000000 HAL_PCD_ResumeCallback
-     /tmp/ccDlv0Av.s:415    .text.HAL_PCD_ISOOUTIncompleteCallback:0000000000000000 $t
-     /tmp/ccDlv0Av.s:422    .text.HAL_PCD_ISOOUTIncompleteCallback:0000000000000000 HAL_PCD_ISOOUTIncompleteCallback
-     /tmp/ccDlv0Av.s:448    .text.HAL_PCD_ISOINIncompleteCallback:0000000000000000 $t
-     /tmp/ccDlv0Av.s:455    .text.HAL_PCD_ISOINIncompleteCallback:0000000000000000 HAL_PCD_ISOINIncompleteCallback
-     /tmp/ccDlv0Av.s:481    .text.HAL_PCD_ConnectCallback:0000000000000000 $t
-     /tmp/ccDlv0Av.s:488    .text.HAL_PCD_ConnectCallback:0000000000000000 HAL_PCD_ConnectCallback
-     /tmp/ccDlv0Av.s:514    .text.HAL_PCD_DisconnectCallback:0000000000000000 $t
-     /tmp/ccDlv0Av.s:521    .text.HAL_PCD_DisconnectCallback:0000000000000000 HAL_PCD_DisconnectCallback
-     /tmp/ccDlv0Av.s:547    .text.USBD_LL_Init:0000000000000000 $t
-     /tmp/ccDlv0Av.s:554    .text.USBD_LL_Init:0000000000000000 USBD_LL_Init
-     /tmp/ccDlv0Av.s:647    .text.USBD_LL_Init:0000000000000074 $d
+     /tmp/ccvOfDqw.s:16     .text.HAL_PCD_MspInit:0000000000000000 $t
+     /tmp/ccvOfDqw.s:23     .text.HAL_PCD_MspInit:0000000000000000 HAL_PCD_MspInit
+     /tmp/ccvOfDqw.s:80     .text.HAL_PCD_MspInit:0000000000000038 $d
+     /tmp/ccvOfDqw.s:86     .text.HAL_PCD_MspDeInit:0000000000000000 $t
+     /tmp/ccvOfDqw.s:93     .text.HAL_PCD_MspDeInit:0000000000000000 HAL_PCD_MspDeInit
+     /tmp/ccvOfDqw.s:133    .text.HAL_PCD_MspDeInit:0000000000000020 $d
+     /tmp/ccvOfDqw.s:140    .text.HAL_PCD_SetupStageCallback:0000000000000000 $t
+     /tmp/ccvOfDqw.s:147    .text.HAL_PCD_SetupStageCallback:0000000000000000 HAL_PCD_SetupStageCallback
+     /tmp/ccvOfDqw.s:178    .text.HAL_PCD_DataOutStageCallback:0000000000000000 $t
+     /tmp/ccvOfDqw.s:185    .text.HAL_PCD_DataOutStageCallback:0000000000000000 HAL_PCD_DataOutStageCallback
+     /tmp/ccvOfDqw.s:218    .text.HAL_PCD_DataInStageCallback:0000000000000000 $t
+     /tmp/ccvOfDqw.s:225    .text.HAL_PCD_DataInStageCallback:0000000000000000 HAL_PCD_DataInStageCallback
+     /tmp/ccvOfDqw.s:256    .text.HAL_PCD_SOFCallback:0000000000000000 $t
+     /tmp/ccvOfDqw.s:263    .text.HAL_PCD_SOFCallback:0000000000000000 HAL_PCD_SOFCallback
+     /tmp/ccvOfDqw.s:289    .text.HAL_PCD_ResetCallback:0000000000000000 $t
+     /tmp/ccvOfDqw.s:296    .text.HAL_PCD_ResetCallback:0000000000000000 HAL_PCD_ResetCallback
+     /tmp/ccvOfDqw.s:332    .text.HAL_PCD_SuspendCallback:0000000000000000 $t
+     /tmp/ccvOfDqw.s:339    .text.HAL_PCD_SuspendCallback:0000000000000000 HAL_PCD_SuspendCallback
+     /tmp/ccvOfDqw.s:377    .text.HAL_PCD_SuspendCallback:0000000000000020 $d
+     /tmp/ccvOfDqw.s:382    .text.HAL_PCD_ResumeCallback:0000000000000000 $t
+     /tmp/ccvOfDqw.s:389    .text.HAL_PCD_ResumeCallback:0000000000000000 HAL_PCD_ResumeCallback
+     /tmp/ccvOfDqw.s:415    .text.HAL_PCD_ISOOUTIncompleteCallback:0000000000000000 $t
+     /tmp/ccvOfDqw.s:422    .text.HAL_PCD_ISOOUTIncompleteCallback:0000000000000000 HAL_PCD_ISOOUTIncompleteCallback
+     /tmp/ccvOfDqw.s:448    .text.HAL_PCD_ISOINIncompleteCallback:0000000000000000 $t
+     /tmp/ccvOfDqw.s:455    .text.HAL_PCD_ISOINIncompleteCallback:0000000000000000 HAL_PCD_ISOINIncompleteCallback
+     /tmp/ccvOfDqw.s:481    .text.HAL_PCD_ConnectCallback:0000000000000000 $t
+     /tmp/ccvOfDqw.s:488    .text.HAL_PCD_ConnectCallback:0000000000000000 HAL_PCD_ConnectCallback
+     /tmp/ccvOfDqw.s:514    .text.HAL_PCD_DisconnectCallback:0000000000000000 $t
+     /tmp/ccvOfDqw.s:521    .text.HAL_PCD_DisconnectCallback:0000000000000000 HAL_PCD_DisconnectCallback
+     /tmp/ccvOfDqw.s:547    .text.USBD_LL_Init:0000000000000000 $t
+     /tmp/ccvOfDqw.s:554    .text.USBD_LL_Init:0000000000000000 USBD_LL_Init
+     /tmp/ccvOfDqw.s:647    .text.USBD_LL_Init:0000000000000074 $d
                             *COM*:0000000000000274 hpcd_USB_FS
-     /tmp/ccDlv0Av.s:653    .text.USBD_LL_DeInit:0000000000000000 $t
-     /tmp/ccDlv0Av.s:660    .text.USBD_LL_DeInit:0000000000000000 USBD_LL_DeInit
-     /tmp/ccDlv0Av.s:709    .text.USBD_LL_Start:0000000000000000 $t
-     /tmp/ccDlv0Av.s:716    .text.USBD_LL_Start:0000000000000000 USBD_LL_Start
-     /tmp/ccDlv0Av.s:765    .text.USBD_LL_Stop:0000000000000000 $t
-     /tmp/ccDlv0Av.s:772    .text.USBD_LL_Stop:0000000000000000 USBD_LL_Stop
-     /tmp/ccDlv0Av.s:821    .text.USBD_LL_OpenEP:0000000000000000 $t
-     /tmp/ccDlv0Av.s:828    .text.USBD_LL_OpenEP:0000000000000000 USBD_LL_OpenEP
-     /tmp/ccDlv0Av.s:881    .text.USBD_LL_CloseEP:0000000000000000 $t
-     /tmp/ccDlv0Av.s:888    .text.USBD_LL_CloseEP:0000000000000000 USBD_LL_CloseEP
-     /tmp/ccDlv0Av.s:937    .text.USBD_LL_FlushEP:0000000000000000 $t
-     /tmp/ccDlv0Av.s:944    .text.USBD_LL_FlushEP:0000000000000000 USBD_LL_FlushEP
-     /tmp/ccDlv0Av.s:993    .text.USBD_LL_StallEP:0000000000000000 $t
-     /tmp/ccDlv0Av.s:1000   .text.USBD_LL_StallEP:0000000000000000 USBD_LL_StallEP
-     /tmp/ccDlv0Av.s:1049   .text.USBD_LL_ClearStallEP:0000000000000000 $t
-     /tmp/ccDlv0Av.s:1056   .text.USBD_LL_ClearStallEP:0000000000000000 USBD_LL_ClearStallEP
-     /tmp/ccDlv0Av.s:1105   .text.USBD_LL_IsStallEP:0000000000000000 $t
-     /tmp/ccDlv0Av.s:1112   .text.USBD_LL_IsStallEP:0000000000000000 USBD_LL_IsStallEP
-     /tmp/ccDlv0Av.s:1161   .text.USBD_LL_SetUSBAddress:0000000000000000 $t
-     /tmp/ccDlv0Av.s:1168   .text.USBD_LL_SetUSBAddress:0000000000000000 USBD_LL_SetUSBAddress
-     /tmp/ccDlv0Av.s:1217   .text.USBD_LL_Transmit:0000000000000000 $t
-     /tmp/ccDlv0Av.s:1224   .text.USBD_LL_Transmit:0000000000000000 USBD_LL_Transmit
-ARM GAS  /tmp/ccDlv0Av.s 			page 41
+     /tmp/ccvOfDqw.s:653    .text.USBD_LL_DeInit:0000000000000000 $t
+     /tmp/ccvOfDqw.s:660    .text.USBD_LL_DeInit:0000000000000000 USBD_LL_DeInit
+     /tmp/ccvOfDqw.s:709    .text.USBD_LL_Start:0000000000000000 $t
+     /tmp/ccvOfDqw.s:716    .text.USBD_LL_Start:0000000000000000 USBD_LL_Start
+     /tmp/ccvOfDqw.s:765    .text.USBD_LL_Stop:0000000000000000 $t
+     /tmp/ccvOfDqw.s:772    .text.USBD_LL_Stop:0000000000000000 USBD_LL_Stop
+     /tmp/ccvOfDqw.s:821    .text.USBD_LL_OpenEP:0000000000000000 $t
+     /tmp/ccvOfDqw.s:828    .text.USBD_LL_OpenEP:0000000000000000 USBD_LL_OpenEP
+     /tmp/ccvOfDqw.s:881    .text.USBD_LL_CloseEP:0000000000000000 $t
+     /tmp/ccvOfDqw.s:888    .text.USBD_LL_CloseEP:0000000000000000 USBD_LL_CloseEP
+     /tmp/ccvOfDqw.s:937    .text.USBD_LL_FlushEP:0000000000000000 $t
+     /tmp/ccvOfDqw.s:944    .text.USBD_LL_FlushEP:0000000000000000 USBD_LL_FlushEP
+     /tmp/ccvOfDqw.s:993    .text.USBD_LL_StallEP:0000000000000000 $t
+     /tmp/ccvOfDqw.s:1000   .text.USBD_LL_StallEP:0000000000000000 USBD_LL_StallEP
+     /tmp/ccvOfDqw.s:1049   .text.USBD_LL_ClearStallEP:0000000000000000 $t
+     /tmp/ccvOfDqw.s:1056   .text.USBD_LL_ClearStallEP:0000000000000000 USBD_LL_ClearStallEP
+     /tmp/ccvOfDqw.s:1105   .text.USBD_LL_IsStallEP:0000000000000000 $t
+     /tmp/ccvOfDqw.s:1112   .text.USBD_LL_IsStallEP:0000000000000000 USBD_LL_IsStallEP
+     /tmp/ccvOfDqw.s:1161   .text.USBD_LL_SetUSBAddress:0000000000000000 $t
+     /tmp/ccvOfDqw.s:1168   .text.USBD_LL_SetUSBAddress:0000000000000000 USBD_LL_SetUSBAddress
+     /tmp/ccvOfDqw.s:1217   .text.USBD_LL_Transmit:0000000000000000 $t
+     /tmp/ccvOfDqw.s:1224   .text.USBD_LL_Transmit:0000000000000000 USBD_LL_Transmit
+ARM GAS  /tmp/ccvOfDqw.s 			page 41
 
 
-     /tmp/ccDlv0Av.s:1273   .text.USBD_LL_PrepareReceive:0000000000000000 $t
-     /tmp/ccDlv0Av.s:1280   .text.USBD_LL_PrepareReceive:0000000000000000 USBD_LL_PrepareReceive
-     /tmp/ccDlv0Av.s:1329   .text.USBD_LL_GetRxDataSize:0000000000000000 $t
-     /tmp/ccDlv0Av.s:1336   .text.USBD_LL_GetRxDataSize:0000000000000000 USBD_LL_GetRxDataSize
-     /tmp/ccDlv0Av.s:1362   .text.USBD_LL_Delay:0000000000000000 $t
-     /tmp/ccDlv0Av.s:1369   .text.USBD_LL_Delay:0000000000000000 USBD_LL_Delay
-     /tmp/ccDlv0Av.s:1391   .text.USBD_static_free:0000000000000000 $t
-     /tmp/ccDlv0Av.s:1398   .text.USBD_static_free:0000000000000000 USBD_static_free
-     /tmp/ccDlv0Av.s:1413   .text.HAL_PCDEx_SetConnectionState:0000000000000000 $t
-     /tmp/ccDlv0Av.s:1420   .text.HAL_PCDEx_SetConnectionState:0000000000000000 HAL_PCDEx_SetConnectionState
+     /tmp/ccvOfDqw.s:1273   .text.USBD_LL_PrepareReceive:0000000000000000 $t
+     /tmp/ccvOfDqw.s:1280   .text.USBD_LL_PrepareReceive:0000000000000000 USBD_LL_PrepareReceive
+     /tmp/ccvOfDqw.s:1329   .text.USBD_LL_GetRxDataSize:0000000000000000 $t
+     /tmp/ccvOfDqw.s:1336   .text.USBD_LL_GetRxDataSize:0000000000000000 USBD_LL_GetRxDataSize
+     /tmp/ccvOfDqw.s:1362   .text.USBD_LL_Delay:0000000000000000 $t
+     /tmp/ccvOfDqw.s:1369   .text.USBD_LL_Delay:0000000000000000 USBD_LL_Delay
+     /tmp/ccvOfDqw.s:1391   .text.USBD_static_free:0000000000000000 $t
+     /tmp/ccvOfDqw.s:1398   .text.USBD_static_free:0000000000000000 USBD_static_free
+     /tmp/ccvOfDqw.s:1413   .text.HAL_PCDEx_SetConnectionState:0000000000000000 $t
+     /tmp/ccvOfDqw.s:1420   .text.HAL_PCDEx_SetConnectionState:0000000000000000 HAL_PCDEx_SetConnectionState
 
 UNDEFINED SYMBOLS
 HAL_NVIC_SetPriority

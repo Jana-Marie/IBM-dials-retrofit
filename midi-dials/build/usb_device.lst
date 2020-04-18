@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccc78uNQ.s 			page 1
+ARM GAS  /tmp/cctPhfTd.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccc78uNQ.s 			page 1
   31:Src/usb_device.c ****   *    this license is void and will automatically terminate your rights under 
   32:Src/usb_device.c ****   *    this license. 
   33:Src/usb_device.c ****   *
-ARM GAS  /tmp/ccc78uNQ.s 			page 2
+ARM GAS  /tmp/cctPhfTd.s 			page 2
 
 
   34:Src/usb_device.c ****   * THIS SOFTWARE IS PROVIDED BY STMICROELECTRONICS AND CONTRIBUTORS "AS IS" 
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccc78uNQ.s 			page 1
   88:Src/usb_device.c **** {
   26              		.loc 1 88 0
   27              		.cfi_startproc
-ARM GAS  /tmp/ccc78uNQ.s 			page 3
+ARM GAS  /tmp/cctPhfTd.s 			page 3
 
 
   28              		@ args = 0, pretend = 0, frame = 0
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccc78uNQ.s 			page 1
   75              		.fpu softvfp
   77              	MX_USB_DEVICE_Init:
   78              	.LFB44:
-ARM GAS  /tmp/ccc78uNQ.s 			page 4
+ARM GAS  /tmp/cctPhfTd.s 			page 4
 
 
   97:Src/usb_device.c **** 
@@ -220,32 +220,32 @@ ARM GAS  /tmp/ccc78uNQ.s 			page 1
   90              		.comm	hUsbDeviceFS,548,4
   91              		.text
   92              	.Letext0:
-  93              		.file 2 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/machin
-  94              		.file 3 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/_s
+  93              		.file 2 "/usr/include/newlib/machine/_default_types.h"
+  94              		.file 3 "/usr/include/newlib/sys/_stdint.h"
   95              		.file 4 "Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h"
   96              		.file 5 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h"
-  97              		.file 6 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/lo
-  98              		.file 7 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/_t
-  99              		.file 8 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/lib/gcc/arm-none-eabi/7.3.1/
- 100              		.file 9 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/re
- 101              		.file 10 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/stdli
+  97              		.file 6 "/usr/include/newlib/sys/lock.h"
+  98              		.file 7 "/usr/include/newlib/sys/_types.h"
+  99              		.file 8 "/usr/lib/gcc/arm-none-eabi/7.3.1/include/stddef.h"
+ 100              		.file 9 "/usr/include/newlib/sys/reent.h"
+ 101              		.file 10 "/usr/include/newlib/stdlib.h"
  102              		.file 11 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h"
  103              		.file 12 "Inc/usb_device.h"
  104              		.file 13 "Inc/usbd_desc.h"
  105              		.file 14 "Middlewares/USBMIDI/Inc/usbd_midi.h"
  106              		.file 15 "Inc/usbd_midi_if.h"
  107              		.file 16 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h"
-ARM GAS  /tmp/ccc78uNQ.s 			page 5
+ARM GAS  /tmp/cctPhfTd.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 usb_device.c
-     /tmp/ccc78uNQ.s:16     .text.MX_USB_MIDI_INIT:0000000000000000 $t
-     /tmp/ccc78uNQ.s:23     .text.MX_USB_MIDI_INIT:0000000000000000 MX_USB_MIDI_INIT
-     /tmp/ccc78uNQ.s:62     .text.MX_USB_MIDI_INIT:0000000000000028 $d
+     /tmp/cctPhfTd.s:16     .text.MX_USB_MIDI_INIT:0000000000000000 $t
+     /tmp/cctPhfTd.s:23     .text.MX_USB_MIDI_INIT:0000000000000000 MX_USB_MIDI_INIT
+     /tmp/cctPhfTd.s:62     .text.MX_USB_MIDI_INIT:0000000000000028 $d
                             *COM*:0000000000000224 hUsbDeviceFS
-     /tmp/ccc78uNQ.s:70     .text.MX_USB_DEVICE_Init:0000000000000000 $t
-     /tmp/ccc78uNQ.s:77     .text.MX_USB_DEVICE_Init:0000000000000000 MX_USB_DEVICE_Init
+     /tmp/cctPhfTd.s:70     .text.MX_USB_DEVICE_Init:0000000000000000 $t
+     /tmp/cctPhfTd.s:77     .text.MX_USB_DEVICE_Init:0000000000000000 MX_USB_DEVICE_Init
 
 UNDEFINED SYMBOLS
 USBD_Init

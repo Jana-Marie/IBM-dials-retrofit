@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccxcefs2.s 			page 1
+ARM GAS  /tmp/ccjHqQBe.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccxcefs2.s 			page 1
   32:Src/usbd_midi_if.c **** RingBufferU8 rbuf_usb_rx[MIDI_OUT_JACK_NUM]; //for input from USB
   33:Src/usbd_midi_if.c **** RingBufferU8 rbuf_jack_rx[MIDI_IN_JACK_NUM];  //for input from MIDI-IN jack
   34:Src/usbd_midi_if.c **** 
-ARM GAS  /tmp/ccxcefs2.s 			page 2
+ARM GAS  /tmp/ccjHqQBe.s 			page 2
 
 
   35:Src/usbd_midi_if.c **** //for receiving midi data from jack
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccxcefs2.s 			page 1
   89:Src/usbd_midi_if.c **** 		return FUNC_ERROR;
   90:Src/usbd_midi_if.c **** 	}
   91:Src/usbd_midi_if.c **** 
-ARM GAS  /tmp/ccxcefs2.s 			page 3
+ARM GAS  /tmp/ccjHqQBe.s 			page 3
 
 
   92:Src/usbd_midi_if.c **** 	return FUNC_SUCCESS;
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccxcefs2.s 			page 1
  146:Src/usbd_midi_if.c **** {
  147:Src/usbd_midi_if.c ****   MIDI_DataRx,
  148:Src/usbd_midi_if.c ****   MIDI_DataTx
-ARM GAS  /tmp/ccxcefs2.s 			page 4
+ARM GAS  /tmp/ccjHqQBe.s 			page 4
 
 
  149:Src/usbd_midi_if.c **** };
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccxcefs2.s 			page 1
  203:Src/usbd_midi_if.c **** 		  default:
  204:Src/usbd_midi_if.c **** 			  midi_size = 0;
  205:Src/usbd_midi_if.c **** 			  break;
-ARM GAS  /tmp/ccxcefs2.s 			page 5
+ARM GAS  /tmp/ccjHqQBe.s 			page 5
 
 
  206:Src/usbd_midi_if.c **** 	  }
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccxcefs2.s 			page 1
   52 0012 0133     		adds	r3, r3, #1
   53 0014 2360     		str	r3, [r4]
  233:Src/usbd_midi_if.c ****     i++;
-ARM GAS  /tmp/ccxcefs2.s 			page 6
+ARM GAS  /tmp/ccjHqQBe.s 			page 6
 
 
   54              		.loc 1 233 0
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccxcefs2.s 			page 1
  103 0002 DE46     		mov	lr, fp
  104 0004 4746     		mov	r7, r8
  105 0006 80B5     		push	{r7, lr}
-ARM GAS  /tmp/ccxcefs2.s 			page 7
+ARM GAS  /tmp/ccjHqQBe.s 			page 7
 
 
  106              	.LCFI2:
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccxcefs2.s 			page 1
  153 002e 0093     		str	r3, [sp]
  189:Src/usbd_midi_if.c **** 
  154              		.loc 1 189 0
-ARM GAS  /tmp/ccxcefs2.s 			page 8
+ARM GAS  /tmp/ccjHqQBe.s 			page 8
 
 
  155 0030 FAE7     		b	.L15
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccxcefs2.s 			page 1
  201              	.LVL20:
  202              	.L10:
  164:Src/usbd_midi_if.c **** 
-ARM GAS  /tmp/ccxcefs2.s 			page 9
+ARM GAS  /tmp/ccjHqQBe.s 			page 9
 
 
  203              		.loc 1 164 0 is_stmt 0 discriminator 1
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccxcefs2.s 			page 1
  255              		.align	1
  256              		.global	midiInit
  257              		.syntax unified
-ARM GAS  /tmp/ccxcefs2.s 			page 10
+ARM GAS  /tmp/ccjHqQBe.s 			page 10
 
 
  258              		.code	16
@@ -565,477 +565,611 @@ ARM GAS  /tmp/ccxcefs2.s 			page 1
   46:Src/usbd_midi_if.c **** 		if(BUFFER_SUCCESS != cureRingBufferU8Init(&rbuf_usb_rx[i], MIDI_BUFFER_SIZ))
  278              		.loc 1 46 0 is_stmt 0 discriminator 1
  279 0004 002C     		cmp	r4, #0
- 280 0006 01D0     		beq	.L25
+ 280 0006 07D0     		beq	.L25
+  53:Src/usbd_midi_if.c **** 		if(BUFFER_SUCCESS != cureRingBufferU8Init(&rbuf_jack_rx[i], MIDI_BUFFER_SIZ))
+ 281              		.loc 1 53 0 is_stmt 1
+ 282 0008 0024     		movs	r4, #0
+ 283              	.LVL27:
+ 284              	.L26:
+  53:Src/usbd_midi_if.c **** 		if(BUFFER_SUCCESS != cureRingBufferU8Init(&rbuf_jack_rx[i], MIDI_BUFFER_SIZ))
+ 285              		.loc 1 53 0 is_stmt 0 discriminator 1
+ 286 000a 002C     		cmp	r4, #0
+ 287 000c 11D0     		beq	.L27
+  61:Src/usbd_midi_if.c **** 
+ 288              		.loc 1 61 0 is_stmt 1
+ 289 000e 0020     		movs	r0, #0
+ 290              	.LVL28:
+ 291              	.L28:
+  61:Src/usbd_midi_if.c **** 
+ 292              		.loc 1 61 0 is_stmt 0 discriminator 1
+ 293 0010 0028     		cmp	r0, #0
+ 294 0012 1BD0     		beq	.L31
   72:Src/usbd_midi_if.c **** }
- 281              		.loc 1 72 0 is_stmt 1
- 282 0008 0120     		movs	r0, #1
- 283              	.L24:
+ 295              		.loc 1 72 0 is_stmt 1
+ 296 0014 0120     		movs	r0, #1
+ 297              	.LVL29:
+ 298              	.L24:
   73:Src/usbd_midi_if.c **** 
- 284              		.loc 1 73 0
- 285              		@ sp needed
- 286              	.LVL27:
- 287 000a 10BD     		pop	{r4, pc}
- 288              	.LVL28:
- 289              	.L25:
+ 299              		.loc 1 73 0
+ 300              		@ sp needed
+ 301 0016 10BD     		pop	{r4, pc}
+ 302              	.LVL30:
+ 303              	.L25:
   47:Src/usbd_midi_if.c **** 		{
- 290              		.loc 1 47 0
- 291 000c 8021     		movs	r1, #128
- 292 000e 6300     		lsls	r3, r4, #1
- 293 0010 1B19     		adds	r3, r3, r4
- 294 0012 9800     		lsls	r0, r3, #2
- 295 0014 054B     		ldr	r3, .L27
- 296 0016 C018     		adds	r0, r0, r3
- 297 0018 8900     		lsls	r1, r1, #2
- 298 001a FFF7FEFF 		bl	cureRingBufferU8Init
- 299              	.LVL29:
- 300 001e 0128     		cmp	r0, #1
- 301 0020 01D1     		bne	.L26
+ 304              		.loc 1 47 0
+ 305 0018 8021     		movs	r1, #128
+ARM GAS  /tmp/ccjHqQBe.s 			page 11
+
+
+ 306 001a 6300     		lsls	r3, r4, #1
+ 307 001c 1B19     		adds	r3, r3, r4
+ 308 001e 9800     		lsls	r0, r3, #2
+ 309 0020 194B     		ldr	r3, .L34
+ 310 0022 C018     		adds	r0, r0, r3
+ 311 0024 8900     		lsls	r1, r1, #2
+ 312 0026 FFF7FEFF 		bl	cureRingBufferU8Init
+ 313              	.LVL31:
+ 314 002a 0128     		cmp	r0, #1
+ 315 002c 27D1     		bne	.L32
   46:Src/usbd_midi_if.c **** 		if(BUFFER_SUCCESS != cureRingBufferU8Init(&rbuf_usb_rx[i], MIDI_BUFFER_SIZ))
- 302              		.loc 1 46 0 discriminator 2
- 303 0022 0134     		adds	r4, r4, #1
- 304              	.LVL30:
- 305 0024 EEE7     		b	.L23
- 306              	.L26:
+ 316              		.loc 1 46 0 discriminator 2
+ 317 002e 0134     		adds	r4, r4, #1
+ 318              	.LVL32:
+ 319 0030 E8E7     		b	.L23
+ 320              	.L27:
+  54:Src/usbd_midi_if.c **** 		{
+ 321              		.loc 1 54 0
+ 322 0032 8021     		movs	r1, #128
+ 323 0034 6300     		lsls	r3, r4, #1
+ 324 0036 1B19     		adds	r3, r3, r4
+ 325 0038 9800     		lsls	r0, r3, #2
+ 326 003a 144B     		ldr	r3, .L34+4
+ 327 003c C018     		adds	r0, r0, r3
+ 328 003e 8900     		lsls	r1, r1, #2
+ 329 0040 FFF7FEFF 		bl	cureRingBufferU8Init
+ 330              	.LVL33:
+ 331 0044 0128     		cmp	r0, #1
+ 332 0046 1CD1     		bne	.L33
+  53:Src/usbd_midi_if.c **** 		if(BUFFER_SUCCESS != cureRingBufferU8Init(&rbuf_jack_rx[i], MIDI_BUFFER_SIZ))
+ 333              		.loc 1 53 0 discriminator 2
+ 334 0048 0134     		adds	r4, r4, #1
+ 335              	.LVL34:
+ 336 004a DEE7     		b	.L26
+ 337              	.LVL35:
+ 338              	.L31:
+  63:Src/usbd_midi_if.c **** 		analyzed_status[i].data_idx = 0;
+ 339              		.loc 1 63 0
+ 340 004c 0022     		movs	r2, #0
+ 341 004e 104B     		ldr	r3, .L34+8
+ 342 0050 1A54     		strb	r2, [r3, r0]
+  64:Src/usbd_midi_if.c **** 		midi_event[i].length = 0;
+ 343              		.loc 1 64 0
+ 344 0052 8100     		lsls	r1, r0, #2
+ 345 0054 0F4B     		ldr	r3, .L34+12
+ 346 0056 5B18     		adds	r3, r3, r1
+ 347 0058 DA70     		strb	r2, [r3, #3]
+  65:Src/usbd_midi_if.c **** 
+ 348              		.loc 1 65 0
+ 349 005a 8301     		lsls	r3, r0, #6
+ 350 005c 1B18     		adds	r3, r3, r0
+ 351 005e 0E49     		ldr	r1, .L34+16
+ 352 0060 5A54     		strb	r2, [r3, r1]
+ 353              	.LVL36:
+  67:Src/usbd_midi_if.c **** 			midi_event[i].midi_byte[j] = 0x00;
+ 354              		.loc 1 67 0
+ 355 0062 0200     		movs	r2, r0
+ARM GAS  /tmp/ccjHqQBe.s 			page 12
+
+
+ 356 0064 07E0     		b	.L29
+ 357              	.LVL37:
+ 358              	.L30:
+  68:Src/usbd_midi_if.c **** 		}
+ 359              		.loc 1 68 0 discriminator 3
+ 360 0066 8101     		lsls	r1, r0, #6
+ 361 0068 0918     		adds	r1, r1, r0
+ 362 006a 0B4B     		ldr	r3, .L34+16
+ 363 006c 5B18     		adds	r3, r3, r1
+ 364 006e 9B18     		adds	r3, r3, r2
+ 365 0070 0021     		movs	r1, #0
+ 366 0072 5970     		strb	r1, [r3, #1]
+  67:Src/usbd_midi_if.c **** 			midi_event[i].midi_byte[j] = 0x00;
+ 367              		.loc 1 67 0 discriminator 3
+ 368 0074 0132     		adds	r2, r2, #1
+ 369              	.LVL38:
+ 370              	.L29:
+  67:Src/usbd_midi_if.c **** 			midi_event[i].midi_byte[j] = 0x00;
+ 371              		.loc 1 67 0 is_stmt 0 discriminator 1
+ 372 0076 3F2A     		cmp	r2, #63
+ 373 0078 F5D9     		bls	.L30
+  61:Src/usbd_midi_if.c **** 
+ 374              		.loc 1 61 0 is_stmt 1 discriminator 2
+ 375 007a 0130     		adds	r0, r0, #1
+ 376              	.LVL39:
+ 377 007c C8E7     		b	.L28
+ 378              	.LVL40:
+ 379              	.L32:
   49:Src/usbd_midi_if.c **** 		}
- 307              		.loc 1 49 0
-ARM GAS  /tmp/ccxcefs2.s 			page 11
-
-
- 308 0026 0020     		movs	r0, #0
- 309 0028 EFE7     		b	.L24
- 310              	.L28:
- 311 002a C046     		.align	2
- 312              	.L27:
- 313 002c 00000000 		.word	rbuf_usb_rx
- 314              		.cfi_endproc
- 315              	.LFE43:
- 317              		.section	.text.midiGetFromUsbRx,"ax",%progbits
- 318              		.align	1
- 319              		.global	midiGetFromUsbRx
- 320              		.syntax unified
- 321              		.code	16
- 322              		.thumb_func
- 323              		.fpu softvfp
- 325              	midiGetFromUsbRx:
- 326              	.LFB44:
+ 380              		.loc 1 49 0
+ 381 007e 0020     		movs	r0, #0
+ 382 0080 C9E7     		b	.L24
+ 383              	.L33:
+  56:Src/usbd_midi_if.c **** 		}
+ 384              		.loc 1 56 0
+ 385 0082 0020     		movs	r0, #0
+ 386 0084 C7E7     		b	.L24
+ 387              	.L35:
+ 388 0086 C046     		.align	2
+ 389              	.L34:
+ 390 0088 00000000 		.word	rbuf_usb_rx
+ 391 008c 00000000 		.word	rbuf_jack_rx
+ 392 0090 00000000 		.word	rx_midi_msg
+ 393 0094 00000000 		.word	analyzed_status
+ 394 0098 00000000 		.word	midi_event
+ 395              		.cfi_endproc
+ 396              	.LFE43:
+ 398              		.section	.text.midiGetFromUsbRx,"ax",%progbits
+ 399              		.align	1
+ 400              		.global	midiGetFromUsbRx
+ 401              		.syntax unified
+ 402              		.code	16
+ 403              		.thumb_func
+ 404              		.fpu softvfp
+ 406              	midiGetFromUsbRx:
+ 407              	.LFB44:
   76:Src/usbd_midi_if.c **** 	if(BUFFER_SUCCESS != cureRingBufferU8Dequeue(&rbuf_usb_rx[cable_num], dat))
- 327              		.loc 1 76 0
- 328              		.cfi_startproc
- 329              		@ args = 0, pretend = 0, frame = 0
- 330              		@ frame_needed = 0, uses_anonymous_args = 0
- 331              	.LVL31:
- 332 0000 10B5     		push	{r4, lr}
- 333              	.LCFI5:
- 334              		.cfi_def_cfa_offset 8
- 335              		.cfi_offset 4, -8
- 336              		.cfi_offset 14, -4
+ARM GAS  /tmp/ccjHqQBe.s 			page 13
+
+
+ 408              		.loc 1 76 0
+ 409              		.cfi_startproc
+ 410              		@ args = 0, pretend = 0, frame = 0
+ 411              		@ frame_needed = 0, uses_anonymous_args = 0
+ 412              	.LVL41:
+ 413 0000 10B5     		push	{r4, lr}
+ 414              	.LCFI5:
+ 415              		.cfi_def_cfa_offset 8
+ 416              		.cfi_offset 4, -8
+ 417              		.cfi_offset 14, -4
   77:Src/usbd_midi_if.c **** 	{
- 337              		.loc 1 77 0
- 338 0002 4300     		lsls	r3, r0, #1
- 339 0004 1818     		adds	r0, r3, r0
- 340              	.LVL32:
- 341 0006 8300     		lsls	r3, r0, #2
- 342 0008 0448     		ldr	r0, .L32
- 343 000a 1818     		adds	r0, r3, r0
- 344 000c FFF7FEFF 		bl	cureRingBufferU8Dequeue
- 345              	.LVL33:
- 346 0010 0128     		cmp	r0, #1
- 347 0012 01D0     		beq	.L31
+ 418              		.loc 1 77 0
+ 419 0002 4300     		lsls	r3, r0, #1
+ 420 0004 1818     		adds	r0, r3, r0
+ 421              	.LVL42:
+ 422 0006 8300     		lsls	r3, r0, #2
+ 423 0008 0448     		ldr	r0, .L39
+ 424 000a 1818     		adds	r0, r3, r0
+ 425 000c FFF7FEFF 		bl	cureRingBufferU8Dequeue
+ 426              	.LVL43:
+ 427 0010 0128     		cmp	r0, #1
+ 428 0012 01D0     		beq	.L38
   79:Src/usbd_midi_if.c **** 	}
- 348              		.loc 1 79 0
- 349 0014 0020     		movs	r0, #0
- 350              	.L30:
+ 429              		.loc 1 79 0
+ 430 0014 0020     		movs	r0, #0
+ 431              	.L37:
   83:Src/usbd_midi_if.c **** 
- 351              		.loc 1 83 0
- 352              		@ sp needed
- 353 0016 10BD     		pop	{r4, pc}
- 354              	.L31:
+ 432              		.loc 1 83 0
+ 433              		@ sp needed
+ 434 0016 10BD     		pop	{r4, pc}
+ 435              	.L38:
   82:Src/usbd_midi_if.c **** }
- 355              		.loc 1 82 0
- 356 0018 0120     		movs	r0, #1
- 357 001a FCE7     		b	.L30
- 358              	.L33:
- 359              		.align	2
- 360              	.L32:
- 361 001c 00000000 		.word	rbuf_usb_rx
-ARM GAS  /tmp/ccxcefs2.s 			page 12
-
-
- 362              		.cfi_endproc
- 363              	.LFE44:
- 365              		.section	.text.midiGetFromJackRx,"ax",%progbits
- 366              		.align	1
- 367              		.global	midiGetFromJackRx
- 368              		.syntax unified
- 369              		.code	16
- 370              		.thumb_func
- 371              		.fpu softvfp
- 373              	midiGetFromJackRx:
- 374              	.LFB45:
+ 436              		.loc 1 82 0
+ 437 0018 0120     		movs	r0, #1
+ 438 001a FCE7     		b	.L37
+ 439              	.L40:
+ 440              		.align	2
+ 441              	.L39:
+ 442 001c 00000000 		.word	rbuf_usb_rx
+ 443              		.cfi_endproc
+ 444              	.LFE44:
+ 446              		.section	.text.midiGetFromJackRx,"ax",%progbits
+ 447              		.align	1
+ 448              		.global	midiGetFromJackRx
+ 449              		.syntax unified
+ 450              		.code	16
+ 451              		.thumb_func
+ 452              		.fpu softvfp
+ 454              	midiGetFromJackRx:
+ 455              	.LFB45:
   86:Src/usbd_midi_if.c **** 	if(BUFFER_SUCCESS != cureRingBufferU8Dequeue(&rbuf_jack_rx[cable_num], &rx_midi_msg[cable_num]))
- 375              		.loc 1 86 0
- 376              		.cfi_startproc
- 377              		@ args = 0, pretend = 0, frame = 0
- 378              		@ frame_needed = 0, uses_anonymous_args = 0
- 379              	.LVL34:
- 380 0000 10B5     		push	{r4, lr}
- 381              	.LCFI6:
- 382              		.cfi_def_cfa_offset 8
- 383              		.cfi_offset 4, -8
- 384              		.cfi_offset 14, -4
+ 456              		.loc 1 86 0
+ 457              		.cfi_startproc
+ 458              		@ args = 0, pretend = 0, frame = 0
+ 459              		@ frame_needed = 0, uses_anonymous_args = 0
+ 460              	.LVL44:
+ 461 0000 10B5     		push	{r4, lr}
+ARM GAS  /tmp/ccjHqQBe.s 			page 14
+
+
+ 462              	.LCFI6:
+ 463              		.cfi_def_cfa_offset 8
+ 464              		.cfi_offset 4, -8
+ 465              		.cfi_offset 14, -4
   87:Src/usbd_midi_if.c **** 	{
- 385              		.loc 1 87 0
- 386 0002 0749     		ldr	r1, .L37
- 387 0004 4118     		adds	r1, r0, r1
- 388 0006 4300     		lsls	r3, r0, #1
- 389 0008 1818     		adds	r0, r3, r0
- 390              	.LVL35:
- 391 000a 8300     		lsls	r3, r0, #2
- 392 000c 0548     		ldr	r0, .L37+4
- 393 000e 1818     		adds	r0, r3, r0
- 394 0010 FFF7FEFF 		bl	cureRingBufferU8Dequeue
- 395              	.LVL36:
- 396 0014 0128     		cmp	r0, #1
- 397 0016 01D0     		beq	.L36
+ 466              		.loc 1 87 0
+ 467 0002 0749     		ldr	r1, .L44
+ 468 0004 4118     		adds	r1, r0, r1
+ 469 0006 4300     		lsls	r3, r0, #1
+ 470 0008 1818     		adds	r0, r3, r0
+ 471              	.LVL45:
+ 472 000a 8300     		lsls	r3, r0, #2
+ 473 000c 0548     		ldr	r0, .L44+4
+ 474 000e 1818     		adds	r0, r3, r0
+ 475 0010 FFF7FEFF 		bl	cureRingBufferU8Dequeue
+ 476              	.LVL46:
+ 477 0014 0128     		cmp	r0, #1
+ 478 0016 01D0     		beq	.L43
   89:Src/usbd_midi_if.c **** 	}
- 398              		.loc 1 89 0
- 399 0018 0020     		movs	r0, #0
- 400              	.L35:
+ 479              		.loc 1 89 0
+ 480 0018 0020     		movs	r0, #0
+ 481              	.L42:
   93:Src/usbd_midi_if.c **** 
- 401              		.loc 1 93 0
- 402              		@ sp needed
- 403 001a 10BD     		pop	{r4, pc}
- 404              	.L36:
+ 482              		.loc 1 93 0
+ 483              		@ sp needed
+ 484 001a 10BD     		pop	{r4, pc}
+ 485              	.L43:
   92:Src/usbd_midi_if.c **** }
- 405              		.loc 1 92 0
- 406 001c 0120     		movs	r0, #1
- 407 001e FCE7     		b	.L35
- 408              	.L38:
- 409              		.align	2
- 410              	.L37:
- 411 0020 00000000 		.word	rx_midi_msg
- 412 0024 00000000 		.word	rbuf_jack_rx
- 413              		.cfi_endproc
- 414              	.LFE45:
- 416              		.section	.text.midiSetFromJackRx,"ax",%progbits
-ARM GAS  /tmp/ccxcefs2.s 			page 13
-
-
- 417              		.align	1
- 418              		.global	midiSetFromJackRx
- 419              		.syntax unified
- 420              		.code	16
- 421              		.thumb_func
- 422              		.fpu softvfp
- 424              	midiSetFromJackRx:
- 425              	.LFB46:
+ 486              		.loc 1 92 0
+ 487 001c 0120     		movs	r0, #1
+ 488 001e FCE7     		b	.L42
+ 489              	.L45:
+ 490              		.align	2
+ 491              	.L44:
+ 492 0020 00000000 		.word	rx_midi_msg
+ 493 0024 00000000 		.word	rbuf_jack_rx
+ 494              		.cfi_endproc
+ 495              	.LFE45:
+ 497              		.section	.text.midiSetFromJackRx,"ax",%progbits
+ 498              		.align	1
+ 499              		.global	midiSetFromJackRx
+ 500              		.syntax unified
+ 501              		.code	16
+ 502              		.thumb_func
+ 503              		.fpu softvfp
+ 505              	midiSetFromJackRx:
+ 506              	.LFB46:
   96:Src/usbd_midi_if.c **** 	if(BUFFER_SUCCESS != cureRingBufferU8Enqueue(&rbuf_jack_rx[cable_num], dat))
- 426              		.loc 1 96 0
- 427              		.cfi_startproc
- 428              		@ args = 0, pretend = 0, frame = 0
- 429              		@ frame_needed = 0, uses_anonymous_args = 0
- 430              	.LVL37:
- 431 0000 10B5     		push	{r4, lr}
- 432              	.LCFI7:
- 433              		.cfi_def_cfa_offset 8
- 434              		.cfi_offset 4, -8
- 435              		.cfi_offset 14, -4
+ 507              		.loc 1 96 0
+ 508              		.cfi_startproc
+ 509              		@ args = 0, pretend = 0, frame = 0
+ 510              		@ frame_needed = 0, uses_anonymous_args = 0
+ 511              	.LVL47:
+ 512 0000 10B5     		push	{r4, lr}
+ 513              	.LCFI7:
+ 514              		.cfi_def_cfa_offset 8
+ 515              		.cfi_offset 4, -8
+ARM GAS  /tmp/ccjHqQBe.s 			page 15
+
+
+ 516              		.cfi_offset 14, -4
   97:Src/usbd_midi_if.c **** 	{
- 436              		.loc 1 97 0
- 437 0002 4300     		lsls	r3, r0, #1
- 438 0004 1818     		adds	r0, r3, r0
- 439              	.LVL38:
- 440 0006 8300     		lsls	r3, r0, #2
- 441 0008 0448     		ldr	r0, .L42
- 442 000a 1818     		adds	r0, r3, r0
- 443 000c FFF7FEFF 		bl	cureRingBufferU8Enqueue
- 444              	.LVL39:
- 445 0010 0128     		cmp	r0, #1
- 446 0012 01D0     		beq	.L41
+ 517              		.loc 1 97 0
+ 518 0002 4300     		lsls	r3, r0, #1
+ 519 0004 1818     		adds	r0, r3, r0
+ 520              	.LVL48:
+ 521 0006 8300     		lsls	r3, r0, #2
+ 522 0008 0448     		ldr	r0, .L49
+ 523 000a 1818     		adds	r0, r3, r0
+ 524 000c FFF7FEFF 		bl	cureRingBufferU8Enqueue
+ 525              	.LVL49:
+ 526 0010 0128     		cmp	r0, #1
+ 527 0012 01D0     		beq	.L48
   99:Src/usbd_midi_if.c **** 	}
- 447              		.loc 1 99 0
- 448 0014 0020     		movs	r0, #0
- 449              	.L40:
+ 528              		.loc 1 99 0
+ 529 0014 0020     		movs	r0, #0
+ 530              	.L47:
  103:Src/usbd_midi_if.c **** 
- 450              		.loc 1 103 0
- 451              		@ sp needed
- 452 0016 10BD     		pop	{r4, pc}
- 453              	.L41:
+ 531              		.loc 1 103 0
+ 532              		@ sp needed
+ 533 0016 10BD     		pop	{r4, pc}
+ 534              	.L48:
  102:Src/usbd_midi_if.c **** }
- 454              		.loc 1 102 0
- 455 0018 0120     		movs	r0, #1
- 456 001a FCE7     		b	.L40
- 457              	.L43:
- 458              		.align	2
- 459              	.L42:
- 460 001c 00000000 		.word	rbuf_jack_rx
- 461              		.cfi_endproc
- 462              	.LFE46:
- 464              		.section	.text.isUsbRxBufEmpty,"ax",%progbits
- 465              		.align	1
- 466              		.global	isUsbRxBufEmpty
- 467              		.syntax unified
- 468              		.code	16
- 469              		.thumb_func
- 470              		.fpu softvfp
-ARM GAS  /tmp/ccxcefs2.s 			page 14
-
-
- 472              	isUsbRxBufEmpty:
- 473              	.LFB47:
+ 535              		.loc 1 102 0
+ 536 0018 0120     		movs	r0, #1
+ 537 001a FCE7     		b	.L47
+ 538              	.L50:
+ 539              		.align	2
+ 540              	.L49:
+ 541 001c 00000000 		.word	rbuf_jack_rx
+ 542              		.cfi_endproc
+ 543              	.LFE46:
+ 545              		.section	.text.isUsbRxBufEmpty,"ax",%progbits
+ 546              		.align	1
+ 547              		.global	isUsbRxBufEmpty
+ 548              		.syntax unified
+ 549              		.code	16
+ 550              		.thumb_func
+ 551              		.fpu softvfp
+ 553              	isUsbRxBufEmpty:
+ 554              	.LFB47:
  107:Src/usbd_midi_if.c **** 	if( 0 != _cureRingBufferU8GetUsedSize(&rbuf_usb_rx[cable_num]) ){
- 474              		.loc 1 107 0
- 475              		.cfi_startproc
- 476              		@ args = 0, pretend = 0, frame = 0
- 477              		@ frame_needed = 0, uses_anonymous_args = 0
- 478              	.LVL40:
- 479 0000 10B5     		push	{r4, lr}
- 480              	.LCFI8:
- 481              		.cfi_def_cfa_offset 8
- 482              		.cfi_offset 4, -8
- 483              		.cfi_offset 14, -4
+ 555              		.loc 1 107 0
+ 556              		.cfi_startproc
+ 557              		@ args = 0, pretend = 0, frame = 0
+ 558              		@ frame_needed = 0, uses_anonymous_args = 0
+ 559              	.LVL50:
+ 560 0000 10B5     		push	{r4, lr}
+ 561              	.LCFI8:
+ 562              		.cfi_def_cfa_offset 8
+ 563              		.cfi_offset 4, -8
+ 564              		.cfi_offset 14, -4
  108:Src/usbd_midi_if.c **** 		return false;
- 484              		.loc 1 108 0
- 485 0002 4300     		lsls	r3, r0, #1
- 486 0004 1818     		adds	r0, r3, r0
- 487              	.LVL41:
- 488 0006 8300     		lsls	r3, r0, #2
- 489 0008 0448     		ldr	r0, .L48
- 490 000a 1818     		adds	r0, r3, r0
- 491 000c FFF7FEFF 		bl	_cureRingBufferU8GetUsedSize
- 492              	.LVL42:
- 493 0010 0028     		cmp	r0, #0
- 494 0012 01D1     		bne	.L47
+ 565              		.loc 1 108 0
+ 566 0002 4300     		lsls	r3, r0, #1
+ 567 0004 1818     		adds	r0, r3, r0
+ 568              	.LVL51:
+ARM GAS  /tmp/ccjHqQBe.s 			page 16
+
+
+ 569 0006 8300     		lsls	r3, r0, #2
+ 570 0008 0448     		ldr	r0, .L55
+ 571 000a 1818     		adds	r0, r3, r0
+ 572 000c FFF7FEFF 		bl	_cureRingBufferU8GetUsedSize
+ 573              	.LVL52:
+ 574 0010 0028     		cmp	r0, #0
+ 575 0012 01D1     		bne	.L54
  112:Src/usbd_midi_if.c **** }
- 495              		.loc 1 112 0
- 496 0014 0120     		movs	r0, #1
- 497              	.L45:
+ 576              		.loc 1 112 0
+ 577 0014 0120     		movs	r0, #1
+ 578              	.L52:
  113:Src/usbd_midi_if.c **** 
- 498              		.loc 1 113 0
- 499              		@ sp needed
- 500 0016 10BD     		pop	{r4, pc}
- 501              	.L47:
+ 579              		.loc 1 113 0
+ 580              		@ sp needed
+ 581 0016 10BD     		pop	{r4, pc}
+ 582              	.L54:
  109:Src/usbd_midi_if.c **** 	}
- 502              		.loc 1 109 0
- 503 0018 0020     		movs	r0, #0
- 504 001a FCE7     		b	.L45
- 505              	.L49:
- 506              		.align	2
- 507              	.L48:
- 508 001c 00000000 		.word	rbuf_usb_rx
- 509              		.cfi_endproc
- 510              	.LFE47:
- 512              		.section	.text.isJackRxBufEmpty,"ax",%progbits
- 513              		.align	1
- 514              		.global	isJackRxBufEmpty
- 515              		.syntax unified
- 516              		.code	16
- 517              		.thumb_func
- 518              		.fpu softvfp
- 520              	isJackRxBufEmpty:
- 521              	.LFB48:
+ 583              		.loc 1 109 0
+ 584 0018 0020     		movs	r0, #0
+ 585 001a FCE7     		b	.L52
+ 586              	.L56:
+ 587              		.align	2
+ 588              	.L55:
+ 589 001c 00000000 		.word	rbuf_usb_rx
+ 590              		.cfi_endproc
+ 591              	.LFE47:
+ 593              		.section	.text.isJackRxBufEmpty,"ax",%progbits
+ 594              		.align	1
+ 595              		.global	isJackRxBufEmpty
+ 596              		.syntax unified
+ 597              		.code	16
+ 598              		.thumb_func
+ 599              		.fpu softvfp
+ 601              	isJackRxBufEmpty:
+ 602              	.LFB48:
  116:Src/usbd_midi_if.c **** 	if( 0 != _cureRingBufferU8GetUsedSize(&rbuf_jack_rx[cable_num]) ){
- 522              		.loc 1 116 0
- 523              		.cfi_startproc
- 524              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/ccxcefs2.s 			page 15
-
-
- 525              		@ frame_needed = 0, uses_anonymous_args = 0
- 526              	.LVL43:
- 527 0000 10B5     		push	{r4, lr}
- 528              	.LCFI9:
- 529              		.cfi_def_cfa_offset 8
- 530              		.cfi_offset 4, -8
- 531              		.cfi_offset 14, -4
+ 603              		.loc 1 116 0
+ 604              		.cfi_startproc
+ 605              		@ args = 0, pretend = 0, frame = 0
+ 606              		@ frame_needed = 0, uses_anonymous_args = 0
+ 607              	.LVL53:
+ 608 0000 10B5     		push	{r4, lr}
+ 609              	.LCFI9:
+ 610              		.cfi_def_cfa_offset 8
+ 611              		.cfi_offset 4, -8
+ 612              		.cfi_offset 14, -4
  117:Src/usbd_midi_if.c **** 		return false;
- 532              		.loc 1 117 0
- 533 0002 4300     		lsls	r3, r0, #1
- 534 0004 1818     		adds	r0, r3, r0
- 535              	.LVL44:
- 536 0006 8300     		lsls	r3, r0, #2
- 537 0008 0448     		ldr	r0, .L54
- 538 000a 1818     		adds	r0, r3, r0
- 539 000c FFF7FEFF 		bl	_cureRingBufferU8GetUsedSize
- 540              	.LVL45:
- 541 0010 0028     		cmp	r0, #0
- 542 0012 01D1     		bne	.L53
+ 613              		.loc 1 117 0
+ 614 0002 4300     		lsls	r3, r0, #1
+ 615 0004 1818     		adds	r0, r3, r0
+ 616              	.LVL54:
+ 617 0006 8300     		lsls	r3, r0, #2
+ 618 0008 0448     		ldr	r0, .L61
+ 619 000a 1818     		adds	r0, r3, r0
+ 620 000c FFF7FEFF 		bl	_cureRingBufferU8GetUsedSize
+ 621              	.LVL55:
+ 622 0010 0028     		cmp	r0, #0
+ARM GAS  /tmp/ccjHqQBe.s 			page 17
+
+
+ 623 0012 01D1     		bne	.L60
  121:Src/usbd_midi_if.c **** }
- 543              		.loc 1 121 0
- 544 0014 0120     		movs	r0, #1
- 545              	.L51:
+ 624              		.loc 1 121 0
+ 625 0014 0120     		movs	r0, #1
+ 626              	.L58:
  122:Src/usbd_midi_if.c **** 
- 546              		.loc 1 122 0
- 547              		@ sp needed
- 548 0016 10BD     		pop	{r4, pc}
- 549              	.L53:
+ 627              		.loc 1 122 0
+ 628              		@ sp needed
+ 629 0016 10BD     		pop	{r4, pc}
+ 630              	.L60:
  118:Src/usbd_midi_if.c **** 	}
- 550              		.loc 1 118 0
- 551 0018 0020     		movs	r0, #0
- 552 001a FCE7     		b	.L51
- 553              	.L55:
- 554              		.align	2
- 555              	.L54:
- 556 001c 00000000 		.word	rbuf_jack_rx
- 557              		.cfi_endproc
- 558              	.LFE48:
- 560              		.section	.text.isRxBufEmpty,"ax",%progbits
- 561              		.align	1
- 562              		.global	isRxBufEmpty
- 563              		.syntax unified
- 564              		.code	16
- 565              		.thumb_func
- 566              		.fpu softvfp
- 568              	isRxBufEmpty:
- 569              	.LFB49:
+ 631              		.loc 1 118 0
+ 632 0018 0020     		movs	r0, #0
+ 633 001a FCE7     		b	.L58
+ 634              	.L62:
+ 635              		.align	2
+ 636              	.L61:
+ 637 001c 00000000 		.word	rbuf_jack_rx
+ 638              		.cfi_endproc
+ 639              	.LFE48:
+ 641              		.section	.text.isRxBufEmpty,"ax",%progbits
+ 642              		.align	1
+ 643              		.global	isRxBufEmpty
+ 644              		.syntax unified
+ 645              		.code	16
+ 646              		.thumb_func
+ 647              		.fpu softvfp
+ 649              	isRxBufEmpty:
+ 650              	.LFB49:
  125:Src/usbd_midi_if.c **** 	uint32_t i;
- 570              		.loc 1 125 0
- 571              		.cfi_startproc
- 572              		@ args = 0, pretend = 0, frame = 0
- 573              		@ frame_needed = 0, uses_anonymous_args = 0
- 574 0000 10B5     		push	{r4, lr}
- 575              	.LCFI10:
- 576              		.cfi_def_cfa_offset 8
- 577              		.cfi_offset 4, -8
- 578              		.cfi_offset 14, -4
-ARM GAS  /tmp/ccxcefs2.s 			page 16
+ 651              		.loc 1 125 0
+ 652              		.cfi_startproc
+ 653              		@ args = 0, pretend = 0, frame = 0
+ 654              		@ frame_needed = 0, uses_anonymous_args = 0
+ 655 0000 10B5     		push	{r4, lr}
+ 656              	.LCFI10:
+ 657              		.cfi_def_cfa_offset 8
+ 658              		.cfi_offset 4, -8
+ 659              		.cfi_offset 14, -4
+ 660              	.LVL56:
+ 128:Src/usbd_midi_if.c **** 		if(0 != _cureRingBufferU8GetUsedSize(&rbuf_usb_rx[i]))
+ 661              		.loc 1 128 0
+ 662 0002 0024     		movs	r4, #0
+ 663              	.LVL57:
+ 664              	.L64:
+ 128:Src/usbd_midi_if.c **** 		if(0 != _cureRingBufferU8GetUsedSize(&rbuf_usb_rx[i]))
+ 665              		.loc 1 128 0 is_stmt 0 discriminator 1
+ 666 0004 002C     		cmp	r4, #0
+ 667 0006 04D0     		beq	.L66
+ 135:Src/usbd_midi_if.c **** 		if(0 != _cureRingBufferU8GetUsedSize(&rbuf_jack_rx[i]))
+ 668              		.loc 1 135 0 is_stmt 1
+ 669 0008 0024     		movs	r4, #0
+ 670              	.LVL58:
+ 671              	.L67:
+ 135:Src/usbd_midi_if.c **** 		if(0 != _cureRingBufferU8GetUsedSize(&rbuf_jack_rx[i]))
+ 672              		.loc 1 135 0 is_stmt 0 discriminator 1
+ 673 000a 002C     		cmp	r4, #0
+ARM GAS  /tmp/ccjHqQBe.s 			page 18
 
 
- 579              	.LVL46:
- 128:Src/usbd_midi_if.c **** 		if(0 != _cureRingBufferU8GetUsedSize(&rbuf_usb_rx[i]))
- 580              		.loc 1 128 0
- 581 0002 0024     		movs	r4, #0
- 582              	.LVL47:
- 583              	.L57:
- 128:Src/usbd_midi_if.c **** 		if(0 != _cureRingBufferU8GetUsedSize(&rbuf_usb_rx[i]))
- 584              		.loc 1 128 0 is_stmt 0 discriminator 1
- 585 0004 002C     		cmp	r4, #0
- 586 0006 01D0     		beq	.L59
+ 674 000c 0CD0     		beq	.L68
  141:Src/usbd_midi_if.c **** }
- 587              		.loc 1 141 0 is_stmt 1
- 588 0008 0120     		movs	r0, #1
- 589              	.L58:
+ 675              		.loc 1 141 0 is_stmt 1
+ 676 000e 0120     		movs	r0, #1
+ 677              	.L65:
  142:Src/usbd_midi_if.c **** 
- 590              		.loc 1 142 0
- 591              		@ sp needed
- 592              	.LVL48:
- 593 000a 10BD     		pop	{r4, pc}
- 594              	.LVL49:
- 595              	.L59:
+ 678              		.loc 1 142 0
+ 679              		@ sp needed
+ 680              	.LVL59:
+ 681 0010 10BD     		pop	{r4, pc}
+ 682              	.LVL60:
+ 683              	.L66:
  129:Src/usbd_midi_if.c **** 		{
- 596              		.loc 1 129 0
- 597 000c 6300     		lsls	r3, r4, #1
- 598 000e 1B19     		adds	r3, r3, r4
- 599 0010 9800     		lsls	r0, r3, #2
- 600 0012 054B     		ldr	r3, .L61
- 601 0014 C018     		adds	r0, r0, r3
- 602 0016 FFF7FEFF 		bl	_cureRingBufferU8GetUsedSize
- 603              	.LVL50:
- 604 001a 0028     		cmp	r0, #0
- 605 001c 01D1     		bne	.L60
+ 684              		.loc 1 129 0
+ 685 0012 6300     		lsls	r3, r4, #1
+ 686 0014 1B19     		adds	r3, r3, r4
+ 687 0016 9800     		lsls	r0, r3, #2
+ 688 0018 0B4B     		ldr	r3, .L71
+ 689 001a C018     		adds	r0, r0, r3
+ 690 001c FFF7FEFF 		bl	_cureRingBufferU8GetUsedSize
+ 691              	.LVL61:
+ 692 0020 0028     		cmp	r0, #0
+ 693 0022 0CD1     		bne	.L69
  128:Src/usbd_midi_if.c **** 		if(0 != _cureRingBufferU8GetUsedSize(&rbuf_usb_rx[i]))
- 606              		.loc 1 128 0 discriminator 2
- 607 001e 0134     		adds	r4, r4, #1
- 608              	.LVL51:
- 609 0020 F0E7     		b	.L57
- 610              	.L60:
+ 694              		.loc 1 128 0 discriminator 2
+ 695 0024 0134     		adds	r4, r4, #1
+ 696              	.LVL62:
+ 697 0026 EDE7     		b	.L64
+ 698              	.L68:
+ 136:Src/usbd_midi_if.c **** 		{
+ 699              		.loc 1 136 0
+ 700 0028 6300     		lsls	r3, r4, #1
+ 701 002a 1B19     		adds	r3, r3, r4
+ 702 002c 9800     		lsls	r0, r3, #2
+ 703 002e 074B     		ldr	r3, .L71+4
+ 704 0030 C018     		adds	r0, r0, r3
+ 705 0032 FFF7FEFF 		bl	_cureRingBufferU8GetUsedSize
+ 706              	.LVL63:
+ 707 0036 0028     		cmp	r0, #0
+ 708 0038 03D1     		bne	.L70
+ 135:Src/usbd_midi_if.c **** 		if(0 != _cureRingBufferU8GetUsedSize(&rbuf_jack_rx[i]))
+ 709              		.loc 1 135 0 discriminator 2
+ 710 003a 0134     		adds	r4, r4, #1
+ 711              	.LVL64:
+ 712 003c E5E7     		b	.L67
+ 713              	.L69:
  131:Src/usbd_midi_if.c **** 		}
- 611              		.loc 1 131 0
- 612 0022 0020     		movs	r0, #0
- 613 0024 F1E7     		b	.L58
- 614              	.L62:
- 615 0026 C046     		.align	2
- 616              	.L61:
- 617 0028 00000000 		.word	rbuf_usb_rx
- 618              		.cfi_endproc
- 619              	.LFE49:
- 621              		.section	.text.sendMidiMessage,"ax",%progbits
- 622              		.align	1
- 623              		.global	sendMidiMessage
- 624              		.syntax unified
- 625              		.code	16
- 626              		.thumb_func
- 627              		.fpu softvfp
- 629              	sendMidiMessage:
- 630              	.LFB51:
-ARM GAS  /tmp/ccxcefs2.s 			page 17
+ 714              		.loc 1 131 0
+ 715 003e 0020     		movs	r0, #0
+ 716 0040 E6E7     		b	.L65
+ 717              	.L70:
+ 138:Src/usbd_midi_if.c **** 		}
+ 718              		.loc 1 138 0
+ 719 0042 0020     		movs	r0, #0
+ 720 0044 E4E7     		b	.L65
+ 721              	.L72:
+ 722 0046 C046     		.align	2
+ARM GAS  /tmp/ccjHqQBe.s 			page 19
 
 
+ 723              	.L71:
+ 724 0048 00000000 		.word	rbuf_usb_rx
+ 725 004c 00000000 		.word	rbuf_jack_rx
+ 726              		.cfi_endproc
+ 727              	.LFE49:
+ 729              		.section	.text.sendMidiMessage,"ax",%progbits
+ 730              		.align	1
+ 731              		.global	sendMidiMessage
+ 732              		.syntax unified
+ 733              		.code	16
+ 734              		.thumb_func
+ 735              		.fpu softvfp
+ 737              	sendMidiMessage:
+ 738              	.LFB51:
  217:Src/usbd_midi_if.c ****   if(size == 4){
- 631              		.loc 1 217 0
- 632              		.cfi_startproc
- 633              		@ args = 0, pretend = 0, frame = 0
- 634              		@ frame_needed = 0, uses_anonymous_args = 0
- 635              	.LVL52:
- 636 0000 10B5     		push	{r4, lr}
- 637              	.LCFI11:
- 638              		.cfi_def_cfa_offset 8
- 639              		.cfi_offset 4, -8
- 640              		.cfi_offset 14, -4
+ 739              		.loc 1 217 0
+ 740              		.cfi_startproc
+ 741              		@ args = 0, pretend = 0, frame = 0
+ 742              		@ frame_needed = 0, uses_anonymous_args = 0
+ 743              	.LVL65:
+ 744 0000 10B5     		push	{r4, lr}
+ 745              	.LCFI11:
+ 746              		.cfi_def_cfa_offset 8
+ 747              		.cfi_offset 4, -8
+ 748              		.cfi_offset 14, -4
  218:Src/usbd_midi_if.c **** //	APP_Rx_Buffer[0] = msg[0];
- 641              		.loc 1 218 0
- 642 0002 0429     		cmp	r1, #4
- 643 0004 00D0     		beq	.L65
- 644              	.LVL53:
- 645              	.L63:
+ 749              		.loc 1 218 0
+ 750 0002 0429     		cmp	r1, #4
+ 751 0004 00D0     		beq	.L75
+ 752              	.LVL66:
+ 753              	.L73:
  226:Src/usbd_midi_if.c **** 
- 646              		.loc 1 226 0
- 647              		@ sp needed
- 648 0006 10BD     		pop	{r4, pc}
- 649              	.LVL54:
- 650              	.L65:
+ 754              		.loc 1 226 0
+ 755              		@ sp needed
+ 756 0006 10BD     		pop	{r4, pc}
+ 757              	.LVL67:
+ 758              	.L75:
  224:Src/usbd_midi_if.c ****   }
- 651              		.loc 1 224 0
- 652 0008 FFF7FEFF 		bl	MIDI_DataTx
- 653              	.LVL55:
+ 759              		.loc 1 224 0
+ 760 0008 FFF7FEFF 		bl	MIDI_DataTx
+ 761              	.LVL68:
  226:Src/usbd_midi_if.c **** 
- 654              		.loc 1 226 0
- 655 000c FBE7     		b	.L63
- 656              		.cfi_endproc
- 657              	.LFE51:
- 659              		.section	.text.midiEventIsGenerated,"ax",%progbits
- 660              		.align	1
- 661              		.global	midiEventIsGenerated
- 662              		.syntax unified
- 663              		.code	16
- 664              		.thumb_func
- 665              		.fpu softvfp
- 667              	midiEventIsGenerated:
- 668              	.LFB53:
+ 762              		.loc 1 226 0
+ 763 000c FBE7     		b	.L73
+ 764              		.cfi_endproc
+ 765              	.LFE51:
+ 767              		.section	.text.midiEventIsGenerated,"ax",%progbits
+ 768              		.align	1
+ 769              		.global	midiEventIsGenerated
+ 770              		.syntax unified
+ 771              		.code	16
+ 772              		.thumb_func
+ 773              		.fpu softvfp
+ 775              	midiEventIsGenerated:
+ 776              	.LFB53:
  240:Src/usbd_midi_if.c **** 
  241:Src/usbd_midi_if.c **** bool midiEventIsGenerated(uint8_t cable_num)
+ARM GAS  /tmp/ccjHqQBe.s 			page 20
+
+
  242:Src/usbd_midi_if.c **** {
- 669              		.loc 1 242 0
- 670              		.cfi_startproc
- 671              		@ args = 0, pretend = 0, frame = 0
- 672              		@ frame_needed = 0, uses_anonymous_args = 0
- 673              	.LVL56:
- 674 0000 F0B5     		push	{r4, r5, r6, r7, lr}
- 675              	.LCFI12:
- 676              		.cfi_def_cfa_offset 20
- 677              		.cfi_offset 4, -20
- 678              		.cfi_offset 5, -16
- 679              		.cfi_offset 6, -12
- 680              		.cfi_offset 7, -8
- 681              		.cfi_offset 14, -4
-ARM GAS  /tmp/ccxcefs2.s 			page 18
-
-
+ 777              		.loc 1 242 0
+ 778              		.cfi_startproc
+ 779              		@ args = 0, pretend = 0, frame = 0
+ 780              		@ frame_needed = 0, uses_anonymous_args = 0
+ 781              	.LVL69:
+ 782 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 783              	.LCFI12:
+ 784              		.cfi_def_cfa_offset 20
+ 785              		.cfi_offset 4, -20
+ 786              		.cfi_offset 5, -16
+ 787              		.cfi_offset 6, -12
+ 788              		.cfi_offset 7, -8
+ 789              		.cfi_offset 14, -4
  243:Src/usbd_midi_if.c **** 	uint8_t upper_half_byte= (rx_midi_msg[cable_num]) & 0xF0;
- 682              		.loc 1 243 0
- 683 0002 8F4B     		ldr	r3, .L102
- 684 0004 1A5C     		ldrb	r2, [r3, r0]
- 685 0006 0F23     		movs	r3, #15
- 686 0008 1100     		movs	r1, r2
- 687 000a 9943     		bics	r1, r3
- 688 000c 0B00     		movs	r3, r1
- 689              	.LVL57:
+ 790              		.loc 1 243 0
+ 791 0002 8F4B     		ldr	r3, .L112
+ 792 0004 1A5C     		ldrb	r2, [r3, r0]
+ 793 0006 0F23     		movs	r3, #15
+ 794 0008 1100     		movs	r1, r2
+ 795 000a 9943     		bics	r1, r3
+ 796 000c 0B00     		movs	r3, r1
+ 797              	.LVL70:
  244:Src/usbd_midi_if.c **** 
  245:Src/usbd_midi_if.c **** 	if( upper_half_byte & 0x80 ){//0x80-0xFF:status byte
- 690              		.loc 1 245 0
- 691 000e 49B2     		sxtb	r1, r1
- 692 0010 0029     		cmp	r1, #0
- 693 0012 24DB     		blt	.L93
+ 798              		.loc 1 245 0
+ 799 000e 49B2     		sxtb	r1, r1
+ 800 0010 0029     		cmp	r1, #0
+ 801 0012 24DB     		blt	.L103
  246:Src/usbd_midi_if.c **** 
  247:Src/usbd_midi_if.c **** 		switch(upper_half_byte){
  248:Src/usbd_midi_if.c **** 
@@ -1064,6 +1198,9 @@ ARM GAS  /tmp/ccxcefs2.s 			page 1
  271:Src/usbd_midi_if.c **** 					case 0xF1://Time Code
  272:Src/usbd_midi_if.c **** 					case 0xF3://Song Select
  273:Src/usbd_midi_if.c **** 						midi_event[cable_num].midi_byte[0] = rx_midi_msg[cable_num];
+ARM GAS  /tmp/ccjHqQBe.s 			page 21
+
+
  274:Src/usbd_midi_if.c **** 						analyzed_status[cable_num].type = MSG_TWO_BYTE;
  275:Src/usbd_midi_if.c **** 						analyzed_status[cable_num].stat = WAIT_DATA1;
  276:Src/usbd_midi_if.c **** 						break;
@@ -1078,9 +1215,6 @@ ARM GAS  /tmp/ccxcefs2.s 			page 1
  285:Src/usbd_midi_if.c **** 					case 0xFC://Stop
  286:Src/usbd_midi_if.c **** 					case 0xFD://Undefined
  287:Src/usbd_midi_if.c **** 					case 0xFE://Active Sensing
-ARM GAS  /tmp/ccxcefs2.s 			page 19
-
-
  288:Src/usbd_midi_if.c **** 					case 0xFF://Reset
  289:Src/usbd_midi_if.c **** 						midi_event[cable_num].midi_byte[0] = rx_midi_msg[cable_num];
  290:Src/usbd_midi_if.c **** 						midi_event[cable_num].length = 1;
@@ -1120,27 +1254,27 @@ ARM GAS  /tmp/ccxcefs2.s 			page 1
  324:Src/usbd_midi_if.c **** 	}else{//0x00-0x7F:data byte
  325:Src/usbd_midi_if.c **** 
  326:Src/usbd_midi_if.c **** 		switch(analyzed_status[cable_num].stat){
- 694              		.loc 1 326 0
- 695 0014 8300     		lsls	r3, r0, #2
- 696 0016 8B49     		ldr	r1, .L102+4
- 697              	.LVL58:
- 698 0018 5B5C     		ldrb	r3, [r3, r1]
- 699 001a 022B     		cmp	r3, #2
- 700 001c 00D1     		bne	.LCB626
- 701 001e DCE0     		b	.L82	@long jump
- 702              	.LCB626:
- 703 0020 00D8     		bhi	.LCB628
- 704 0022 B7E0     		b	.L94	@long jump
- 705              	.LCB628:
- 706 0024 032B     		cmp	r3, #3
- 707 0026 00D1     		bne	.LCB630
- 708 0028 EEE0     		b	.L85	@long jump
- 709              	.LCB630:
- 710 002a 042B     		cmp	r3, #4
- 711 002c 60D1     		bne	.L81
-ARM GAS  /tmp/ccxcefs2.s 			page 20
+ 802              		.loc 1 326 0
+ 803 0014 8300     		lsls	r3, r0, #2
+ 804 0016 8B49     		ldr	r1, .L112+4
+ 805              	.LVL71:
+ARM GAS  /tmp/ccjHqQBe.s 			page 22
 
 
+ 806 0018 5B5C     		ldrb	r3, [r3, r1]
+ 807 001a 022B     		cmp	r3, #2
+ 808 001c 00D1     		bne	.LCB748
+ 809 001e DCE0     		b	.L92	@long jump
+ 810              	.LCB748:
+ 811 0020 00D8     		bhi	.LCB750
+ 812 0022 B7E0     		b	.L104	@long jump
+ 813              	.LCB750:
+ 814 0024 032B     		cmp	r3, #3
+ 815 0026 00D1     		bne	.LCB752
+ 816 0028 EEE0     		b	.L95	@long jump
+ 817              	.LCB752:
+ 818 002a 042B     		cmp	r3, #4
+ 819 002c 60D1     		bne	.L91
  327:Src/usbd_midi_if.c **** 
  328:Src/usbd_midi_if.c **** 			case WAIT_DATA1:
  329:Src/usbd_midi_if.c **** 				midi_event[cable_num].midi_byte[1] = rx_midi_msg[cable_num];
@@ -1175,202 +1309,205 @@ ARM GAS  /tmp/ccxcefs2.s 			page 1
  358:Src/usbd_midi_if.c **** 
  359:Src/usbd_midi_if.c **** 			case END_ANALYSIS://running status:When status byte is omitted.
  360:Src/usbd_midi_if.c **** 				midi_event[cable_num].midi_byte[1] = rx_midi_msg[cable_num];
- 712              		.loc 1 360 0
- 713 002e 8101     		lsls	r1, r0, #6
- 714 0030 0918     		adds	r1, r1, r0
- 715 0032 854B     		ldr	r3, .L102+8
- 716 0034 5B18     		adds	r3, r3, r1
- 717 0036 9A70     		strb	r2, [r3, #2]
+ 820              		.loc 1 360 0
+ 821 002e 8101     		lsls	r1, r0, #6
+ 822 0030 0918     		adds	r1, r1, r0
+ 823 0032 854B     		ldr	r3, .L112+8
+ 824 0034 5B18     		adds	r3, r3, r1
+ 825 0036 9A70     		strb	r2, [r3, #2]
  361:Src/usbd_midi_if.c **** 				if(MSG_THREE_BYTE == analyzed_status[cable_num].type){
- 718              		.loc 1 361 0
- 719 0038 8200     		lsls	r2, r0, #2
- 720              	.LVL59:
- 721 003a 824B     		ldr	r3, .L102+4
- 722 003c 9B18     		adds	r3, r3, r2
- 723 003e 5B78     		ldrb	r3, [r3, #1]
- 724 0040 042B     		cmp	r3, #4
- 725 0042 00D1     		bne	.LCB644
- 726 0044 F5E0     		b	.L95	@long jump
- 727              	.LCB644:
+ 826              		.loc 1 361 0
+ 827 0038 8200     		lsls	r2, r0, #2
+ARM GAS  /tmp/ccjHqQBe.s 			page 23
+
+
+ 828              	.LVL72:
+ 829 003a 824B     		ldr	r3, .L112+4
+ 830 003c 9B18     		adds	r3, r3, r2
+ 831 003e 5B78     		ldrb	r3, [r3, #1]
+ 832 0040 042B     		cmp	r3, #4
+ 833 0042 00D1     		bne	.LCB766
+ 834 0044 F5E0     		b	.L105	@long jump
+ 835              	.LCB766:
  362:Src/usbd_midi_if.c **** 					analyzed_status[cable_num].stat = WAIT_DATA2;
  363:Src/usbd_midi_if.c **** 				}else if(MSG_TWO_BYTE == analyzed_status[cable_num].type){
- 728              		.loc 1 363 0
- 729 0046 032B     		cmp	r3, #3
- 730 0048 52D1     		bne	.L81
+ 836              		.loc 1 363 0
+ 837 0046 032B     		cmp	r3, #3
+ 838 0048 52D1     		bne	.L91
  364:Src/usbd_midi_if.c **** 					midi_event[cable_num].length = 2;
-ARM GAS  /tmp/ccxcefs2.s 			page 21
-
-
- 731              		.loc 1 364 0
- 732 004a 8301     		lsls	r3, r0, #6
- 733 004c 1B18     		adds	r3, r3, r0
- 734 004e 7E4A     		ldr	r2, .L102+8
- 735 0050 0221     		movs	r1, #2
- 736 0052 9954     		strb	r1, [r3, r2]
+ 839              		.loc 1 364 0
+ 840 004a 8301     		lsls	r3, r0, #6
+ 841 004c 1B18     		adds	r3, r3, r0
+ 842 004e 7E4A     		ldr	r2, .L112+8
+ 843 0050 0221     		movs	r1, #2
+ 844 0052 9954     		strb	r1, [r3, r2]
  365:Src/usbd_midi_if.c **** 					analyzed_status[cable_num].stat = END_ANALYSIS;
- 737              		.loc 1 365 0
- 738 0054 8300     		lsls	r3, r0, #2
- 739 0056 7B4A     		ldr	r2, .L102+4
- 740 0058 0231     		adds	r1, r1, #2
- 741 005a 9954     		strb	r1, [r3, r2]
- 742 005c 48E0     		b	.L81
- 743              	.LVL60:
- 744              	.L93:
+ 845              		.loc 1 365 0
+ 846 0054 8300     		lsls	r3, r0, #2
+ 847 0056 7B4A     		ldr	r2, .L112+4
+ 848 0058 0231     		adds	r1, r1, #2
+ 849 005a 9954     		strb	r1, [r3, r2]
+ 850 005c 48E0     		b	.L91
+ 851              	.LVL73:
+ 852              	.L103:
  247:Src/usbd_midi_if.c **** 
- 745              		.loc 1 247 0
- 746 005e B02B     		cmp	r3, #176
- 747 0060 00D1     		bne	.LCB662
- 748 0062 88E0     		b	.L69	@long jump
- 749              	.LCB662:
- 750 0064 10D9     		bls	.L96
- 751 0066 D02B     		cmp	r3, #208
- 752 0068 21D0     		beq	.L71
- 753 006a 1ED9     		bls	.L97
- 754 006c E02B     		cmp	r3, #224
- 755 006e 00D1     		bne	.LCB670
- 756 0070 81E0     		b	.L69	@long jump
- 757              	.LCB670:
- 758 0072 F02B     		cmp	r3, #240
- 759 0074 11D1     		bne	.L68
+ 853              		.loc 1 247 0
+ 854 005e B02B     		cmp	r3, #176
+ 855 0060 00D1     		bne	.LCB784
+ 856 0062 88E0     		b	.L79	@long jump
+ 857              	.LCB784:
+ 858 0064 10D9     		bls	.L106
+ 859 0066 D02B     		cmp	r3, #208
+ 860 0068 21D0     		beq	.L81
+ 861 006a 1ED9     		bls	.L107
+ 862 006c E02B     		cmp	r3, #224
+ 863 006e 00D1     		bne	.LCB792
+ 864 0070 81E0     		b	.L79	@long jump
+ 865              	.LCB792:
+ 866 0072 F02B     		cmp	r3, #240
+ 867 0074 11D1     		bne	.L78
  250:Src/usbd_midi_if.c **** 
- 760              		.loc 1 250 0
- 761 0076 1300     		movs	r3, r2
- 762 0078 1033     		adds	r3, r3, #16
- 763 007a D9B2     		uxtb	r1, r3
- 764              	.LVL61:
- 765 007c 0F29     		cmp	r1, #15
- 766 007e 32D8     		bhi	.L74
- 767 0080 8B00     		lsls	r3, r1, #2
- 768 0082 7249     		ldr	r1, .L102+12
- 769 0084 CB58     		ldr	r3, [r1, r3]
- 770 0086 9F46     		mov	pc, r3
- 771              		.section	.rodata.midiEventIsGenerated,"a",%progbits
- 772              		.align	2
- 773              	.L76:
- 774 0000 CC000000 		.word	.L75
- 775 0004 3E010000 		.word	.L77
- 776 0008 24010000 		.word	.L78
- 777 000c 3E010000 		.word	.L77
- 778 0010 58010000 		.word	.L79
- 779 0014 58010000 		.word	.L79
- 780 0018 58010000 		.word	.L79
- 781 001c 00010000 		.word	.L80
- 782 0020 58010000 		.word	.L79
- 783 0024 58010000 		.word	.L79
- 784 0028 58010000 		.word	.L79
-ARM GAS  /tmp/ccxcefs2.s 			page 22
+ 868              		.loc 1 250 0
+ 869 0076 1300     		movs	r3, r2
+ 870 0078 1033     		adds	r3, r3, #16
+ 871 007a D9B2     		uxtb	r1, r3
+ 872              	.LVL74:
+ 873 007c 0F29     		cmp	r1, #15
+ 874 007e 32D8     		bhi	.L84
+ 875 0080 8B00     		lsls	r3, r1, #2
+ 876 0082 7249     		ldr	r1, .L112+12
+ 877 0084 CB58     		ldr	r3, [r1, r3]
+ 878 0086 9F46     		mov	pc, r3
+ARM GAS  /tmp/ccjHqQBe.s 			page 24
 
 
- 785 002c 58010000 		.word	.L79
- 786 0030 58010000 		.word	.L79
- 787 0034 58010000 		.word	.L79
- 788 0038 58010000 		.word	.L79
- 789 003c 58010000 		.word	.L79
- 790              		.section	.text.midiEventIsGenerated
- 791              	.LVL62:
- 792              	.L96:
+ 879              		.section	.rodata.midiEventIsGenerated,"a",%progbits
+ 880              		.align	2
+ 881              	.L86:
+ 882 0000 CC000000 		.word	.L85
+ 883 0004 3E010000 		.word	.L87
+ 884 0008 24010000 		.word	.L88
+ 885 000c 3E010000 		.word	.L87
+ 886 0010 58010000 		.word	.L89
+ 887 0014 58010000 		.word	.L89
+ 888 0018 58010000 		.word	.L89
+ 889 001c 00010000 		.word	.L90
+ 890 0020 58010000 		.word	.L89
+ 891 0024 58010000 		.word	.L89
+ 892 0028 58010000 		.word	.L89
+ 893 002c 58010000 		.word	.L89
+ 894 0030 58010000 		.word	.L89
+ 895 0034 58010000 		.word	.L89
+ 896 0038 58010000 		.word	.L89
+ 897 003c 58010000 		.word	.L89
+ 898              		.section	.text.midiEventIsGenerated
+ 899              	.LVL75:
+ 900              	.L106:
  247:Src/usbd_midi_if.c **** 
- 793              		.loc 1 247 0
- 794 0088 902B     		cmp	r3, #144
- 795 008a 00D1     		bne	.LCB692
- 796 008c 73E0     		b	.L69	@long jump
- 797              	.LCB692:
- 798 008e A02B     		cmp	r3, #160
- 799 0090 00D1     		bne	.LCB694
- 800 0092 70E0     		b	.L69	@long jump
- 801              	.LCB694:
- 802 0094 802B     		cmp	r3, #128
- 803 0096 00D1     		bne	.LCB696
- 804 0098 6DE0     		b	.L69	@long jump
- 805              	.LCB696:
- 806              	.L68:
+ 901              		.loc 1 247 0
+ 902 0088 902B     		cmp	r3, #144
+ 903 008a 00D1     		bne	.LCB814
+ 904 008c 73E0     		b	.L79	@long jump
+ 905              	.LCB814:
+ 906 008e A02B     		cmp	r3, #160
+ 907 0090 00D1     		bne	.LCB816
+ 908 0092 70E0     		b	.L79	@long jump
+ 909              	.LCB816:
+ 910 0094 802B     		cmp	r3, #128
+ 911 0096 00D1     		bne	.LCB818
+ 912 0098 6DE0     		b	.L79	@long jump
+ 913              	.LCB818:
+ 914              	.L78:
  318:Src/usbd_midi_if.c **** 				analyzed_status[cable_num].stat = START_ANALYSIS;
- 807              		.loc 1 318 0
- 808 009a 6A49     		ldr	r1, .L102+4
- 809              	.LVL63:
- 810 009c 8400     		lsls	r4, r0, #2
- 811 009e 0A19     		adds	r2, r1, r4
- 812 00a0 0023     		movs	r3, #0
- 813              	.LVL64:
- 814 00a2 5370     		strb	r3, [r2, #1]
+ 915              		.loc 1 318 0
+ 916 009a 6A49     		ldr	r1, .L112+4
+ 917              	.LVL76:
+ 918 009c 8400     		lsls	r4, r0, #2
+ 919 009e 0A19     		adds	r2, r1, r4
+ 920 00a0 0023     		movs	r3, #0
+ 921              	.LVL77:
+ 922 00a2 5370     		strb	r3, [r2, #1]
  319:Src/usbd_midi_if.c **** 				analyzed_status[cable_num].is_system_common = false;
- 815              		.loc 1 319 0
- 816 00a4 6354     		strb	r3, [r4, r1]
+ 923              		.loc 1 319 0
+ 924 00a4 6354     		strb	r3, [r4, r1]
  320:Src/usbd_midi_if.c **** 				break;
- 817              		.loc 1 320 0
- 818 00a6 9370     		strb	r3, [r2, #2]
+ 925              		.loc 1 320 0
+ 926 00a6 9370     		strb	r3, [r2, #2]
  321:Src/usbd_midi_if.c **** 		}
- 819              		.loc 1 321 0
- 820 00a8 22E0     		b	.L81
- 821              	.LVL65:
- 822              	.L97:
+ 927              		.loc 1 321 0
+ 928 00a8 22E0     		b	.L91
+ 929              	.LVL78:
+ 930              	.L107:
+ARM GAS  /tmp/ccjHqQBe.s 			page 25
+
+
  247:Src/usbd_midi_if.c **** 
- 823              		.loc 1 247 0
- 824 00aa C02B     		cmp	r3, #192
- 825 00ac F5D1     		bne	.L68
- 826              	.L71:
+ 931              		.loc 1 247 0
+ 932 00aa C02B     		cmp	r3, #192
+ 933 00ac F5D1     		bne	.L78
+ 934              	.L81:
  311:Src/usbd_midi_if.c **** 				analyzed_status[cable_num].type = MSG_TWO_BYTE;
- 827              		.loc 1 311 0
- 828 00ae 8101     		lsls	r1, r0, #6
- 829              	.LVL66:
- 830 00b0 0918     		adds	r1, r1, r0
- 831 00b2 654B     		ldr	r3, .L102+8
- 832              	.LVL67:
- 833 00b4 5B18     		adds	r3, r3, r1
- 834 00b6 5A70     		strb	r2, [r3, #1]
-ARM GAS  /tmp/ccxcefs2.s 			page 23
-
-
+ 935              		.loc 1 311 0
+ 936 00ae 8101     		lsls	r1, r0, #6
+ 937              	.LVL79:
+ 938 00b0 0918     		adds	r1, r1, r0
+ 939 00b2 654B     		ldr	r3, .L112+8
+ 940              	.LVL80:
+ 941 00b4 5B18     		adds	r3, r3, r1
+ 942 00b6 5A70     		strb	r2, [r3, #1]
  312:Src/usbd_midi_if.c **** 				analyzed_status[cable_num].stat = WAIT_DATA1;
- 835              		.loc 1 312 0
- 836 00b8 624A     		ldr	r2, .L102+4
- 837              	.LVL68:
- 838 00ba 8100     		lsls	r1, r0, #2
- 839 00bc 5318     		adds	r3, r2, r1
- 840 00be 0324     		movs	r4, #3
- 841 00c0 5C70     		strb	r4, [r3, #1]
+ 943              		.loc 1 312 0
+ 944 00b8 624A     		ldr	r2, .L112+4
+ 945              	.LVL81:
+ 946 00ba 8100     		lsls	r1, r0, #2
+ 947 00bc 5318     		adds	r3, r2, r1
+ 948 00be 0324     		movs	r4, #3
+ 949 00c0 5C70     		strb	r4, [r3, #1]
  313:Src/usbd_midi_if.c **** 				analyzed_status[cable_num].is_system_common = false;
- 842              		.loc 1 313 0
- 843 00c2 023C     		subs	r4, r4, #2
- 844 00c4 8C54     		strb	r4, [r1, r2]
+ 950              		.loc 1 313 0
+ 951 00c2 023C     		subs	r4, r4, #2
+ 952 00c4 8C54     		strb	r4, [r1, r2]
  314:Src/usbd_midi_if.c **** 				break;
- 845              		.loc 1 314 0
- 846 00c6 0022     		movs	r2, #0
- 847 00c8 9A70     		strb	r2, [r3, #2]
+ 953              		.loc 1 314 0
+ 954 00c6 0022     		movs	r2, #0
+ 955 00c8 9A70     		strb	r2, [r3, #2]
  315:Src/usbd_midi_if.c **** 
- 848              		.loc 1 315 0
- 849 00ca 11E0     		b	.L81
- 850              	.LVL69:
- 851              	.L75:
+ 956              		.loc 1 315 0
+ 957 00ca 11E0     		b	.L91
+ 958              	.LVL82:
+ 959              	.L85:
  254:Src/usbd_midi_if.c **** 						analyzed_status[cable_num].type = MSG_SYSEX;
- 852              		.loc 1 254 0
- 853 00cc 5D4C     		ldr	r4, .L102+4
- 854 00ce 8500     		lsls	r5, r0, #2
- 855 00d0 6619     		adds	r6, r4, r5
- 856 00d2 0127     		movs	r7, #1
- 857 00d4 F770     		strb	r7, [r6, #3]
- 858 00d6 8101     		lsls	r1, r0, #6
- 859 00d8 0918     		adds	r1, r1, r0
- 860 00da 5B4B     		ldr	r3, .L102+8
- 861 00dc 5B18     		adds	r3, r3, r1
- 862 00de 5A70     		strb	r2, [r3, #1]
+ 960              		.loc 1 254 0
+ 961 00cc 5D4C     		ldr	r4, .L112+4
+ 962 00ce 8500     		lsls	r5, r0, #2
+ 963 00d0 6619     		adds	r6, r4, r5
+ 964 00d2 0127     		movs	r7, #1
+ 965 00d4 F770     		strb	r7, [r6, #3]
+ 966 00d6 8101     		lsls	r1, r0, #6
+ 967 00d8 0918     		adds	r1, r1, r0
+ 968 00da 5B4B     		ldr	r3, .L112+8
+ 969 00dc 5B18     		adds	r3, r3, r1
+ 970 00de 5A70     		strb	r2, [r3, #1]
  255:Src/usbd_midi_if.c **** 						analyzed_status[cable_num].stat = WAIT_SYSTEM_DATA;
- 863              		.loc 1 255 0
- 864 00e0 7770     		strb	r7, [r6, #1]
+ 971              		.loc 1 255 0
+ 972 00e0 7770     		strb	r7, [r6, #1]
  256:Src/usbd_midi_if.c **** 						break;
- 865              		.loc 1 256 0
- 866 00e2 0323     		movs	r3, #3
- 867 00e4 2B55     		strb	r3, [r5, r4]
- 868              	.LVL70:
- 869              	.L74:
+ 973              		.loc 1 256 0
+ 974 00e2 0323     		movs	r3, #3
+ 975 00e4 2B55     		strb	r3, [r5, r4]
+ 976              	.LVL83:
+ 977              	.L84:
  295:Src/usbd_midi_if.c **** 				break;
- 870              		.loc 1 295 0
- 871 00e6 8200     		lsls	r2, r0, #2
- 872 00e8 564B     		ldr	r3, .L102+4
- 873 00ea 9B18     		adds	r3, r3, r2
- 874 00ec 0122     		movs	r2, #1
- 875 00ee 9A70     		strb	r2, [r3, #2]
- 876              	.L81:
+ARM GAS  /tmp/ccjHqQBe.s 			page 26
+
+
+ 978              		.loc 1 295 0
+ 979 00e6 8200     		lsls	r2, r0, #2
+ 980 00e8 564B     		ldr	r3, .L112+4
+ 981 00ea 9B18     		adds	r3, r3, r2
+ 982 00ec 0122     		movs	r2, #1
+ 983 00ee 9A70     		strb	r2, [r3, #2]
+ 984              	.L91:
  366:Src/usbd_midi_if.c **** 				}
  367:Src/usbd_midi_if.c **** 				break;
  368:Src/usbd_midi_if.c **** 
@@ -1378,384 +1515,381 @@ ARM GAS  /tmp/ccxcefs2.s 			page 1
  370:Src/usbd_midi_if.c **** 				break;
  371:Src/usbd_midi_if.c **** 
  372:Src/usbd_midi_if.c **** 			default:
-ARM GAS  /tmp/ccxcefs2.s 			page 24
-
-
  373:Src/usbd_midi_if.c **** 				break;
  374:Src/usbd_midi_if.c **** 		}
  375:Src/usbd_midi_if.c **** 	}
  376:Src/usbd_midi_if.c **** 
  377:Src/usbd_midi_if.c **** 	if(END_ANALYSIS == analyzed_status[cable_num].stat){
- 877              		.loc 1 377 0
- 878 00f0 8000     		lsls	r0, r0, #2
- 879              	.LVL71:
- 880 00f2 544B     		ldr	r3, .L102+4
- 881 00f4 C35C     		ldrb	r3, [r0, r3]
- 882 00f6 042B     		cmp	r3, #4
- 883 00f8 00D1     		bne	.LCB767
- 884 00fa 9FE0     		b	.L98	@long jump
- 885              	.LCB767:
+ 985              		.loc 1 377 0
+ 986 00f0 8000     		lsls	r0, r0, #2
+ 987              	.LVL84:
+ 988 00f2 544B     		ldr	r3, .L112+4
+ 989 00f4 C35C     		ldrb	r3, [r0, r3]
+ 990 00f6 042B     		cmp	r3, #4
+ 991 00f8 00D1     		bne	.LCB889
+ 992 00fa 9FE0     		b	.L108	@long jump
+ 993              	.LCB889:
  378:Src/usbd_midi_if.c **** 		return true;
  379:Src/usbd_midi_if.c **** 	}else{
  380:Src/usbd_midi_if.c **** 		return false;
- 886              		.loc 1 380 0
- 887 00fc 0020     		movs	r0, #0
- 888              	.L91:
+ 994              		.loc 1 380 0
+ 995 00fc 0020     		movs	r0, #0
+ 996              	.L101:
  381:Src/usbd_midi_if.c **** 	}
  382:Src/usbd_midi_if.c **** 
  383:Src/usbd_midi_if.c **** }
- 889              		.loc 1 383 0
- 890              		@ sp needed
- 891 00fe F0BD     		pop	{r4, r5, r6, r7, pc}
- 892              	.LVL72:
- 893              	.L80:
+ 997              		.loc 1 383 0
+ 998              		@ sp needed
+ 999 00fe F0BD     		pop	{r4, r5, r6, r7, pc}
+ 1000              	.LVL85:
+ 1001              	.L90:
  260:Src/usbd_midi_if.c **** 						midi_event[cable_num].length = analyzed_status[cable_num].data_idx;
- 894              		.loc 1 260 0
- 895 0100 504D     		ldr	r5, .L102+4
- 896 0102 8600     		lsls	r6, r0, #2
- 897 0104 AB19     		adds	r3, r5, r6
- 898 0106 D978     		ldrb	r1, [r3, #3]
- 899 0108 8C46     		mov	ip, r1
- 900 010a 0131     		adds	r1, r1, #1
- 901 010c C9B2     		uxtb	r1, r1
- 902 010e D970     		strb	r1, [r3, #3]
- 903 0110 4D4F     		ldr	r7, .L102+8
- 904 0112 8301     		lsls	r3, r0, #6
- 905 0114 1B18     		adds	r3, r3, r0
- 906 0116 FC18     		adds	r4, r7, r3
- 907 0118 6444     		add	r4, r4, ip
- 908 011a 6270     		strb	r2, [r4, #1]
+ 1002              		.loc 1 260 0
+ 1003 0100 504D     		ldr	r5, .L112+4
+ 1004 0102 8600     		lsls	r6, r0, #2
+ 1005 0104 AB19     		adds	r3, r5, r6
+ 1006 0106 D978     		ldrb	r1, [r3, #3]
+ 1007 0108 8C46     		mov	ip, r1
+ 1008 010a 0131     		adds	r1, r1, #1
+ 1009 010c C9B2     		uxtb	r1, r1
+ 1010 010e D970     		strb	r1, [r3, #3]
+ 1011 0110 4D4F     		ldr	r7, .L112+8
+ 1012 0112 8301     		lsls	r3, r0, #6
+ 1013 0114 1B18     		adds	r3, r3, r0
+ 1014 0116 FC18     		adds	r4, r7, r3
+ 1015 0118 6444     		add	r4, r4, ip
+ARM GAS  /tmp/ccjHqQBe.s 			page 27
+
+
+ 1016 011a 6270     		strb	r2, [r4, #1]
  261:Src/usbd_midi_if.c **** 						analyzed_status[cable_num].stat = END_ANALYSIS;
- 909              		.loc 1 261 0
- 910 011c D955     		strb	r1, [r3, r7]
+ 1017              		.loc 1 261 0
+ 1018 011c D955     		strb	r1, [r3, r7]
  262:Src/usbd_midi_if.c **** 						break;
- 911              		.loc 1 262 0
- 912 011e 0423     		movs	r3, #4
- 913 0120 7355     		strb	r3, [r6, r5]
+ 1019              		.loc 1 262 0
+ 1020 011e 0423     		movs	r3, #4
+ 1021 0120 7355     		strb	r3, [r6, r5]
  263:Src/usbd_midi_if.c **** 
- 914              		.loc 1 263 0
- 915 0122 E0E7     		b	.L74
- 916              	.L78:
+ 1022              		.loc 1 263 0
+ 1023 0122 E0E7     		b	.L84
+ 1024              	.L88:
  266:Src/usbd_midi_if.c **** 						analyzed_status[cable_num].type = MSG_THREE_BYTE;
- 917              		.loc 1 266 0
-ARM GAS  /tmp/ccxcefs2.s 			page 25
-
-
- 918 0124 8101     		lsls	r1, r0, #6
- 919 0126 0918     		adds	r1, r1, r0
- 920 0128 474B     		ldr	r3, .L102+8
- 921 012a 5B18     		adds	r3, r3, r1
- 922 012c 5A70     		strb	r2, [r3, #1]
+ 1025              		.loc 1 266 0
+ 1026 0124 8101     		lsls	r1, r0, #6
+ 1027 0126 0918     		adds	r1, r1, r0
+ 1028 0128 474B     		ldr	r3, .L112+8
+ 1029 012a 5B18     		adds	r3, r3, r1
+ 1030 012c 5A70     		strb	r2, [r3, #1]
  267:Src/usbd_midi_if.c **** 						analyzed_status[cable_num].stat = WAIT_DATA1;
- 923              		.loc 1 267 0
- 924 012e 454B     		ldr	r3, .L102+4
- 925 0130 8200     		lsls	r2, r0, #2
- 926              	.LVL73:
- 927 0132 9918     		adds	r1, r3, r2
- 928 0134 0424     		movs	r4, #4
- 929 0136 4C70     		strb	r4, [r1, #1]
+ 1031              		.loc 1 267 0
+ 1032 012e 454B     		ldr	r3, .L112+4
+ 1033 0130 8200     		lsls	r2, r0, #2
+ 1034              	.LVL86:
+ 1035 0132 9918     		adds	r1, r3, r2
+ 1036 0134 0424     		movs	r4, #4
+ 1037 0136 4C70     		strb	r4, [r1, #1]
  268:Src/usbd_midi_if.c **** 						break;
- 930              		.loc 1 268 0
- 931 0138 0121     		movs	r1, #1
- 932 013a D154     		strb	r1, [r2, r3]
+ 1038              		.loc 1 268 0
+ 1039 0138 0121     		movs	r1, #1
+ 1040 013a D154     		strb	r1, [r2, r3]
  269:Src/usbd_midi_if.c **** 
- 933              		.loc 1 269 0
- 934 013c D3E7     		b	.L74
- 935              	.LVL74:
- 936              	.L77:
+ 1041              		.loc 1 269 0
+ 1042 013c D3E7     		b	.L84
+ 1043              	.LVL87:
+ 1044              	.L87:
  273:Src/usbd_midi_if.c **** 						analyzed_status[cable_num].type = MSG_TWO_BYTE;
- 937              		.loc 1 273 0
- 938 013e 8101     		lsls	r1, r0, #6
- 939 0140 0918     		adds	r1, r1, r0
- 940 0142 414B     		ldr	r3, .L102+8
- 941 0144 5B18     		adds	r3, r3, r1
- 942 0146 5A70     		strb	r2, [r3, #1]
+ 1045              		.loc 1 273 0
+ 1046 013e 8101     		lsls	r1, r0, #6
+ 1047 0140 0918     		adds	r1, r1, r0
+ 1048 0142 414B     		ldr	r3, .L112+8
+ 1049 0144 5B18     		adds	r3, r3, r1
+ 1050 0146 5A70     		strb	r2, [r3, #1]
  274:Src/usbd_midi_if.c **** 						analyzed_status[cable_num].stat = WAIT_DATA1;
- 943              		.loc 1 274 0
- 944 0148 3E4B     		ldr	r3, .L102+4
- 945 014a 8200     		lsls	r2, r0, #2
- 946              	.LVL75:
- 947 014c 9918     		adds	r1, r3, r2
- 948 014e 0324     		movs	r4, #3
- 949 0150 4C70     		strb	r4, [r1, #1]
+ 1051              		.loc 1 274 0
+ 1052 0148 3E4B     		ldr	r3, .L112+4
+ 1053 014a 8200     		lsls	r2, r0, #2
+ 1054              	.LVL88:
+ 1055 014c 9918     		adds	r1, r3, r2
+ 1056 014e 0324     		movs	r4, #3
+ 1057 0150 4C70     		strb	r4, [r1, #1]
  275:Src/usbd_midi_if.c **** 						break;
- 950              		.loc 1 275 0
- 951 0152 0121     		movs	r1, #1
- 952 0154 D154     		strb	r1, [r2, r3]
+ 1058              		.loc 1 275 0
+ 1059 0152 0121     		movs	r1, #1
+ 1060 0154 D154     		strb	r1, [r2, r3]
  276:Src/usbd_midi_if.c **** 
- 953              		.loc 1 276 0
- 954 0156 C6E7     		b	.L74
- 955              	.LVL76:
- 956              	.L79:
+ 1061              		.loc 1 276 0
+ARM GAS  /tmp/ccjHqQBe.s 			page 28
+
+
+ 1062 0156 C6E7     		b	.L84
+ 1063              	.LVL89:
+ 1064              	.L89:
  289:Src/usbd_midi_if.c **** 						midi_event[cable_num].length = 1;
- 957              		.loc 1 289 0
- 958 0158 3B49     		ldr	r1, .L102+8
- 959 015a 8301     		lsls	r3, r0, #6
- 960 015c 1B18     		adds	r3, r3, r0
- 961 015e CC18     		adds	r4, r1, r3
- 962 0160 6270     		strb	r2, [r4, #1]
+ 1065              		.loc 1 289 0
+ 1066 0158 3B49     		ldr	r1, .L112+8
+ 1067 015a 8301     		lsls	r3, r0, #6
+ 1068 015c 1B18     		adds	r3, r3, r0
+ 1069 015e CC18     		adds	r4, r1, r3
+ 1070 0160 6270     		strb	r2, [r4, #1]
  290:Src/usbd_midi_if.c **** 						analyzed_status[cable_num].type = MSG_ONE_BYTE;
- 963              		.loc 1 290 0
- 964 0162 0122     		movs	r2, #1
- 965              	.LVL77:
-ARM GAS  /tmp/ccxcefs2.s 			page 26
-
-
- 966 0164 5A54     		strb	r2, [r3, r1]
+ 1071              		.loc 1 290 0
+ 1072 0162 0122     		movs	r2, #1
+ 1073              	.LVL90:
+ 1074 0164 5A54     		strb	r2, [r3, r1]
  291:Src/usbd_midi_if.c **** 						analyzed_status[cable_num].stat = END_ANALYSIS;
- 967              		.loc 1 291 0
- 968 0166 374B     		ldr	r3, .L102+4
- 969 0168 8200     		lsls	r2, r0, #2
- 970 016a 9918     		adds	r1, r3, r2
- 971 016c 0224     		movs	r4, #2
- 972 016e 4C70     		strb	r4, [r1, #1]
+ 1075              		.loc 1 291 0
+ 1076 0166 374B     		ldr	r3, .L112+4
+ 1077 0168 8200     		lsls	r2, r0, #2
+ 1078 016a 9918     		adds	r1, r3, r2
+ 1079 016c 0224     		movs	r4, #2
+ 1080 016e 4C70     		strb	r4, [r1, #1]
  292:Src/usbd_midi_if.c **** 						break;
- 973              		.loc 1 292 0
- 974 0170 0421     		movs	r1, #4
- 975 0172 D154     		strb	r1, [r2, r3]
+ 1081              		.loc 1 292 0
+ 1082 0170 0421     		movs	r1, #4
+ 1083 0172 D154     		strb	r1, [r2, r3]
  293:Src/usbd_midi_if.c **** 				}
- 976              		.loc 1 293 0
- 977 0174 B7E7     		b	.L74
- 978              	.LVL78:
- 979              	.L69:
+ 1084              		.loc 1 293 0
+ 1085 0174 B7E7     		b	.L84
+ 1086              	.LVL91:
+ 1087              	.L79:
  303:Src/usbd_midi_if.c **** 				analyzed_status[cable_num].type = MSG_THREE_BYTE;
- 980              		.loc 1 303 0
- 981 0176 8101     		lsls	r1, r0, #6
- 982              	.LVL79:
- 983 0178 0918     		adds	r1, r1, r0
- 984 017a 334B     		ldr	r3, .L102+8
- 985              	.LVL80:
- 986 017c 5B18     		adds	r3, r3, r1
- 987 017e 5A70     		strb	r2, [r3, #1]
+ 1088              		.loc 1 303 0
+ 1089 0176 8101     		lsls	r1, r0, #6
+ 1090              	.LVL92:
+ 1091 0178 0918     		adds	r1, r1, r0
+ 1092 017a 334B     		ldr	r3, .L112+8
+ 1093              	.LVL93:
+ 1094 017c 5B18     		adds	r3, r3, r1
+ 1095 017e 5A70     		strb	r2, [r3, #1]
  304:Src/usbd_midi_if.c **** 				analyzed_status[cable_num].stat = WAIT_DATA1;
- 988              		.loc 1 304 0
- 989 0180 304A     		ldr	r2, .L102+4
- 990              	.LVL81:
- 991 0182 8100     		lsls	r1, r0, #2
- 992 0184 5318     		adds	r3, r2, r1
- 993 0186 0424     		movs	r4, #4
- 994 0188 5C70     		strb	r4, [r3, #1]
+ 1096              		.loc 1 304 0
+ 1097 0180 304A     		ldr	r2, .L112+4
+ 1098              	.LVL94:
+ 1099 0182 8100     		lsls	r1, r0, #2
+ 1100 0184 5318     		adds	r3, r2, r1
+ 1101 0186 0424     		movs	r4, #4
+ 1102 0188 5C70     		strb	r4, [r3, #1]
  305:Src/usbd_midi_if.c **** 				analyzed_status[cable_num].is_system_common = false;
- 995              		.loc 1 305 0
- 996 018a 033C     		subs	r4, r4, #3
- 997 018c 8C54     		strb	r4, [r1, r2]
+ 1103              		.loc 1 305 0
+ 1104 018a 033C     		subs	r4, r4, #3
+ 1105 018c 8C54     		strb	r4, [r1, r2]
  306:Src/usbd_midi_if.c **** 				break;
- 998              		.loc 1 306 0
- 999 018e 0022     		movs	r2, #0
- 1000 0190 9A70     		strb	r2, [r3, #2]
+ 1106              		.loc 1 306 0
+ 1107 018e 0022     		movs	r2, #0
+ 1108 0190 9A70     		strb	r2, [r3, #2]
  307:Src/usbd_midi_if.c **** 
- 1001              		.loc 1 307 0
- 1002 0192 ADE7     		b	.L81
- 1003              	.LVL82:
- 1004              	.L94:
+ARM GAS  /tmp/ccjHqQBe.s 			page 29
+
+
+ 1109              		.loc 1 307 0
+ 1110 0192 ADE7     		b	.L91
+ 1111              	.LVL95:
+ 1112              	.L104:
  326:Src/usbd_midi_if.c **** 
- 1005              		.loc 1 326 0
- 1006 0194 012B     		cmp	r3, #1
- 1007 0196 ABD1     		bne	.L81
+ 1113              		.loc 1 326 0
+ 1114 0194 012B     		cmp	r3, #1
+ 1115 0196 ABD1     		bne	.L91
  329:Src/usbd_midi_if.c **** 
- 1008              		.loc 1 329 0
- 1009 0198 8101     		lsls	r1, r0, #6
- 1010 019a 0918     		adds	r1, r1, r0
- 1011 019c 2A4B     		ldr	r3, .L102+8
- 1012 019e 5B18     		adds	r3, r3, r1
-ARM GAS  /tmp/ccxcefs2.s 			page 27
-
-
- 1013 01a0 9A70     		strb	r2, [r3, #2]
+ 1116              		.loc 1 329 0
+ 1117 0198 8101     		lsls	r1, r0, #6
+ 1118 019a 0918     		adds	r1, r1, r0
+ 1119 019c 2A4B     		ldr	r3, .L112+8
+ 1120 019e 5B18     		adds	r3, r3, r1
+ 1121 01a0 9A70     		strb	r2, [r3, #2]
  331:Src/usbd_midi_if.c **** 					analyzed_status[cable_num].stat = WAIT_DATA2;
- 1014              		.loc 1 331 0
- 1015 01a2 8200     		lsls	r2, r0, #2
- 1016              	.LVL83:
- 1017 01a4 274B     		ldr	r3, .L102+4
- 1018 01a6 9B18     		adds	r3, r3, r2
- 1019 01a8 5B78     		ldrb	r3, [r3, #1]
- 1020 01aa 042B     		cmp	r3, #4
- 1021 01ac 06D0     		beq	.L99
+ 1122              		.loc 1 331 0
+ 1123 01a2 8200     		lsls	r2, r0, #2
+ 1124              	.LVL96:
+ 1125 01a4 274B     		ldr	r3, .L112+4
+ 1126 01a6 9B18     		adds	r3, r3, r2
+ 1127 01a8 5B78     		ldrb	r3, [r3, #1]
+ 1128 01aa 042B     		cmp	r3, #4
+ 1129 01ac 06D0     		beq	.L109
  333:Src/usbd_midi_if.c **** 					midi_event[cable_num].length = 2;
- 1022              		.loc 1 333 0
- 1023 01ae 032B     		cmp	r3, #3
- 1024 01b0 09D0     		beq	.L100
+ 1130              		.loc 1 333 0
+ 1131 01ae 032B     		cmp	r3, #3
+ 1132 01b0 09D0     		beq	.L110
  337:Src/usbd_midi_if.c **** 				}
- 1025              		.loc 1 337 0
- 1026 01b2 8300     		lsls	r3, r0, #2
- 1027 01b4 234A     		ldr	r2, .L102+4
- 1028 01b6 0021     		movs	r1, #0
- 1029 01b8 9954     		strb	r1, [r3, r2]
- 1030 01ba 99E7     		b	.L81
- 1031              	.L99:
+ 1133              		.loc 1 337 0
+ 1134 01b2 8300     		lsls	r3, r0, #2
+ 1135 01b4 234A     		ldr	r2, .L112+4
+ 1136 01b6 0021     		movs	r1, #0
+ 1137 01b8 9954     		strb	r1, [r3, r2]
+ 1138 01ba 99E7     		b	.L91
+ 1139              	.L109:
  332:Src/usbd_midi_if.c **** 				}else if( MSG_TWO_BYTE == analyzed_status[cable_num].type ){
- 1032              		.loc 1 332 0
- 1033 01bc 1300     		movs	r3, r2
- 1034 01be 214A     		ldr	r2, .L102+4
- 1035 01c0 0221     		movs	r1, #2
- 1036 01c2 9954     		strb	r1, [r3, r2]
- 1037 01c4 94E7     		b	.L81
- 1038              	.L100:
+ 1140              		.loc 1 332 0
+ 1141 01bc 1300     		movs	r3, r2
+ 1142 01be 214A     		ldr	r2, .L112+4
+ 1143 01c0 0221     		movs	r1, #2
+ 1144 01c2 9954     		strb	r1, [r3, r2]
+ 1145 01c4 94E7     		b	.L91
+ 1146              	.L110:
  334:Src/usbd_midi_if.c **** 					analyzed_status[cable_num].stat = END_ANALYSIS;
- 1039              		.loc 1 334 0
- 1040 01c6 8301     		lsls	r3, r0, #6
- 1041 01c8 1B18     		adds	r3, r3, r0
- 1042 01ca 1F4A     		ldr	r2, .L102+8
- 1043 01cc 0221     		movs	r1, #2
- 1044 01ce 9954     		strb	r1, [r3, r2]
+ 1147              		.loc 1 334 0
+ 1148 01c6 8301     		lsls	r3, r0, #6
+ 1149 01c8 1B18     		adds	r3, r3, r0
+ 1150 01ca 1F4A     		ldr	r2, .L112+8
+ 1151 01cc 0221     		movs	r1, #2
+ 1152 01ce 9954     		strb	r1, [r3, r2]
  335:Src/usbd_midi_if.c **** 				}else{
- 1045              		.loc 1 335 0
- 1046 01d0 8300     		lsls	r3, r0, #2
- 1047 01d2 1C4A     		ldr	r2, .L102+4
- 1048 01d4 0231     		adds	r1, r1, #2
- 1049 01d6 9954     		strb	r1, [r3, r2]
- 1050 01d8 8AE7     		b	.L81
- 1051              	.LVL84:
- 1052              	.L82:
+ 1153              		.loc 1 335 0
+ 1154 01d0 8300     		lsls	r3, r0, #2
+ 1155 01d2 1C4A     		ldr	r2, .L112+4
+ 1156 01d4 0231     		adds	r1, r1, #2
+ 1157 01d6 9954     		strb	r1, [r3, r2]
+ARM GAS  /tmp/ccjHqQBe.s 			page 30
+
+
+ 1158 01d8 8AE7     		b	.L91
+ 1159              	.LVL97:
+ 1160              	.L92:
  342:Src/usbd_midi_if.c **** 					midi_event[cable_num].midi_byte[2] = rx_midi_msg[cable_num];
- 1053              		.loc 1 342 0
- 1054 01da 8100     		lsls	r1, r0, #2
- 1055 01dc 194B     		ldr	r3, .L102+4
- 1056 01de 5B18     		adds	r3, r3, r1
- 1057 01e0 5B78     		ldrb	r3, [r3, #1]
- 1058 01e2 042B     		cmp	r3, #4
- 1059 01e4 04D0     		beq	.L101
+ 1161              		.loc 1 342 0
+ 1162 01da 8100     		lsls	r1, r0, #2
+ 1163 01dc 194B     		ldr	r3, .L112+4
+ 1164 01de 5B18     		adds	r3, r3, r1
+ 1165 01e0 5B78     		ldrb	r3, [r3, #1]
+ 1166 01e2 042B     		cmp	r3, #4
+ 1167 01e4 04D0     		beq	.L111
  347:Src/usbd_midi_if.c **** 				}
- 1060              		.loc 1 347 0
- 1061 01e6 8300     		lsls	r3, r0, #2
-ARM GAS  /tmp/ccxcefs2.s 			page 28
-
-
- 1062 01e8 164A     		ldr	r2, .L102+4
- 1063              	.LVL85:
- 1064 01ea 0021     		movs	r1, #0
- 1065 01ec 9954     		strb	r1, [r3, r2]
- 1066 01ee 7FE7     		b	.L81
- 1067              	.LVL86:
- 1068              	.L101:
+ 1168              		.loc 1 347 0
+ 1169 01e6 8300     		lsls	r3, r0, #2
+ 1170 01e8 164A     		ldr	r2, .L112+4
+ 1171              	.LVL98:
+ 1172 01ea 0021     		movs	r1, #0
+ 1173 01ec 9954     		strb	r1, [r3, r2]
+ 1174 01ee 7FE7     		b	.L91
+ 1175              	.LVL99:
+ 1176              	.L111:
  343:Src/usbd_midi_if.c **** 					midi_event[cable_num].length = 3;
- 1069              		.loc 1 343 0
- 1070 01f0 1549     		ldr	r1, .L102+8
- 1071 01f2 8301     		lsls	r3, r0, #6
- 1072 01f4 1B18     		adds	r3, r3, r0
- 1073 01f6 CC18     		adds	r4, r1, r3
- 1074 01f8 E270     		strb	r2, [r4, #3]
+ 1177              		.loc 1 343 0
+ 1178 01f0 1549     		ldr	r1, .L112+8
+ 1179 01f2 8301     		lsls	r3, r0, #6
+ 1180 01f4 1B18     		adds	r3, r3, r0
+ 1181 01f6 CC18     		adds	r4, r1, r3
+ 1182 01f8 E270     		strb	r2, [r4, #3]
  344:Src/usbd_midi_if.c **** 					analyzed_status[cable_num].stat = END_ANALYSIS;
- 1075              		.loc 1 344 0
- 1076 01fa 0322     		movs	r2, #3
- 1077              	.LVL87:
- 1078 01fc 5A54     		strb	r2, [r3, r1]
+ 1183              		.loc 1 344 0
+ 1184 01fa 0322     		movs	r2, #3
+ 1185              	.LVL100:
+ 1186 01fc 5A54     		strb	r2, [r3, r1]
  345:Src/usbd_midi_if.c **** 				}else{
- 1079              		.loc 1 345 0
- 1080 01fe 8300     		lsls	r3, r0, #2
- 1081 0200 104A     		ldr	r2, .L102+4
- 1082 0202 0421     		movs	r1, #4
- 1083 0204 9954     		strb	r1, [r3, r2]
- 1084 0206 73E7     		b	.L81
- 1085              	.LVL88:
- 1086              	.L85:
+ 1187              		.loc 1 345 0
+ 1188 01fe 8300     		lsls	r3, r0, #2
+ 1189 0200 104A     		ldr	r2, .L112+4
+ 1190 0202 0421     		movs	r1, #4
+ 1191 0204 9954     		strb	r1, [r3, r2]
+ 1192 0206 73E7     		b	.L91
+ 1193              	.LVL101:
+ 1194              	.L95:
  352:Src/usbd_midi_if.c **** 
- 1087              		.loc 1 352 0
- 1088 0208 8300     		lsls	r3, r0, #2
- 1089 020a 0E4C     		ldr	r4, .L102+4
- 1090 020c E418     		adds	r4, r4, r3
- 1091 020e E578     		ldrb	r5, [r4, #3]
- 1092 0210 691C     		adds	r1, r5, #1
- 1093 0212 C9B2     		uxtb	r1, r1
- 1094 0214 E170     		strb	r1, [r4, #3]
- 1095 0216 8401     		lsls	r4, r0, #6
- 1096 0218 2418     		adds	r4, r4, r0
- 1097 021a 0B4B     		ldr	r3, .L102+8
- 1098 021c 1B19     		adds	r3, r3, r4
- 1099 021e 5B19     		adds	r3, r3, r5
- 1100 0220 5A70     		strb	r2, [r3, #1]
+ 1195              		.loc 1 352 0
+ 1196 0208 8300     		lsls	r3, r0, #2
+ 1197 020a 0E4C     		ldr	r4, .L112+4
+ 1198 020c E418     		adds	r4, r4, r3
+ 1199 020e E578     		ldrb	r5, [r4, #3]
+ 1200 0210 691C     		adds	r1, r5, #1
+ 1201 0212 C9B2     		uxtb	r1, r1
+ 1202 0214 E170     		strb	r1, [r4, #3]
+ 1203 0216 8401     		lsls	r4, r0, #6
+ 1204 0218 2418     		adds	r4, r4, r0
+ 1205 021a 0B4B     		ldr	r3, .L112+8
+ 1206 021c 1B19     		adds	r3, r3, r4
+ 1207 021e 5B19     		adds	r3, r3, r5
+ 1208 0220 5A70     		strb	r2, [r3, #1]
+ARM GAS  /tmp/ccjHqQBe.s 			page 31
+
+
  354:Src/usbd_midi_if.c **** 					analyzed_status[cable_num].stat = END_ANALYSIS;
- 1101              		.loc 1 354 0
- 1102 0222 3F29     		cmp	r1, #63
- 1103 0224 00D8     		bhi	.LCB977
- 1104 0226 63E7     		b	.L81	@long jump
- 1105              	.LCB977:
+ 1209              		.loc 1 354 0
+ 1210 0222 3F29     		cmp	r1, #63
+ 1211 0224 00D8     		bhi	.LCB1099
+ 1212 0226 63E7     		b	.L91	@long jump
+ 1213              	.LCB1099:
  355:Src/usbd_midi_if.c **** 				}
- 1106              		.loc 1 355 0
- 1107 0228 8300     		lsls	r3, r0, #2
- 1108 022a 064A     		ldr	r2, .L102+4
- 1109              	.LVL89:
- 1110 022c 0421     		movs	r1, #4
- 1111 022e 9954     		strb	r1, [r3, r2]
- 1112 0230 5EE7     		b	.L81
-ARM GAS  /tmp/ccxcefs2.s 			page 29
-
-
- 1113              	.L95:
+ 1214              		.loc 1 355 0
+ 1215 0228 8300     		lsls	r3, r0, #2
+ 1216 022a 064A     		ldr	r2, .L112+4
+ 1217              	.LVL102:
+ 1218 022c 0421     		movs	r1, #4
+ 1219 022e 9954     		strb	r1, [r3, r2]
+ 1220 0230 5EE7     		b	.L91
+ 1221              	.L105:
  362:Src/usbd_midi_if.c **** 				}else if(MSG_TWO_BYTE == analyzed_status[cable_num].type){
- 1114              		.loc 1 362 0
- 1115 0232 1300     		movs	r3, r2
- 1116 0234 034A     		ldr	r2, .L102+4
- 1117 0236 0221     		movs	r1, #2
- 1118 0238 9954     		strb	r1, [r3, r2]
- 1119 023a 59E7     		b	.L81
- 1120              	.LVL90:
- 1121              	.L98:
+ 1222              		.loc 1 362 0
+ 1223 0232 1300     		movs	r3, r2
+ 1224 0234 034A     		ldr	r2, .L112+4
+ 1225 0236 0221     		movs	r1, #2
+ 1226 0238 9954     		strb	r1, [r3, r2]
+ 1227 023a 59E7     		b	.L91
+ 1228              	.LVL103:
+ 1229              	.L108:
  378:Src/usbd_midi_if.c **** 	}else{
- 1122              		.loc 1 378 0
- 1123 023c 0120     		movs	r0, #1
- 1124 023e 5EE7     		b	.L91
- 1125              	.L103:
- 1126              		.align	2
- 1127              	.L102:
- 1128 0240 00000000 		.word	rx_midi_msg
- 1129 0244 00000000 		.word	analyzed_status
- 1130 0248 00000000 		.word	midi_event
- 1131 024c 00000000 		.word	.L76
- 1132              		.cfi_endproc
- 1133              	.LFE53:
- 1135              		.section	.text.midiGenerateUsbPacket,"ax",%progbits
- 1136              		.align	1
- 1137              		.global	midiGenerateUsbPacket
- 1138              		.syntax unified
- 1139              		.code	16
- 1140              		.thumb_func
- 1141              		.fpu softvfp
- 1143              	midiGenerateUsbPacket:
- 1144              	.LFB54:
+ 1230              		.loc 1 378 0
+ 1231 023c 0120     		movs	r0, #1
+ 1232 023e 5EE7     		b	.L101
+ 1233              	.L113:
+ 1234              		.align	2
+ 1235              	.L112:
+ 1236 0240 00000000 		.word	rx_midi_msg
+ 1237 0244 00000000 		.word	analyzed_status
+ 1238 0248 00000000 		.word	midi_event
+ 1239 024c 00000000 		.word	.L86
+ 1240              		.cfi_endproc
+ 1241              	.LFE53:
+ 1243              		.section	.text.midiGenerateUsbPacket,"ax",%progbits
+ 1244              		.align	1
+ 1245              		.global	midiGenerateUsbPacket
+ 1246              		.syntax unified
+ 1247              		.code	16
+ 1248              		.thumb_func
+ 1249              		.fpu softvfp
+ 1251              	midiGenerateUsbPacket:
+ 1252              	.LFB54:
  384:Src/usbd_midi_if.c **** 
  385:Src/usbd_midi_if.c **** 
  386:Src/usbd_midi_if.c **** void midiGenerateUsbPacket(uint8_t cable_num)
  387:Src/usbd_midi_if.c **** {
- 1145              		.loc 1 387 0
- 1146              		.cfi_startproc
- 1147              		@ args = 0, pretend = 0, frame = 8
- 1148              		@ frame_needed = 0, uses_anonymous_args = 0
- 1149              	.LVL91:
- 1150 0000 F0B5     		push	{r4, r5, r6, r7, lr}
- 1151              	.LCFI13:
- 1152              		.cfi_def_cfa_offset 20
- 1153              		.cfi_offset 4, -20
- 1154              		.cfi_offset 5, -16
- 1155              		.cfi_offset 6, -12
- 1156              		.cfi_offset 7, -8
- 1157              		.cfi_offset 14, -4
- 1158 0002 83B0     		sub	sp, sp, #12
- 1159              	.LCFI14:
- 1160              		.cfi_def_cfa_offset 32
- 1161 0004 0700     		movs	r7, r0
+ 1253              		.loc 1 387 0
+ 1254              		.cfi_startproc
+ 1255              		@ args = 0, pretend = 0, frame = 8
+ 1256              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1257              	.LVL104:
+ 1258 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 1259              	.LCFI13:
+ARM GAS  /tmp/ccjHqQBe.s 			page 32
+
+
+ 1260              		.cfi_def_cfa_offset 20
+ 1261              		.cfi_offset 4, -20
+ 1262              		.cfi_offset 5, -16
+ 1263              		.cfi_offset 6, -12
+ 1264              		.cfi_offset 7, -8
+ 1265              		.cfi_offset 14, -4
+ 1266 0002 83B0     		sub	sp, sp, #12
+ 1267              	.LCFI14:
+ 1268              		.cfi_def_cfa_offset 32
+ 1269 0004 0700     		movs	r7, r0
  388:Src/usbd_midi_if.c **** 	uint8_t msg_buf[4] = {0x00,0x00,0x00,0x00};
- 1162              		.loc 1 388 0
- 1163 0006 0023     		movs	r3, #0
- 1164 0008 0193     		str	r3, [sp, #4]
-ARM GAS  /tmp/ccxcefs2.s 			page 30
-
-
- 1165              	.LVL92:
+ 1270              		.loc 1 388 0
+ 1271 0006 0023     		movs	r3, #0
+ 1272 0008 0193     		str	r3, [sp, #4]
+ 1273              	.LVL105:
  389:Src/usbd_midi_if.c **** 	uint32_t cnt_remain=0, cnt_length;
  390:Src/usbd_midi_if.c **** 
  391:Src/usbd_midi_if.c **** 	switch(analyzed_status[cable_num].type){
- 1166              		.loc 1 391 0
- 1167 000a 0400     		movs	r4, r0
- 1168 000c 8200     		lsls	r2, r0, #2
- 1169 000e 504B     		ldr	r3, .L126
- 1170 0010 9B18     		adds	r3, r3, r2
- 1171 0012 5B78     		ldrb	r3, [r3, #1]
- 1172 0014 022B     		cmp	r3, #2
- 1173 0016 18D0     		beq	.L106
- 1174 0018 04D8     		bhi	.L107
- 1175 001a 012B     		cmp	r3, #1
- 1176 001c 23D1     		bne	.L105
+ 1274              		.loc 1 391 0
+ 1275 000a 0400     		movs	r4, r0
+ 1276 000c 8200     		lsls	r2, r0, #2
+ 1277 000e 504B     		ldr	r3, .L136
+ 1278 0010 9B18     		adds	r3, r3, r2
+ 1279 0012 5B78     		ldrb	r3, [r3, #1]
+ 1280 0014 022B     		cmp	r3, #2
+ 1281 0016 18D0     		beq	.L116
+ 1282 0018 04D8     		bhi	.L117
+ 1283 001a 012B     		cmp	r3, #1
+ 1284 001c 23D1     		bne	.L115
  392:Src/usbd_midi_if.c **** 
  393:Src/usbd_midi_if.c **** 		case MSG_ONE_BYTE:
  394:Src/usbd_midi_if.c **** 			//byte 0: cable number + code index number
@@ -1783,67 +1917,70 @@ ARM GAS  /tmp/ccxcefs2.s 			page 1
  416:Src/usbd_midi_if.c **** 
  417:Src/usbd_midi_if.c **** 		case MSG_SYSEX:
  418:Src/usbd_midi_if.c **** 			for(cnt_length = 0; cnt_length < midi_event[cable_num].length; cnt_length++){
- 1177              		.loc 1 418 0
- 1178 001e 0026     		movs	r6, #0
+ 1285              		.loc 1 418 0
+ARM GAS  /tmp/ccjHqQBe.s 			page 33
+
+
+ 1286 001e 0026     		movs	r6, #0
  389:Src/usbd_midi_if.c **** 	uint32_t cnt_remain=0, cnt_length;
- 1179              		.loc 1 389 0
- 1180 0020 0025     		movs	r5, #0
- 1181 0022 7CE0     		b	.L108
- 1182              	.L107:
+ 1287              		.loc 1 389 0
+ 1288 0020 0025     		movs	r5, #0
+ 1289 0022 7CE0     		b	.L118
+ 1290              	.L117:
  391:Src/usbd_midi_if.c **** 
- 1183              		.loc 1 391 0
- 1184 0024 042B     		cmp	r3, #4
- 1185 0026 1ED8     		bhi	.L105
+ 1291              		.loc 1 391 0
+ 1292 0024 042B     		cmp	r3, #4
+ 1293 0026 1ED8     		bhi	.L115
  403:Src/usbd_midi_if.c **** 				msg_buf[0] = (cable_num << 4) + midi_event[cable_num].length;
- 1186              		.loc 1 403 0
- 1187 0028 8200     		lsls	r2, r0, #2
- 1188 002a 494B     		ldr	r3, .L126
-ARM GAS  /tmp/ccxcefs2.s 			page 31
-
-
- 1189 002c 9B18     		adds	r3, r3, r2
- 1190 002e 9B78     		ldrb	r3, [r3, #2]
- 1191 0030 002B     		cmp	r3, #0
- 1192 0032 1CD0     		beq	.L110
+ 1294              		.loc 1 403 0
+ 1295 0028 8200     		lsls	r2, r0, #2
+ 1296 002a 494B     		ldr	r3, .L136
+ 1297 002c 9B18     		adds	r3, r3, r2
+ 1298 002e 9B78     		ldrb	r3, [r3, #2]
+ 1299 0030 002B     		cmp	r3, #0
+ 1300 0032 1CD0     		beq	.L120
  404:Src/usbd_midi_if.c **** 			}else{
- 1193              		.loc 1 404 0
- 1194 0034 0301     		lsls	r3, r0, #4
- 1195 0036 DBB2     		uxtb	r3, r3
- 1196 0038 8201     		lsls	r2, r0, #6
- 1197 003a 1718     		adds	r7, r2, r0
- 1198 003c 454A     		ldr	r2, .L126+4
- 1199 003e BA5C     		ldrb	r2, [r7, r2]
- 1200 0040 9B18     		adds	r3, r3, r2
- 1201 0042 01AA     		add	r2, sp, #4
- 1202 0044 1370     		strb	r3, [r2]
- 1203              	.L111:
+ 1301              		.loc 1 404 0
+ 1302 0034 0301     		lsls	r3, r0, #4
+ 1303 0036 DBB2     		uxtb	r3, r3
+ 1304 0038 8201     		lsls	r2, r0, #6
+ 1305 003a 1718     		adds	r7, r2, r0
+ 1306 003c 454A     		ldr	r2, .L136+4
+ 1307 003e BA5C     		ldrb	r2, [r7, r2]
+ 1308 0040 9B18     		adds	r3, r3, r2
+ 1309 0042 01AA     		add	r2, sp, #4
+ 1310 0044 1370     		strb	r3, [r2]
+ 1311              	.L121:
  387:Src/usbd_midi_if.c **** 	uint8_t msg_buf[4] = {0x00,0x00,0x00,0x00};
- 1204              		.loc 1 387 0 discriminator 1
- 1205 0046 0021     		movs	r1, #0
- 1206 0048 27E0     		b	.L112
- 1207              	.L106:
+ 1312              		.loc 1 387 0 discriminator 1
+ 1313 0046 0021     		movs	r1, #0
+ 1314 0048 27E0     		b	.L122
+ 1315              	.L116:
  395:Src/usbd_midi_if.c **** 
- 1208              		.loc 1 395 0
- 1209 004a 0301     		lsls	r3, r0, #4
- 1210 004c DBB2     		uxtb	r3, r3
- 1211 004e 8201     		lsls	r2, r0, #6
- 1212 0050 1218     		adds	r2, r2, r0
- 1213 0052 404F     		ldr	r7, .L126+4
- 1214 0054 BF18     		adds	r7, r7, r2
- 1215 0056 7A78     		ldrb	r2, [r7, #1]
- 1216 0058 1209     		lsrs	r2, r2, #4
- 1217 005a 9B18     		adds	r3, r3, r2
- 1218 005c 01A8     		add	r0, sp, #4
- 1219              	.LVL93:
- 1220 005e 0370     		strb	r3, [r0]
+ 1316              		.loc 1 395 0
+ 1317 004a 0301     		lsls	r3, r0, #4
+ 1318 004c DBB2     		uxtb	r3, r3
+ 1319 004e 8201     		lsls	r2, r0, #6
+ 1320 0050 1218     		adds	r2, r2, r0
+ 1321 0052 404F     		ldr	r7, .L136+4
+ 1322 0054 BF18     		adds	r7, r7, r2
+ 1323 0056 7A78     		ldrb	r2, [r7, #1]
+ 1324 0058 1209     		lsrs	r2, r2, #4
+ 1325 005a 9B18     		adds	r3, r3, r2
+ 1326 005c 01A8     		add	r0, sp, #4
+ 1327              	.LVL106:
+ 1328 005e 0370     		strb	r3, [r0]
  397:Src/usbd_midi_if.c **** 			break;
- 1221              		.loc 1 397 0
- 1222 0060 0421     		movs	r1, #4
- 1223 0062 FFF7FEFF 		bl	sendMidiMessage
- 1224              	.LVL94:
- 1225              	.L105:
+ 1329              		.loc 1 397 0
+ 1330 0060 0421     		movs	r1, #4
+ 1331 0062 FFF7FEFF 		bl	sendMidiMessage
+ 1332              	.LVL107:
+ 1333              	.L115:
  419:Src/usbd_midi_if.c **** 				if( 0xF7 !=midi_event[cable_num].midi_byte[cnt_length] ){
  420:Src/usbd_midi_if.c **** 					if(2 == cnt_remain){
+ARM GAS  /tmp/ccjHqQBe.s 			page 34
+
+
  421:Src/usbd_midi_if.c **** 						msg_buf[3] = midi_event[cable_num].midi_byte[cnt_length];
  422:Src/usbd_midi_if.c **** 						msg_buf[0] = (cable_num << 4) + 0x4;	//SysEx starts or continues
  423:Src/usbd_midi_if.c **** 						sendMidiMessage(msg_buf,4);
@@ -1858,9 +1995,6 @@ ARM GAS  /tmp/ccxcefs2.s 			page 1
  432:Src/usbd_midi_if.c **** 						case 0:
  433:Src/usbd_midi_if.c **** 							msg_buf[0] = (cable_num << 4) + 0x5;	//SysEx ends with following single byte
  434:Src/usbd_midi_if.c **** 							msg_buf[1] = 0xF7;
-ARM GAS  /tmp/ccxcefs2.s 			page 32
-
-
  435:Src/usbd_midi_if.c **** 							msg_buf[2] = msg_buf[3] = 0x00;
  436:Src/usbd_midi_if.c **** 							sendMidiMessage(msg_buf,4);
  437:Src/usbd_midi_if.c **** 							break;
@@ -1893,250 +2027,268 @@ ARM GAS  /tmp/ccxcefs2.s 			page 1
  464:Src/usbd_midi_if.c **** 			break;
  465:Src/usbd_midi_if.c **** 	}
  466:Src/usbd_midi_if.c **** 	USBD_MIDI_SendPacket();
- 1226              		.loc 1 466 0
- 1227 0066 FFF7FEFF 		bl	USBD_MIDI_SendPacket
- 1228              	.LVL95:
+ 1334              		.loc 1 466 0
+ 1335 0066 FFF7FEFF 		bl	USBD_MIDI_SendPacket
+ 1336              	.LVL108:
  467:Src/usbd_midi_if.c **** }
- 1229              		.loc 1 467 0
- 1230 006a 03B0     		add	sp, sp, #12
- 1231              		@ sp needed
- 1232 006c F0BD     		pop	{r4, r5, r6, r7, pc}
- 1233              	.LVL96:
- 1234              	.L110:
+ 1337              		.loc 1 467 0
+ 1338 006a 03B0     		add	sp, sp, #12
+ 1339              		@ sp needed
+ 1340 006c F0BD     		pop	{r4, r5, r6, r7, pc}
+ 1341              	.LVL109:
+ 1342              	.L120:
  406:Src/usbd_midi_if.c **** 			}
- 1235              		.loc 1 406 0
- 1236 006e 0301     		lsls	r3, r0, #4
- 1237 0070 DBB2     		uxtb	r3, r3
- 1238 0072 8201     		lsls	r2, r0, #6
- 1239 0074 1218     		adds	r2, r2, r0
- 1240 0076 374F     		ldr	r7, .L126+4
- 1241 0078 BF18     		adds	r7, r7, r2
- 1242 007a 7A78     		ldrb	r2, [r7, #1]
- 1243 007c 1209     		lsrs	r2, r2, #4
- 1244 007e 9B18     		adds	r3, r3, r2
- 1245 0080 01AA     		add	r2, sp, #4
- 1246 0082 1370     		strb	r3, [r2]
- 1247 0084 DFE7     		b	.L111
- 1248              	.LVL97:
-ARM GAS  /tmp/ccxcefs2.s 			page 33
+ARM GAS  /tmp/ccjHqQBe.s 			page 35
 
 
- 1249              	.L113:
- 1250              	.LBB5:
+ 1343              		.loc 1 406 0
+ 1344 006e 0301     		lsls	r3, r0, #4
+ 1345 0070 DBB2     		uxtb	r3, r3
+ 1346 0072 8201     		lsls	r2, r0, #6
+ 1347 0074 1218     		adds	r2, r2, r0
+ 1348 0076 374F     		ldr	r7, .L136+4
+ 1349 0078 BF18     		adds	r7, r7, r2
+ 1350 007a 7A78     		ldrb	r2, [r7, #1]
+ 1351 007c 1209     		lsrs	r2, r2, #4
+ 1352 007e 9B18     		adds	r3, r3, r2
+ 1353 0080 01AA     		add	r2, sp, #4
+ 1354 0082 1370     		strb	r3, [r2]
+ 1355 0084 DFE7     		b	.L121
+ 1356              	.LVL110:
+ 1357              	.L123:
+ 1358              	.LBB5:
  411:Src/usbd_midi_if.c **** 			}
- 1251              		.loc 1 411 0 discriminator 3
- 1252 0086 481C     		adds	r0, r1, #1
- 1253 0088 A201     		lsls	r2, r4, #6
- 1254 008a 1219     		adds	r2, r2, r4
- 1255 008c 314B     		ldr	r3, .L126+4
- 1256 008e 9B18     		adds	r3, r3, r2
- 1257 0090 5B18     		adds	r3, r3, r1
- 1258 0092 5A78     		ldrb	r2, [r3, #1]
- 1259 0094 01AB     		add	r3, sp, #4
- 1260 0096 1A54     		strb	r2, [r3, r0]
- 1261              	.LVL98:
+ 1359              		.loc 1 411 0 discriminator 3
+ 1360 0086 481C     		adds	r0, r1, #1
+ 1361 0088 A201     		lsls	r2, r4, #6
+ 1362 008a 1219     		adds	r2, r2, r4
+ 1363 008c 314B     		ldr	r3, .L136+4
+ 1364 008e 9B18     		adds	r3, r3, r2
+ 1365 0090 5B18     		adds	r3, r3, r1
+ 1366 0092 5A78     		ldrb	r2, [r3, #1]
+ 1367 0094 01AB     		add	r3, sp, #4
+ 1368 0096 1A54     		strb	r2, [r3, r0]
+ 1369              	.LVL111:
  410:Src/usbd_midi_if.c **** 				msg_buf[i+1] = midi_event[cable_num].midi_byte[i];
- 1262              		.loc 1 410 0 discriminator 3
- 1263 0098 0100     		movs	r1, r0
- 1264              	.LVL99:
- 1265              	.L112:
+ 1370              		.loc 1 410 0 discriminator 3
+ 1371 0098 0100     		movs	r1, r0
+ 1372              	.LVL112:
+ 1373              	.L122:
  410:Src/usbd_midi_if.c **** 				msg_buf[i+1] = midi_event[cable_num].midi_byte[i];
- 1266              		.loc 1 410 0 is_stmt 0 discriminator 1
- 1267 009a A201     		lsls	r2, r4, #6
- 1268 009c 1219     		adds	r2, r2, r4
- 1269 009e 2D4B     		ldr	r3, .L126+4
- 1270 00a0 D35C     		ldrb	r3, [r2, r3]
- 1271 00a2 8B42     		cmp	r3, r1
- 1272 00a4 EFD8     		bhi	.L113
- 1273              	.LBE5:
+ 1374              		.loc 1 410 0 is_stmt 0 discriminator 1
+ 1375 009a A201     		lsls	r2, r4, #6
+ 1376 009c 1219     		adds	r2, r2, r4
+ 1377 009e 2D4B     		ldr	r3, .L136+4
+ 1378 00a0 D35C     		ldrb	r3, [r2, r3]
+ 1379 00a2 8B42     		cmp	r3, r1
+ 1380 00a4 EFD8     		bhi	.L123
+ 1381              	.LBE5:
  414:Src/usbd_midi_if.c **** 			break;
- 1274              		.loc 1 414 0 is_stmt 1
- 1275 00a6 0421     		movs	r1, #4
- 1276              	.LVL100:
- 1277 00a8 01A8     		add	r0, sp, #4
- 1278 00aa FFF7FEFF 		bl	sendMidiMessage
- 1279              	.LVL101:
+ 1382              		.loc 1 414 0 is_stmt 1
+ 1383 00a6 0421     		movs	r1, #4
+ 1384              	.LVL113:
+ 1385 00a8 01A8     		add	r0, sp, #4
+ 1386 00aa FFF7FEFF 		bl	sendMidiMessage
+ 1387              	.LVL114:
  415:Src/usbd_midi_if.c **** 
- 1280              		.loc 1 415 0
- 1281 00ae DAE7     		b	.L105
- 1282              	.LVL102:
- 1283              	.L125:
+ 1388              		.loc 1 415 0
+ 1389 00ae DAE7     		b	.L115
+ 1390              	.LVL115:
+ 1391              	.L135:
  421:Src/usbd_midi_if.c **** 						msg_buf[0] = (cable_num << 4) + 0x4;	//SysEx starts or continues
- 1284              		.loc 1 421 0
- 1285 00b0 01A8     		add	r0, sp, #4
- 1286 00b2 C370     		strb	r3, [r0, #3]
+ 1392              		.loc 1 421 0
+ 1393 00b0 01A8     		add	r0, sp, #4
+ARM GAS  /tmp/ccjHqQBe.s 			page 36
+
+
+ 1394 00b2 C370     		strb	r3, [r0, #3]
  422:Src/usbd_midi_if.c **** 						sendMidiMessage(msg_buf,4);
- 1287              		.loc 1 422 0
- 1288 00b4 3B01     		lsls	r3, r7, #4
- 1289 00b6 DBB2     		uxtb	r3, r3
- 1290 00b8 0433     		adds	r3, r3, #4
- 1291 00ba 0370     		strb	r3, [r0]
+ 1395              		.loc 1 422 0
+ 1396 00b4 3B01     		lsls	r3, r7, #4
+ 1397 00b6 DBB2     		uxtb	r3, r3
+ 1398 00b8 0433     		adds	r3, r3, #4
+ 1399 00ba 0370     		strb	r3, [r0]
  423:Src/usbd_midi_if.c **** 					}else{
- 1292              		.loc 1 423 0
- 1293 00bc 0421     		movs	r1, #4
- 1294 00be FFF7FEFF 		bl	sendMidiMessage
- 1295              	.LVL103:
- 1296 00c2 3FE0     		b	.L116
- 1297              	.L114:
-ARM GAS  /tmp/ccxcefs2.s 			page 34
-
-
+ 1400              		.loc 1 423 0
+ 1401 00bc 0421     		movs	r1, #4
+ 1402 00be FFF7FEFF 		bl	sendMidiMessage
+ 1403              	.LVL116:
+ 1404 00c2 3FE0     		b	.L126
+ 1405              	.L124:
  431:Src/usbd_midi_if.c **** 						case 0:
- 1298              		.loc 1 431 0
- 1299 00c4 012D     		cmp	r5, #1
- 1300 00c6 1CD0     		beq	.L117
- 1301 00c8 002D     		cmp	r5, #0
- 1302 00ca 0CD0     		beq	.L118
- 1303 00cc 022D     		cmp	r5, #2
- 1304 00ce 39D1     		bne	.L116
+ 1406              		.loc 1 431 0
+ 1407 00c4 012D     		cmp	r5, #1
+ 1408 00c6 1CD0     		beq	.L127
+ 1409 00c8 002D     		cmp	r5, #0
+ 1410 00ca 0CD0     		beq	.L128
+ 1411 00cc 022D     		cmp	r5, #2
+ 1412 00ce 39D1     		bne	.L126
  447:Src/usbd_midi_if.c **** 							msg_buf[3] = 0xF7;
- 1305              		.loc 1 447 0
- 1306 00d0 3B01     		lsls	r3, r7, #4
- 1307 00d2 DBB2     		uxtb	r3, r3
- 1308 00d4 0733     		adds	r3, r3, #7
- 1309 00d6 01A8     		add	r0, sp, #4
- 1310 00d8 0370     		strb	r3, [r0]
+ 1413              		.loc 1 447 0
+ 1414 00d0 3B01     		lsls	r3, r7, #4
+ 1415 00d2 DBB2     		uxtb	r3, r3
+ 1416 00d4 0733     		adds	r3, r3, #7
+ 1417 00d6 01A8     		add	r0, sp, #4
+ 1418 00d8 0370     		strb	r3, [r0]
  448:Src/usbd_midi_if.c **** 							sendMidiMessage(msg_buf,4);
- 1311              		.loc 1 448 0
- 1312 00da F723     		movs	r3, #247
- 1313 00dc C370     		strb	r3, [r0, #3]
+ 1419              		.loc 1 448 0
+ 1420 00da F723     		movs	r3, #247
+ 1421 00dc C370     		strb	r3, [r0, #3]
  449:Src/usbd_midi_if.c **** 							break;
- 1314              		.loc 1 449 0
- 1315 00de 0421     		movs	r1, #4
- 1316 00e0 FFF7FEFF 		bl	sendMidiMessage
- 1317              	.LVL104:
+ 1422              		.loc 1 449 0
+ 1423 00de 0421     		movs	r1, #4
+ 1424 00e0 FFF7FEFF 		bl	sendMidiMessage
+ 1425              	.LVL117:
  450:Src/usbd_midi_if.c **** 						default:
- 1318              		.loc 1 450 0
- 1319 00e4 2EE0     		b	.L116
- 1320              	.L118:
+ 1426              		.loc 1 450 0
+ 1427 00e4 2EE0     		b	.L126
+ 1428              	.L128:
  433:Src/usbd_midi_if.c **** 							msg_buf[1] = 0xF7;
- 1321              		.loc 1 433 0
- 1322 00e6 3B01     		lsls	r3, r7, #4
- 1323 00e8 DBB2     		uxtb	r3, r3
- 1324 00ea 0533     		adds	r3, r3, #5
- 1325 00ec 01A8     		add	r0, sp, #4
- 1326 00ee 0370     		strb	r3, [r0]
+ 1429              		.loc 1 433 0
+ 1430 00e6 3B01     		lsls	r3, r7, #4
+ 1431 00e8 DBB2     		uxtb	r3, r3
+ 1432 00ea 0533     		adds	r3, r3, #5
+ 1433 00ec 01A8     		add	r0, sp, #4
+ 1434 00ee 0370     		strb	r3, [r0]
  434:Src/usbd_midi_if.c **** 							msg_buf[2] = msg_buf[3] = 0x00;
- 1327              		.loc 1 434 0
- 1328 00f0 F723     		movs	r3, #247
- 1329 00f2 4370     		strb	r3, [r0, #1]
+ 1435              		.loc 1 434 0
+ 1436 00f0 F723     		movs	r3, #247
+ 1437 00f2 4370     		strb	r3, [r0, #1]
  435:Src/usbd_midi_if.c **** 							sendMidiMessage(msg_buf,4);
- 1330              		.loc 1 435 0
- 1331 00f4 0023     		movs	r3, #0
- 1332 00f6 C370     		strb	r3, [r0, #3]
- 1333 00f8 8370     		strb	r3, [r0, #2]
+ 1438              		.loc 1 435 0
+ 1439 00f4 0023     		movs	r3, #0
+ 1440 00f6 C370     		strb	r3, [r0, #3]
+ARM GAS  /tmp/ccjHqQBe.s 			page 37
+
+
+ 1441 00f8 8370     		strb	r3, [r0, #2]
  436:Src/usbd_midi_if.c **** 							break;
- 1334              		.loc 1 436 0
- 1335 00fa 0421     		movs	r1, #4
- 1336 00fc FFF7FEFF 		bl	sendMidiMessage
- 1337              	.LVL105:
+ 1442              		.loc 1 436 0
+ 1443 00fa 0421     		movs	r1, #4
+ 1444 00fc FFF7FEFF 		bl	sendMidiMessage
+ 1445              	.LVL118:
  437:Src/usbd_midi_if.c **** 
- 1338              		.loc 1 437 0
- 1339 0100 20E0     		b	.L116
- 1340              	.L117:
+ 1446              		.loc 1 437 0
+ 1447 0100 20E0     		b	.L126
+ 1448              	.L127:
  440:Src/usbd_midi_if.c **** 							msg_buf[2] = 0xF7;
- 1341              		.loc 1 440 0
- 1342 0102 3B01     		lsls	r3, r7, #4
- 1343 0104 DBB2     		uxtb	r3, r3
-ARM GAS  /tmp/ccxcefs2.s 			page 35
-
-
- 1344 0106 0633     		adds	r3, r3, #6
- 1345 0108 01A8     		add	r0, sp, #4
- 1346 010a 0370     		strb	r3, [r0]
+ 1449              		.loc 1 440 0
+ 1450 0102 3B01     		lsls	r3, r7, #4
+ 1451 0104 DBB2     		uxtb	r3, r3
+ 1452 0106 0633     		adds	r3, r3, #6
+ 1453 0108 01A8     		add	r0, sp, #4
+ 1454 010a 0370     		strb	r3, [r0]
  441:Src/usbd_midi_if.c **** 							msg_buf[3] = 0x00;
- 1347              		.loc 1 441 0
- 1348 010c F723     		movs	r3, #247
- 1349 010e 8370     		strb	r3, [r0, #2]
+ 1455              		.loc 1 441 0
+ 1456 010c F723     		movs	r3, #247
+ 1457 010e 8370     		strb	r3, [r0, #2]
  442:Src/usbd_midi_if.c **** 							sendMidiMessage(msg_buf,4);
- 1350              		.loc 1 442 0
- 1351 0110 0023     		movs	r3, #0
- 1352 0112 C370     		strb	r3, [r0, #3]
+ 1458              		.loc 1 442 0
+ 1459 0110 0023     		movs	r3, #0
+ 1460 0112 C370     		strb	r3, [r0, #3]
  443:Src/usbd_midi_if.c **** 							break;
- 1353              		.loc 1 443 0
- 1354 0114 0421     		movs	r1, #4
- 1355 0116 FFF7FEFF 		bl	sendMidiMessage
- 1356              	.LVL106:
+ 1461              		.loc 1 443 0
+ 1462 0114 0421     		movs	r1, #4
+ 1463 0116 FFF7FEFF 		bl	sendMidiMessage
+ 1464              	.LVL119:
  444:Src/usbd_midi_if.c **** 
- 1357              		.loc 1 444 0
- 1358 011a 13E0     		b	.L116
- 1359              	.LVL107:
- 1360              	.L120:
+ 1465              		.loc 1 444 0
+ 1466 011a 13E0     		b	.L126
+ 1467              	.LVL120:
+ 1468              	.L130:
  418:Src/usbd_midi_if.c **** 				if( 0xF7 !=midi_event[cable_num].midi_byte[cnt_length] ){
- 1361              		.loc 1 418 0 discriminator 2
- 1362 011c 0136     		adds	r6, r6, #1
- 1363              	.LVL108:
- 1364              	.L108:
+ 1469              		.loc 1 418 0 discriminator 2
+ 1470 011c 0136     		adds	r6, r6, #1
+ 1471              	.LVL121:
+ 1472              	.L118:
  418:Src/usbd_midi_if.c **** 				if( 0xF7 !=midi_event[cable_num].midi_byte[cnt_length] ){
- 1365              		.loc 1 418 0 is_stmt 0 discriminator 1
- 1366 011e A301     		lsls	r3, r4, #6
- 1367 0120 1B19     		adds	r3, r3, r4
- 1368 0122 0C4A     		ldr	r2, .L126+4
- 1369 0124 9B5C     		ldrb	r3, [r3, r2]
- 1370 0126 B342     		cmp	r3, r6
- 1371 0128 9DD9     		bls	.L105
+ 1473              		.loc 1 418 0 is_stmt 0 discriminator 1
+ 1474 011e A301     		lsls	r3, r4, #6
+ 1475 0120 1B19     		adds	r3, r3, r4
+ 1476 0122 0C4A     		ldr	r2, .L136+4
+ 1477 0124 9B5C     		ldrb	r3, [r3, r2]
+ 1478 0126 B342     		cmp	r3, r6
+ 1479 0128 9DD9     		bls	.L115
  419:Src/usbd_midi_if.c **** 					if(2 == cnt_remain){
- 1372              		.loc 1 419 0 is_stmt 1
- 1373 012a A201     		lsls	r2, r4, #6
- 1374 012c 1219     		adds	r2, r2, r4
- 1375 012e 094B     		ldr	r3, .L126+4
- 1376 0130 9B18     		adds	r3, r3, r2
- 1377 0132 9B19     		adds	r3, r3, r6
- 1378 0134 5B78     		ldrb	r3, [r3, #1]
- 1379 0136 F72B     		cmp	r3, #247
- 1380 0138 C4D0     		beq	.L114
+ 1480              		.loc 1 419 0 is_stmt 1
+ 1481 012a A201     		lsls	r2, r4, #6
+ 1482 012c 1219     		adds	r2, r2, r4
+ 1483 012e 094B     		ldr	r3, .L136+4
+ 1484 0130 9B18     		adds	r3, r3, r2
+ 1485 0132 9B19     		adds	r3, r3, r6
+ 1486 0134 5B78     		ldrb	r3, [r3, #1]
+ 1487 0136 F72B     		cmp	r3, #247
+ARM GAS  /tmp/ccjHqQBe.s 			page 38
+
+
+ 1488 0138 C4D0     		beq	.L124
  420:Src/usbd_midi_if.c **** 						msg_buf[3] = midi_event[cable_num].midi_byte[cnt_length];
- 1381              		.loc 1 420 0
- 1382 013a 022D     		cmp	r5, #2
- 1383 013c B8D0     		beq	.L125
+ 1489              		.loc 1 420 0
+ 1490 013a 022D     		cmp	r5, #2
+ 1491 013c B8D0     		beq	.L135
  425:Src/usbd_midi_if.c **** 					}
- 1384              		.loc 1 425 0
- 1385 013e 6A1C     		adds	r2, r5, #1
- 1386 0140 01A9     		add	r1, sp, #4
- 1387 0142 8B54     		strb	r3, [r1, r2]
- 1388              	.L116:
+ 1492              		.loc 1 425 0
+ 1493 013e 6A1C     		adds	r2, r5, #1
+ 1494 0140 01A9     		add	r1, sp, #4
+ 1495 0142 8B54     		strb	r3, [r1, r2]
+ 1496              	.L126:
  456:Src/usbd_midi_if.c **** 				if(cnt_remain >=3){
- 1389              		.loc 1 456 0
- 1390 0144 0135     		adds	r5, r5, #1
-ARM GAS  /tmp/ccxcefs2.s 			page 36
-
-
- 1391              	.LVL109:
+ 1497              		.loc 1 456 0
+ 1498 0144 0135     		adds	r5, r5, #1
+ 1499              	.LVL122:
  457:Src/usbd_midi_if.c **** 					cnt_remain = 0;
- 1392              		.loc 1 457 0
- 1393 0146 022D     		cmp	r5, #2
- 1394 0148 E8D9     		bls	.L120
+ 1500              		.loc 1 457 0
+ 1501 0146 022D     		cmp	r5, #2
+ 1502 0148 E8D9     		bls	.L130
  458:Src/usbd_midi_if.c **** 				}
- 1395              		.loc 1 458 0
- 1396 014a 0025     		movs	r5, #0
- 1397              	.LVL110:
- 1398 014c E6E7     		b	.L120
- 1399              	.L127:
- 1400 014e C046     		.align	2
- 1401              	.L126:
- 1402 0150 00000000 		.word	analyzed_status
- 1403 0154 00000000 		.word	midi_event
- 1404              		.cfi_endproc
- 1405              	.LFE54:
- 1407              		.section	.text.midiProcess,"ax",%progbits
- 1408              		.align	1
- 1409              		.global	midiProcess
- 1410              		.syntax unified
- 1411              		.code	16
- 1412              		.thumb_func
- 1413              		.fpu softvfp
- 1415              	midiProcess:
- 1416              	.LFB55:
+ 1503              		.loc 1 458 0
+ 1504 014a 0025     		movs	r5, #0
+ 1505              	.LVL123:
+ 1506 014c E6E7     		b	.L130
+ 1507              	.L137:
+ 1508 014e C046     		.align	2
+ 1509              	.L136:
+ 1510 0150 00000000 		.word	analyzed_status
+ 1511 0154 00000000 		.word	midi_event
+ 1512              		.cfi_endproc
+ 1513              	.LFE54:
+ 1515              		.section	.text.midiProcess,"ax",%progbits
+ 1516              		.align	1
+ 1517              		.global	midiProcess
+ 1518              		.syntax unified
+ 1519              		.code	16
+ 1520              		.thumb_func
+ 1521              		.fpu softvfp
+ 1523              	midiProcess:
+ 1524              	.LFB55:
  468:Src/usbd_midi_if.c **** 
  469:Src/usbd_midi_if.c **** void midiProcess(){
- 1417              		.loc 1 469 0
- 1418              		.cfi_startproc
- 1419              		@ args = 0, pretend = 0, frame = 0
- 1420              		@ frame_needed = 0, uses_anonymous_args = 0
- 1421              		@ link register save eliminated.
- 1422              	.LVL111:
+ 1525              		.loc 1 469 0
+ 1526              		.cfi_startproc
+ 1527              		@ args = 0, pretend = 0, frame = 0
+ 1528              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1529 0000 70B5     		push	{r4, r5, r6, lr}
+ 1530              	.LCFI15:
+ 1531              		.cfi_def_cfa_offset 16
+ 1532              		.cfi_offset 4, -16
+ 1533              		.cfi_offset 5, -12
+ 1534              		.cfi_offset 6, -8
+ 1535              		.cfi_offset 14, -4
+ 1536              	.LVL124:
+ 1537              	.LBB6:
  470:Src/usbd_midi_if.c **** 
  471:Src/usbd_midi_if.c **** 	for(uint32_t cable_num=0; cable_num<MIDI_IN_JACK_NUM; cable_num++){
+ARM GAS  /tmp/ccjHqQBe.s 			page 39
+
+
+ 1538              		.loc 1 471 0
+ 1539 0002 0025     		movs	r5, #0
+ 1540              	.LVL125:
+ 1541              	.L139:
+ 1542              		.loc 1 471 0 is_stmt 0 discriminator 1
+ 1543 0004 002D     		cmp	r5, #0
+ 1544 0006 00D0     		beq	.L140
+ 1545              	.LBE6:
  472:Src/usbd_midi_if.c **** 		while( FUNC_SUCCESS == midiGetFromJackRx(cable_num) ){
  473:Src/usbd_midi_if.c **** 			if( midiEventIsGenerated(cable_num) ){// Generate MIDI event from UART buffer.
  474:Src/usbd_midi_if.c **** 				//Analyze MIDI Message.
@@ -2145,93 +2297,125 @@ ARM GAS  /tmp/ccxcefs2.s 			page 1
  477:Src/usbd_midi_if.c **** 		}
  478:Src/usbd_midi_if.c **** 	}
  479:Src/usbd_midi_if.c **** }
- 1423              		.loc 1 479 0
- 1424              		@ sp needed
- 1425 0000 7047     		bx	lr
- 1426              		.cfi_endproc
- 1427              	.LFE55:
- 1429              		.global	USBD_Interface_fops_FS
- 1430              		.comm	rx_midi_msg,0,4
- 1431              		.comm	midi_event,0,4
- 1432              		.comm	analyzed_status,0,4
- 1433              		.comm	rbuf_jack_rx,0,4
- 1434              		.comm	rbuf_usb_rx,12,4
- 1435              		.section	.data.USBD_Interface_fops_FS,"aw",%progbits
- 1436              		.align	2
-ARM GAS  /tmp/ccxcefs2.s 			page 37
+ 1546              		.loc 1 479 0 is_stmt 1
+ 1547              		@ sp needed
+ 1548              	.LVL126:
+ 1549 0008 70BD     		pop	{r4, r5, r6, pc}
+ 1550              	.LVL127:
+ 1551              	.L140:
+ 1552              	.LBB7:
+ 472:Src/usbd_midi_if.c **** 		while( FUNC_SUCCESS == midiGetFromJackRx(cable_num) ){
+ 1553              		.loc 1 472 0
+ 1554 000a ECB2     		uxtb	r4, r5
+ 1555 000c 2000     		movs	r0, r4
+ 1556 000e FFF7FEFF 		bl	midiGetFromJackRx
+ 1557              	.LVL128:
+ 1558 0012 0128     		cmp	r0, #1
+ 1559 0014 08D1     		bne	.L143
+ 473:Src/usbd_midi_if.c **** 				//Analyze MIDI Message.
+ 1560              		.loc 1 473 0
+ 1561 0016 2000     		movs	r0, r4
+ 1562 0018 FFF7FEFF 		bl	midiEventIsGenerated
+ 1563              	.LVL129:
+ 1564 001c 0028     		cmp	r0, #0
+ 1565 001e F4D0     		beq	.L140
+ 475:Src/usbd_midi_if.c **** 			}
+ 1566              		.loc 1 475 0
+ 1567 0020 2000     		movs	r0, r4
+ 1568 0022 FFF7FEFF 		bl	midiGenerateUsbPacket
+ 1569              	.LVL130:
+ 1570 0026 F0E7     		b	.L140
+ 1571              	.L143:
+ 471:Src/usbd_midi_if.c **** 		while( FUNC_SUCCESS == midiGetFromJackRx(cable_num) ){
+ 1572              		.loc 1 471 0 discriminator 2
+ 1573 0028 0135     		adds	r5, r5, #1
+ 1574              	.LVL131:
+ 1575 002a EBE7     		b	.L139
+ 1576              	.LBE7:
+ 1577              		.cfi_endproc
+ 1578              	.LFE55:
+ 1580              		.global	USBD_Interface_fops_FS
+ 1581              		.comm	rx_midi_msg,1,4
+ 1582              		.comm	midi_event,65,4
+ 1583              		.comm	analyzed_status,4,4
+ARM GAS  /tmp/ccjHqQBe.s 			page 40
 
 
- 1439              	USBD_Interface_fops_FS:
- 1440 0000 00000000 		.word	MIDI_DataRx
- 1441 0004 00000000 		.word	MIDI_DataTx
- 1442              		.text
- 1443              	.Letext0:
- 1444              		.file 2 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/machin
- 1445              		.file 3 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/lo
- 1446              		.file 4 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/_t
- 1447              		.file 5 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/lib/gcc/arm-none-eabi/7.3.1/
- 1448              		.file 6 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/re
- 1449              		.file 7 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/_s
- 1450              		.file 8 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/stdlib
- 1451              		.file 9 "Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h"
- 1452              		.file 10 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h"
- 1453              		.file 11 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h"
- 1454              		.file 12 "Middlewares/USBMIDI/Inc/usbd_midi.h"
- 1455              		.file 13 "Inc/usbd_desc.h"
- 1456              		.file 14 "Inc/curelib_inc/curemisc.h"
- 1457              		.file 15 "Inc/curelib_inc/curebuffer.h"
- 1458              		.file 16 "Inc/usbd_midi_if.h"
-ARM GAS  /tmp/ccxcefs2.s 			page 38
+ 1584              		.comm	rbuf_jack_rx,12,4
+ 1585              		.comm	rbuf_usb_rx,12,4
+ 1586              		.section	.data.USBD_Interface_fops_FS,"aw",%progbits
+ 1587              		.align	2
+ 1590              	USBD_Interface_fops_FS:
+ 1591 0000 00000000 		.word	MIDI_DataRx
+ 1592 0004 00000000 		.word	MIDI_DataTx
+ 1593              		.text
+ 1594              	.Letext0:
+ 1595              		.file 2 "/usr/include/newlib/machine/_default_types.h"
+ 1596              		.file 3 "/usr/include/newlib/sys/lock.h"
+ 1597              		.file 4 "/usr/include/newlib/sys/_types.h"
+ 1598              		.file 5 "/usr/lib/gcc/arm-none-eabi/7.3.1/include/stddef.h"
+ 1599              		.file 6 "/usr/include/newlib/sys/reent.h"
+ 1600              		.file 7 "/usr/include/newlib/sys/_stdint.h"
+ 1601              		.file 8 "/usr/include/newlib/stdlib.h"
+ 1602              		.file 9 "Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h"
+ 1603              		.file 10 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h"
+ 1604              		.file 11 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h"
+ 1605              		.file 12 "Middlewares/USBMIDI/Inc/usbd_midi.h"
+ 1606              		.file 13 "Inc/usbd_desc.h"
+ 1607              		.file 14 "Inc/curelib_inc/curemisc.h"
+ 1608              		.file 15 "Inc/curelib_inc/curebuffer.h"
+ 1609              		.file 16 "Inc/usbd_midi_if.h"
+ARM GAS  /tmp/ccjHqQBe.s 			page 41
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 usbd_midi_if.c
-     /tmp/ccxcefs2.s:16     .text.MIDI_DataTx:0000000000000000 $t
-     /tmp/ccxcefs2.s:22     .text.MIDI_DataTx:0000000000000000 MIDI_DataTx
-     /tmp/ccxcefs2.s:76     .text.MIDI_DataTx:000000000000002c $d
-     /tmp/ccxcefs2.s:82     .text.MIDI_DataRx:0000000000000000 $t
-     /tmp/ccxcefs2.s:88     .text.MIDI_DataRx:0000000000000000 MIDI_DataRx
-     /tmp/ccxcefs2.s:225    .rodata.MIDI_DataRx:0000000000000000 $d
-     /tmp/ccxcefs2.s:247    .text.MIDI_DataRx:0000000000000080 $d
+     /tmp/ccjHqQBe.s:16     .text.MIDI_DataTx:0000000000000000 $t
+     /tmp/ccjHqQBe.s:22     .text.MIDI_DataTx:0000000000000000 MIDI_DataTx
+     /tmp/ccjHqQBe.s:76     .text.MIDI_DataTx:000000000000002c $d
+     /tmp/ccjHqQBe.s:82     .text.MIDI_DataRx:0000000000000000 $t
+     /tmp/ccjHqQBe.s:88     .text.MIDI_DataRx:0000000000000000 MIDI_DataRx
+     /tmp/ccjHqQBe.s:225    .rodata.MIDI_DataRx:0000000000000000 $d
+     /tmp/ccjHqQBe.s:247    .text.MIDI_DataRx:0000000000000080 $d
                             *COM*:000000000000000c rbuf_usb_rx
-     /tmp/ccxcefs2.s:255    .text.midiInit:0000000000000000 $t
-     /tmp/ccxcefs2.s:262    .text.midiInit:0000000000000000 midiInit
-     /tmp/ccxcefs2.s:313    .text.midiInit:000000000000002c $d
-     /tmp/ccxcefs2.s:318    .text.midiGetFromUsbRx:0000000000000000 $t
-     /tmp/ccxcefs2.s:325    .text.midiGetFromUsbRx:0000000000000000 midiGetFromUsbRx
-     /tmp/ccxcefs2.s:361    .text.midiGetFromUsbRx:000000000000001c $d
-     /tmp/ccxcefs2.s:366    .text.midiGetFromJackRx:0000000000000000 $t
-     /tmp/ccxcefs2.s:373    .text.midiGetFromJackRx:0000000000000000 midiGetFromJackRx
-     /tmp/ccxcefs2.s:411    .text.midiGetFromJackRx:0000000000000020 $d
-                            *COM*:0000000000000000 rx_midi_msg
-                            *COM*:0000000000000000 rbuf_jack_rx
-     /tmp/ccxcefs2.s:417    .text.midiSetFromJackRx:0000000000000000 $t
-     /tmp/ccxcefs2.s:424    .text.midiSetFromJackRx:0000000000000000 midiSetFromJackRx
-     /tmp/ccxcefs2.s:460    .text.midiSetFromJackRx:000000000000001c $d
-     /tmp/ccxcefs2.s:465    .text.isUsbRxBufEmpty:0000000000000000 $t
-     /tmp/ccxcefs2.s:472    .text.isUsbRxBufEmpty:0000000000000000 isUsbRxBufEmpty
-     /tmp/ccxcefs2.s:508    .text.isUsbRxBufEmpty:000000000000001c $d
-     /tmp/ccxcefs2.s:513    .text.isJackRxBufEmpty:0000000000000000 $t
-     /tmp/ccxcefs2.s:520    .text.isJackRxBufEmpty:0000000000000000 isJackRxBufEmpty
-     /tmp/ccxcefs2.s:556    .text.isJackRxBufEmpty:000000000000001c $d
-     /tmp/ccxcefs2.s:561    .text.isRxBufEmpty:0000000000000000 $t
-     /tmp/ccxcefs2.s:568    .text.isRxBufEmpty:0000000000000000 isRxBufEmpty
-     /tmp/ccxcefs2.s:617    .text.isRxBufEmpty:0000000000000028 $d
-     /tmp/ccxcefs2.s:622    .text.sendMidiMessage:0000000000000000 $t
-     /tmp/ccxcefs2.s:629    .text.sendMidiMessage:0000000000000000 sendMidiMessage
-     /tmp/ccxcefs2.s:660    .text.midiEventIsGenerated:0000000000000000 $t
-     /tmp/ccxcefs2.s:667    .text.midiEventIsGenerated:0000000000000000 midiEventIsGenerated
-     /tmp/ccxcefs2.s:772    .rodata.midiEventIsGenerated:0000000000000000 $d
-     /tmp/ccxcefs2.s:1128   .text.midiEventIsGenerated:0000000000000240 $d
-                            *COM*:0000000000000000 analyzed_status
-                            *COM*:0000000000000000 midi_event
-     /tmp/ccxcefs2.s:1136   .text.midiGenerateUsbPacket:0000000000000000 $t
-     /tmp/ccxcefs2.s:1143   .text.midiGenerateUsbPacket:0000000000000000 midiGenerateUsbPacket
-     /tmp/ccxcefs2.s:1402   .text.midiGenerateUsbPacket:0000000000000150 $d
-     /tmp/ccxcefs2.s:1408   .text.midiProcess:0000000000000000 $t
-     /tmp/ccxcefs2.s:1415   .text.midiProcess:0000000000000000 midiProcess
-     /tmp/ccxcefs2.s:1439   .data.USBD_Interface_fops_FS:0000000000000000 USBD_Interface_fops_FS
-     /tmp/ccxcefs2.s:1436   .data.USBD_Interface_fops_FS:0000000000000000 $d
+     /tmp/ccjHqQBe.s:255    .text.midiInit:0000000000000000 $t
+     /tmp/ccjHqQBe.s:262    .text.midiInit:0000000000000000 midiInit
+     /tmp/ccjHqQBe.s:390    .text.midiInit:0000000000000088 $d
+                            *COM*:000000000000000c rbuf_jack_rx
+                            *COM*:0000000000000001 rx_midi_msg
+                            *COM*:0000000000000004 analyzed_status
+                            *COM*:0000000000000041 midi_event
+     /tmp/ccjHqQBe.s:399    .text.midiGetFromUsbRx:0000000000000000 $t
+     /tmp/ccjHqQBe.s:406    .text.midiGetFromUsbRx:0000000000000000 midiGetFromUsbRx
+     /tmp/ccjHqQBe.s:442    .text.midiGetFromUsbRx:000000000000001c $d
+     /tmp/ccjHqQBe.s:447    .text.midiGetFromJackRx:0000000000000000 $t
+     /tmp/ccjHqQBe.s:454    .text.midiGetFromJackRx:0000000000000000 midiGetFromJackRx
+     /tmp/ccjHqQBe.s:492    .text.midiGetFromJackRx:0000000000000020 $d
+     /tmp/ccjHqQBe.s:498    .text.midiSetFromJackRx:0000000000000000 $t
+     /tmp/ccjHqQBe.s:505    .text.midiSetFromJackRx:0000000000000000 midiSetFromJackRx
+     /tmp/ccjHqQBe.s:541    .text.midiSetFromJackRx:000000000000001c $d
+     /tmp/ccjHqQBe.s:546    .text.isUsbRxBufEmpty:0000000000000000 $t
+     /tmp/ccjHqQBe.s:553    .text.isUsbRxBufEmpty:0000000000000000 isUsbRxBufEmpty
+     /tmp/ccjHqQBe.s:589    .text.isUsbRxBufEmpty:000000000000001c $d
+     /tmp/ccjHqQBe.s:594    .text.isJackRxBufEmpty:0000000000000000 $t
+     /tmp/ccjHqQBe.s:601    .text.isJackRxBufEmpty:0000000000000000 isJackRxBufEmpty
+     /tmp/ccjHqQBe.s:637    .text.isJackRxBufEmpty:000000000000001c $d
+     /tmp/ccjHqQBe.s:642    .text.isRxBufEmpty:0000000000000000 $t
+     /tmp/ccjHqQBe.s:649    .text.isRxBufEmpty:0000000000000000 isRxBufEmpty
+     /tmp/ccjHqQBe.s:724    .text.isRxBufEmpty:0000000000000048 $d
+     /tmp/ccjHqQBe.s:730    .text.sendMidiMessage:0000000000000000 $t
+     /tmp/ccjHqQBe.s:737    .text.sendMidiMessage:0000000000000000 sendMidiMessage
+     /tmp/ccjHqQBe.s:768    .text.midiEventIsGenerated:0000000000000000 $t
+     /tmp/ccjHqQBe.s:775    .text.midiEventIsGenerated:0000000000000000 midiEventIsGenerated
+     /tmp/ccjHqQBe.s:880    .rodata.midiEventIsGenerated:0000000000000000 $d
+     /tmp/ccjHqQBe.s:1236   .text.midiEventIsGenerated:0000000000000240 $d
+     /tmp/ccjHqQBe.s:1244   .text.midiGenerateUsbPacket:0000000000000000 $t
+     /tmp/ccjHqQBe.s:1251   .text.midiGenerateUsbPacket:0000000000000000 midiGenerateUsbPacket
+     /tmp/ccjHqQBe.s:1510   .text.midiGenerateUsbPacket:0000000000000150 $d
+     /tmp/ccjHqQBe.s:1516   .text.midiProcess:0000000000000000 $t
+     /tmp/ccjHqQBe.s:1523   .text.midiProcess:0000000000000000 midiProcess
+     /tmp/ccjHqQBe.s:1590   .data.USBD_Interface_fops_FS:0000000000000000 USBD_Interface_fops_FS
+     /tmp/ccjHqQBe.s:1587   .data.USBD_Interface_fops_FS:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 APP_Rx_ptr_in
@@ -2241,6 +2425,6 @@ cureRingBufferU8Init
 cureRingBufferU8Dequeue
 _cureRingBufferU8GetUsedSize
 USBD_MIDI_SendPacket
-ARM GAS  /tmp/ccxcefs2.s 			page 39
+ARM GAS  /tmp/ccjHqQBe.s 			page 42
 
 

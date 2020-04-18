@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cce1OmQK.s 			page 1
+ARM GAS  /tmp/ccxPgspp.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cce1OmQK.s 			page 1
   31:Src/stm32f0xx_it.c **** /* USER CODE END TD */
   32:Src/stm32f0xx_it.c **** 
   33:Src/stm32f0xx_it.c **** /* Private define ------------------------------------------------------------*/
-ARM GAS  /tmp/cce1OmQK.s 			page 2
+ARM GAS  /tmp/ccxPgspp.s 			page 2
 
 
   34:Src/stm32f0xx_it.c **** /* USER CODE BEGIN PD */
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cce1OmQK.s 			page 1
   33 0000 7047     		bx	lr
   34              		.cfi_endproc
   35              	.LFE40:
-ARM GAS  /tmp/cce1OmQK.s 			page 3
+ARM GAS  /tmp/ccxPgspp.s 			page 3
 
 
   37              		.section	.text.HardFault_Handler,"ax",%progbits
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cce1OmQK.s 			page 1
  102:Src/stm32f0xx_it.c ****   /* USER CODE BEGIN SVC_IRQn 0 */
  103:Src/stm32f0xx_it.c **** 
  104:Src/stm32f0xx_it.c ****   /* USER CODE END SVC_IRQn 0 */
-ARM GAS  /tmp/cce1OmQK.s 			page 4
+ARM GAS  /tmp/ccxPgspp.s 			page 4
 
 
  105:Src/stm32f0xx_it.c ****   /* USER CODE BEGIN SVC_IRQn 1 */
@@ -238,7 +238,7 @@ ARM GAS  /tmp/cce1OmQK.s 			page 1
  126:Src/stm32f0xx_it.c **** void SysTick_Handler(void)
  127:Src/stm32f0xx_it.c **** {
  110              		.loc 1 127 0
-ARM GAS  /tmp/cce1OmQK.s 			page 5
+ARM GAS  /tmp/ccxPgspp.s 			page 5
 
 
  111              		.cfi_startproc
@@ -298,7 +298,7 @@ ARM GAS  /tmp/cce1OmQK.s 			page 1
  146              		.cfi_offset 14, -4
  149:Src/stm32f0xx_it.c ****   /* USER CODE BEGIN DMA1_Channel1_IRQn 0 */
  150:Src/stm32f0xx_it.c **** 
-ARM GAS  /tmp/cce1OmQK.s 			page 6
+ARM GAS  /tmp/ccxPgspp.s 			page 6
 
 
  151:Src/stm32f0xx_it.c ****   /* USER CODE END DMA1_Channel1_IRQn 0 */
@@ -358,7 +358,7 @@ ARM GAS  /tmp/cce1OmQK.s 			page 1
  170:Src/stm32f0xx_it.c **** }
  184              		.loc 1 170 0
  185              		@ sp needed
-ARM GAS  /tmp/cce1OmQK.s 			page 7
+ARM GAS  /tmp/ccxPgspp.s 			page 7
 
 
  186 0008 10BD     		pop	{r4, pc}
@@ -370,8 +370,8 @@ ARM GAS  /tmp/cce1OmQK.s 			page 1
  192              	.LFE46:
  194              		.text
  195              	.Letext0:
- 196              		.file 2 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/machin
- 197              		.file 3 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/_s
+ 196              		.file 2 "/usr/include/newlib/machine/_default_types.h"
+ 197              		.file 3 "/usr/include/newlib/sys/_stdint.h"
  198              		.file 4 "Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h"
  199              		.file 5 "Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h"
  200              		.file 6 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h"
@@ -379,27 +379,27 @@ ARM GAS  /tmp/cce1OmQK.s 			page 1
  202              		.file 8 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usb.h"
  203              		.file 9 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h"
  204              		.file 10 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h"
-ARM GAS  /tmp/cce1OmQK.s 			page 8
+ARM GAS  /tmp/ccxPgspp.s 			page 8
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f0xx_it.c
-     /tmp/cce1OmQK.s:16     .text.NMI_Handler:0000000000000000 $t
-     /tmp/cce1OmQK.s:23     .text.NMI_Handler:0000000000000000 NMI_Handler
-     /tmp/cce1OmQK.s:38     .text.HardFault_Handler:0000000000000000 $t
-     /tmp/cce1OmQK.s:45     .text.HardFault_Handler:0000000000000000 HardFault_Handler
-     /tmp/cce1OmQK.s:59     .text.SVC_Handler:0000000000000000 $t
-     /tmp/cce1OmQK.s:66     .text.SVC_Handler:0000000000000000 SVC_Handler
-     /tmp/cce1OmQK.s:80     .text.PendSV_Handler:0000000000000000 $t
-     /tmp/cce1OmQK.s:87     .text.PendSV_Handler:0000000000000000 PendSV_Handler
-     /tmp/cce1OmQK.s:101    .text.SysTick_Handler:0000000000000000 $t
-     /tmp/cce1OmQK.s:108    .text.SysTick_Handler:0000000000000000 SysTick_Handler
-     /tmp/cce1OmQK.s:129    .text.DMA1_Channel1_IRQHandler:0000000000000000 $t
-     /tmp/cce1OmQK.s:136    .text.DMA1_Channel1_IRQHandler:0000000000000000 DMA1_Channel1_IRQHandler
-     /tmp/cce1OmQK.s:157    .text.DMA1_Channel1_IRQHandler:000000000000000c $d
-     /tmp/cce1OmQK.s:162    .text.USB_IRQHandler:0000000000000000 $t
-     /tmp/cce1OmQK.s:169    .text.USB_IRQHandler:0000000000000000 USB_IRQHandler
-     /tmp/cce1OmQK.s:190    .text.USB_IRQHandler:000000000000000c $d
+     /tmp/ccxPgspp.s:16     .text.NMI_Handler:0000000000000000 $t
+     /tmp/ccxPgspp.s:23     .text.NMI_Handler:0000000000000000 NMI_Handler
+     /tmp/ccxPgspp.s:38     .text.HardFault_Handler:0000000000000000 $t
+     /tmp/ccxPgspp.s:45     .text.HardFault_Handler:0000000000000000 HardFault_Handler
+     /tmp/ccxPgspp.s:59     .text.SVC_Handler:0000000000000000 $t
+     /tmp/ccxPgspp.s:66     .text.SVC_Handler:0000000000000000 SVC_Handler
+     /tmp/ccxPgspp.s:80     .text.PendSV_Handler:0000000000000000 $t
+     /tmp/ccxPgspp.s:87     .text.PendSV_Handler:0000000000000000 PendSV_Handler
+     /tmp/ccxPgspp.s:101    .text.SysTick_Handler:0000000000000000 $t
+     /tmp/ccxPgspp.s:108    .text.SysTick_Handler:0000000000000000 SysTick_Handler
+     /tmp/ccxPgspp.s:129    .text.DMA1_Channel1_IRQHandler:0000000000000000 $t
+     /tmp/ccxPgspp.s:136    .text.DMA1_Channel1_IRQHandler:0000000000000000 DMA1_Channel1_IRQHandler
+     /tmp/ccxPgspp.s:157    .text.DMA1_Channel1_IRQHandler:000000000000000c $d
+     /tmp/ccxPgspp.s:162    .text.USB_IRQHandler:0000000000000000 $t
+     /tmp/ccxPgspp.s:169    .text.USB_IRQHandler:0000000000000000 USB_IRQHandler
+     /tmp/ccxPgspp.s:190    .text.USB_IRQHandler:000000000000000c $d
 
 UNDEFINED SYMBOLS
 HAL_IncTick

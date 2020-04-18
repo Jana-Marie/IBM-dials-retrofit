@@ -63,7 +63,7 @@ extern bool isRxBufEmpty();
 
 //USB function
 extern void sendMidiMessage(uint8_t *msg, uint16_t size);
-extern uint8_t USBD_MIDI_SendData (USBD_HandleTypeDef *pdev, uint8_t *pBuf, uint16_t length);
+extern uint8_t USBD_MIDI_SendData(USBD_HandleTypeDef *pdev, uint8_t *pBuf, uint16_t length);
 
 
 // Call in main loop
@@ -75,5 +75,5 @@ extern void USBD_MIDI_SendPacket(void);
 #ifdef __cplusplus
 }
 #endif
-  
+
 #endif /* __USBD_MIDI_IF_H */

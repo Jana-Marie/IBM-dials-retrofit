@@ -1,12 +1,14 @@
 
 #include "main.h"
 #include "usb_device.h"
-#include "usbd_midi_if.h"
 
 #include "device_conf.h"
 #include "curemisc.h"
 #include "curebuffer.h"
 #include "usbd_midi_if.h"
+#include "usbd_midi.h"
+
+#define HYST 50
 
 ADC_HandleTypeDef hadc;
 DMA_HandleTypeDef hdma_adc;
@@ -19,7 +21,13 @@ static void MX_DMA_Init(void);
 static void MX_ADC_Init(void);
 static void MX_USB_PCD_Init(void);
 
-uint16_t ADCval[8];
+uint16_t ADC_val[8];
+uint16_t ADC_val_old[8];
+uint8_t dial[8];
+uint8_t dial_mapping[8] = {1, 2, 3, 4, 5, 6, 7, 0};
+uint16_t dial_div[8] = {32, 32, 32, 32, 32, 32, 32, 256};
+
+uint8_t midi_packet[4] = {0x0B, 0xB0, 0x00, 0x00};
 
 int main(void)
 {
@@ -32,14 +40,58 @@ int main(void)
   MX_ADC_Init();
   MX_USB_MIDI_INIT();
 
-  HAL_ADC_Start_DMA(&hadc, ADCval, 8);
+  HAL_ADC_Start_DMA(&hadc, ADC_val, 8);
+
+
+  if(FUNC_ERROR == midiInit() ){
+	  while(1){
+		  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, SET);
+		  HAL_Delay(500);
+		  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, RESET);
+		  HAL_Delay(500);
+	  }
+  }
+
+  //Wait usb configuration.
+  while(1){
+
+	  if(USBD_STATE_CONFIGURED == hUsbDeviceFS.dev_state){
+		  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, SET);
+		  break;
+	  }else{
+		  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, RESET);
+	  }
+  }
 
   while (1)
   {
-    HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,1);
-    HAL_Delay(1000);
-    HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,0);
-    HAL_Delay(1000);
+    while(1){
+      if(USBD_STATE_CONFIGURED == hUsbDeviceFS.dev_state){
+        HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, SET);
+        break;
+      }else{
+        HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, SET);
+        HAL_Delay(200);
+        HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, RESET);
+        HAL_Delay(200);
+      }
+    }
+
+    midiProcess();
+    for(uint8_t i = 0; i <= 7; i++){
+      if(ADC_val[dial_mapping[i]] >= (ADC_val_old[dial_mapping[i]] + HYST) || ADC_val[dial_mapping[i]] <= (ADC_val_old[dial_mapping[i]] - HYST)){
+        ADC_val_old[dial_mapping[i]] = ADC_val[dial_mapping[i]];
+        dial[i] = (uint8_t)((ADC_val[dial_mapping[i]]/dial_div[i]) & 0x7F);
+        midi_packet[3] = dial[i];
+        midi_packet[1] = 0xB0 + i;
+        sendMidiMessage(midi_packet, 4);
+        USBD_MIDI_SendPacket();
+        HAL_Delay(2);
+      }
+    }
+    //USBD_MIDI_SendData(&hUsbDeviceFS, midi_packet, 4);
+
+
   }
 }
 
@@ -90,11 +142,8 @@ static void MX_ADC_Init(void)
   hadc.Init.Overrun = ADC_OVR_DATA_PRESERVED;
   HAL_ADC_Init(&hadc);
 
-  sConfig.Channel = ADC_CHANNEL_0;
   sConfig.Rank = ADC_RANK_CHANNEL_NUMBER;
   sConfig.SamplingTime = ADC_SAMPLETIME_71CYCLES_5;
-  HAL_ADC_ConfigChannel(&hadc, &sConfig);
-
   sConfig.Channel = ADC_CHANNEL_1;
   HAL_ADC_ConfigChannel(&hadc, &sConfig);
 

@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccLHvmEn.s 			page 1
+ARM GAS  /tmp/ccrR1nOM.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccLHvmEn.s 			page 1
   31:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc_ex.c ****   */
   32:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc_ex.c **** 
   33:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc_ex.c **** /* Includes ------------------------------------------------------------------*/
-ARM GAS  /tmp/ccLHvmEn.s 			page 2
+ARM GAS  /tmp/ccrR1nOM.s 			page 2
 
 
   34:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc_ex.c **** #include "stm32f0xx_hal.h"
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccLHvmEn.s 			page 1
   88:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc_ex.c **** /**
   89:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc_ex.c ****   * @brief  Perform an ADC automatic self-calibration
   90:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc_ex.c ****   *         Calibration prerequisite: ADC must be disabled (execute this
-ARM GAS  /tmp/ccLHvmEn.s 			page 3
+ARM GAS  /tmp/ccrR1nOM.s 			page 3
 
 
   91:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc_ex.c ****   *         function before HAL_ADC_Start() or after HAL_ADC_Stop() ).
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccLHvmEn.s 			page 1
   60              		.loc 1 110 0 discriminator 4
   61 0024 DA68     		ldr	r2, [r3, #12]
   62 0026 1204     		lsls	r2, r2, #16
-ARM GAS  /tmp/ccLHvmEn.s 			page 4
+ARM GAS  /tmp/ccrR1nOM.s 			page 4
 
 
   63 0028 34D4     		bmi	.L4
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccLHvmEn.s 			page 1
   95              		.loc 1 132 0
   96 0056 2368     		ldr	r3, [r4]
   97 0058 9A68     		ldr	r2, [r3, #8]
-ARM GAS  /tmp/ccLHvmEn.s 			page 5
+ARM GAS  /tmp/ccrR1nOM.s 			page 5
 
 
   98 005a 002A     		cmp	r2, #0
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccLHvmEn.s 			page 1
  132 008e A363     		str	r3, [r4, #56]
   99:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc_ex.c ****   uint32_t tickstart = 0U;
  133              		.loc 1 99 0
-ARM GAS  /tmp/ccLHvmEn.s 			page 6
+ARM GAS  /tmp/ccrR1nOM.s 			page 6
 
 
  134 0090 0020     		movs	r0, #0
@@ -357,11 +357,11 @@ ARM GAS  /tmp/ccLHvmEn.s 			page 1
  169              	.LFE40:
  171              		.text
  172              	.Letext0:
- 173              		.file 2 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/machin
-ARM GAS  /tmp/ccLHvmEn.s 			page 7
+ 173              		.file 2 "/usr/include/newlib/machine/_default_types.h"
+ARM GAS  /tmp/ccrR1nOM.s 			page 7
 
 
- 174              		.file 3 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/_s
+ 174              		.file 3 "/usr/include/newlib/sys/_stdint.h"
  175              		.file 4 "Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h"
  176              		.file 5 "Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h"
  177              		.file 6 "Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h"
@@ -369,14 +369,14 @@ ARM GAS  /tmp/ccLHvmEn.s 			page 1
  179              		.file 8 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h"
  180              		.file 9 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_adc.h"
  181              		.file 10 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h"
-ARM GAS  /tmp/ccLHvmEn.s 			page 8
+ARM GAS  /tmp/ccrR1nOM.s 			page 8
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f0xx_hal_adc_ex.c
-     /tmp/ccLHvmEn.s:16     .text.HAL_ADCEx_Calibration_Start:0000000000000000 $t
-     /tmp/ccLHvmEn.s:23     .text.HAL_ADCEx_Calibration_Start:0000000000000000 HAL_ADCEx_Calibration_Start
-     /tmp/ccLHvmEn.s:167    .text.HAL_ADCEx_Calibration_Start:00000000000000ac $d
+     /tmp/ccrR1nOM.s:16     .text.HAL_ADCEx_Calibration_Start:0000000000000000 $t
+     /tmp/ccrR1nOM.s:23     .text.HAL_ADCEx_Calibration_Start:0000000000000000 HAL_ADCEx_Calibration_Start
+     /tmp/ccrR1nOM.s:167    .text.HAL_ADCEx_Calibration_Start:00000000000000ac $d
 
 UNDEFINED SYMBOLS
 HAL_GetTick

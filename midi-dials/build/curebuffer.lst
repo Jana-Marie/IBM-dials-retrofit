@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccH4oDXT.s 			page 1
+ARM GAS  /tmp/ccYZCOLV.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccH4oDXT.s 			page 1
   31:Src/curelib_src/curebuffer.c **** 			return BUFFER_FAILURE;
   32:Src/curelib_src/curebuffer.c **** 		}
   33:Src/curelib_src/curebuffer.c **** 		for(i=0; i<buflen; i++){
-ARM GAS  /tmp/ccH4oDXT.s 			page 2
+ARM GAS  /tmp/ccYZCOLV.s 			page 2
 
 
   34:Src/curelib_src/curebuffer.c **** 			rbuf->buffer[i] = 0;
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccH4oDXT.s 			page 1
   62              		.global	cureRingBufferU8Init
   63              		.syntax unified
   64              		.code	16
-ARM GAS  /tmp/ccH4oDXT.s 			page 3
+ARM GAS  /tmp/ccYZCOLV.s 			page 3
 
 
   65              		.thumb_func
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccH4oDXT.s 			page 1
  112 0028 F8D8     		bhi	.L6
   37:Src/curelib_src/curebuffer.c **** 
  113              		.loc 1 37 0 is_stmt 1
-ARM GAS  /tmp/ccH4oDXT.s 			page 4
+ARM GAS  /tmp/ccYZCOLV.s 			page 4
 
 
  114 002a AC80     		strh	r4, [r5, #4]
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccH4oDXT.s 			page 1
   60:Src/curelib_src/curebuffer.c **** 		rbuf->buffer[rbuf->idx_front]=  *inputc;
  160              		.loc 1 60 0
  161 0012 0B78     		ldrb	r3, [r1]
-ARM GAS  /tmp/ccH4oDXT.s 			page 5
+ARM GAS  /tmp/ccYZCOLV.s 			page 5
 
 
  162 0014 8168     		ldr	r1, [r0, #8]
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccH4oDXT.s 			page 1
  208 0000 0288     		ldrh	r2, [r0]
  209 0002 4388     		ldrh	r3, [r0, #2]
  210 0004 9A42     		cmp	r2, r3
-ARM GAS  /tmp/ccH4oDXT.s 			page 6
+ARM GAS  /tmp/ccYZCOLV.s 			page 6
 
 
  211 0006 0CD0     		beq	.L13
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccH4oDXT.s 			page 1
  253              		.cfi_startproc
  254              		@ args = 0, pretend = 0, frame = 0
  255              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccH4oDXT.s 			page 7
+ARM GAS  /tmp/ccYZCOLV.s 			page 7
 
 
  256              		@ link register save eliminated.
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccH4oDXT.s 			page 1
  100:Src/curelib_src/curebuffer.c **** 	cureRingBuffer16Free(rbuf);
  101:Src/curelib_src/curebuffer.c **** 
  102:Src/curelib_src/curebuffer.c **** 		rbuf->buffer = (int16_t *)malloc( buflen * sizeof(int16_t) );
-ARM GAS  /tmp/ccH4oDXT.s 			page 8
+ARM GAS  /tmp/ccYZCOLV.s 			page 8
 
 
  103:Src/curelib_src/curebuffer.c **** 		if(NULL == rbuf->buffer){
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccH4oDXT.s 			page 1
  328              		.section	.text.cureRingBuffer16Init,"ax",%progbits
  329              		.align	1
  330              		.global	cureRingBuffer16Init
-ARM GAS  /tmp/ccH4oDXT.s 			page 9
+ARM GAS  /tmp/ccYZCOLV.s 			page 9
 
 
  331              		.syntax unified
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccH4oDXT.s 			page 1
  379              	.L22:
  106:Src/curelib_src/curebuffer.c **** 			rbuf->buffer[i] = 0;
  380              		.loc 1 106 0 is_stmt 0 discriminator 1
-ARM GAS  /tmp/ccH4oDXT.s 			page 10
+ARM GAS  /tmp/ccYZCOLV.s 			page 10
 
 
  381 002a 9D42     		cmp	r5, r3
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccH4oDXT.s 			page 1
  429 0010 0ED0     		beq	.L27
  128:Src/curelib_src/curebuffer.c **** 		return BUFFER_FAILURE;
  129:Src/curelib_src/curebuffer.c **** 	}else{
-ARM GAS  /tmp/ccH4oDXT.s 			page 11
+ARM GAS  /tmp/ccYZCOLV.s 			page 11
 
 
  130:Src/curelib_src/curebuffer.c **** 		rbuf->buffer[rbuf->idx_front]=  *inputc;
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccH4oDXT.s 			page 1
  476              		@ frame_needed = 0, uses_anonymous_args = 0
  477              		@ link register save eliminated.
  478              	.LVL42:
-ARM GAS  /tmp/ccH4oDXT.s 			page 12
+ARM GAS  /tmp/ccYZCOLV.s 			page 12
 
 
  139:Src/curelib_src/curebuffer.c **** 
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccH4oDXT.s 			page 1
  523 0002 4388     		ldrh	r3, [r0, #2]
  524 0004 9A42     		cmp	r2, r3
  525 0006 0DD0     		beq	.L31
-ARM GAS  /tmp/ccH4oDXT.s 			page 13
+ARM GAS  /tmp/ccYZCOLV.s 			page 13
 
 
  151:Src/curelib_src/curebuffer.c **** 		return BUFFER_FAILURE;
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccH4oDXT.s 			page 1
  569              		@ args = 0, pretend = 0, frame = 0
  570              		@ frame_needed = 0, uses_anonymous_args = 0
  571              	.LVL49:
-ARM GAS  /tmp/ccH4oDXT.s 			page 14
+ARM GAS  /tmp/ccYZCOLV.s 			page 14
 
 
  572 0000 10B5     		push	{r4, lr}
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccH4oDXT.s 			page 1
  617              	cureRingBufferU32Free:
  618              	.LFB12:
  173:Src/curelib_src/curebuffer.c **** 
-ARM GAS  /tmp/ccH4oDXT.s 			page 15
+ARM GAS  /tmp/ccYZCOLV.s 			page 15
 
 
  174:Src/curelib_src/curebuffer.c **** /////////////////////////////
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccH4oDXT.s 			page 1
  643              		.loc 1 203 0
  644 0014 A380     		strh	r3, [r4, #4]
  204:Src/curelib_src/curebuffer.c **** 
-ARM GAS  /tmp/ccH4oDXT.s 			page 16
+ARM GAS  /tmp/ccYZCOLV.s 			page 16
 
 
  205:Src/curelib_src/curebuffer.c **** 	return BUFFER_SUCCESS;
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccH4oDXT.s 			page 1
  190:Src/curelib_src/curebuffer.c **** 		}
  694              		.loc 1 190 0 discriminator 3
  695 001c 9A00     		lsls	r2, r3, #2
-ARM GAS  /tmp/ccH4oDXT.s 			page 17
+ARM GAS  /tmp/ccYZCOLV.s 			page 17
 
 
  696 001e A168     		ldr	r1, [r4, #8]
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccH4oDXT.s 			page 1
  743              		.cfi_def_cfa_offset 8
  744              		.cfi_offset 4, -8
  745              		.cfi_offset 14, -4
-ARM GAS  /tmp/ccH4oDXT.s 			page 18
+ARM GAS  /tmp/ccYZCOLV.s 			page 18
 
 
  210:Src/curelib_src/curebuffer.c **** 	if( ((rbuf->idx_front +1)&(rbuf->length -1)) == rbuf->idx_rear ){//buffer overrun error occurs.
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccH4oDXT.s 			page 1
  791              		.code	16
  792              		.thumb_func
  793              		.fpu softvfp
-ARM GAS  /tmp/ccH4oDXT.s 			page 19
+ARM GAS  /tmp/ccYZCOLV.s 			page 19
 
 
  795              	cureRingBufferU32EnqueueIgnoreErr:
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccH4oDXT.s 			page 1
  232:Src/curelib_src/curebuffer.c **** {
  838              		.loc 1 232 0
  839              		.cfi_startproc
-ARM GAS  /tmp/ccH4oDXT.s 			page 20
+ARM GAS  /tmp/ccYZCOLV.s 			page 20
 
 
  840              		@ args = 0, pretend = 0, frame = 0
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccH4oDXT.s 			page 1
  885              		.thumb_func
  886              		.fpu softvfp
  888              	cureRingBufferU32GetElement:
-ARM GAS  /tmp/ccH4oDXT.s 			page 21
+ARM GAS  /tmp/ccYZCOLV.s 			page 21
 
 
  889              	.LFB16:
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccH4oDXT.s 			page 1
  926 001c A41A     		subs	r4, r4, r2
  927 001e A4B2     		uxth	r4, r4
  928              	.LVL84:
-ARM GAS  /tmp/ccH4oDXT.s 			page 22
+ARM GAS  /tmp/ccYZCOLV.s 			page 22
 
 
  929 0020 F6E7     		b	.L52
@@ -1266,53 +1266,53 @@ ARM GAS  /tmp/ccH4oDXT.s 			page 1
  931              	.LFE16:
  933              		.text
  934              	.Letext0:
- 935              		.file 2 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/machin
- 936              		.file 3 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/_s
+ 935              		.file 2 "/usr/include/newlib/machine/_default_types.h"
+ 936              		.file 3 "/usr/include/newlib/sys/_stdint.h"
  937              		.file 4 "Inc/curelib_inc/curebuffer.h"
- 938              		.file 5 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/lo
- 939              		.file 6 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/_t
- 940              		.file 7 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/lib/gcc/arm-none-eabi/7.3.1/
- 941              		.file 8 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/re
- 942              		.file 9 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/stdlib
-ARM GAS  /tmp/ccH4oDXT.s 			page 23
+ 938              		.file 5 "/usr/include/newlib/sys/lock.h"
+ 939              		.file 6 "/usr/include/newlib/sys/_types.h"
+ 940              		.file 7 "/usr/lib/gcc/arm-none-eabi/7.3.1/include/stddef.h"
+ 941              		.file 8 "/usr/include/newlib/sys/reent.h"
+ 942              		.file 9 "/usr/include/newlib/stdlib.h"
+ARM GAS  /tmp/ccYZCOLV.s 			page 23
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 curebuffer.c
-     /tmp/ccH4oDXT.s:16     .text.cureRingBufferU8Free:0000000000000000 $t
-     /tmp/ccH4oDXT.s:23     .text.cureRingBufferU8Free:0000000000000000 cureRingBufferU8Free
-     /tmp/ccH4oDXT.s:61     .text.cureRingBufferU8Init:0000000000000000 $t
-     /tmp/ccH4oDXT.s:68     .text.cureRingBufferU8Init:0000000000000000 cureRingBufferU8Init
-     /tmp/ccH4oDXT.s:132    .text.cureRingBufferU8Enqueue:0000000000000000 $t
-     /tmp/ccH4oDXT.s:139    .text.cureRingBufferU8Enqueue:0000000000000000 cureRingBufferU8Enqueue
-     /tmp/ccH4oDXT.s:192    .text.cureRingBufferU8Dequeue:0000000000000000 $t
-     /tmp/ccH4oDXT.s:199    .text.cureRingBufferU8Dequeue:0000000000000000 cureRingBufferU8Dequeue
-     /tmp/ccH4oDXT.s:243    .text._cureRingBufferU8GetUsedSize:0000000000000000 $t
-     /tmp/ccH4oDXT.s:250    .text._cureRingBufferU8GetUsedSize:0000000000000000 _cureRingBufferU8GetUsedSize
-     /tmp/ccH4oDXT.s:285    .text.cureRingBuffer16Free:0000000000000000 $t
-     /tmp/ccH4oDXT.s:292    .text.cureRingBuffer16Free:0000000000000000 cureRingBuffer16Free
-     /tmp/ccH4oDXT.s:329    .text.cureRingBuffer16Init:0000000000000000 $t
-     /tmp/ccH4oDXT.s:336    .text.cureRingBuffer16Init:0000000000000000 cureRingBuffer16Init
-     /tmp/ccH4oDXT.s:402    .text.cureRingBuffer16Enqueue:0000000000000000 $t
-     /tmp/ccH4oDXT.s:409    .text.cureRingBuffer16Enqueue:0000000000000000 cureRingBuffer16Enqueue
-     /tmp/ccH4oDXT.s:464    .text.cureRingBuffer16EnqueueIgnoreErr:0000000000000000 $t
-     /tmp/ccH4oDXT.s:471    .text.cureRingBuffer16EnqueueIgnoreErr:0000000000000000 cureRingBuffer16EnqueueIgnoreErr
-     /tmp/ccH4oDXT.s:506    .text.cureRingBuffer16Dequeue:0000000000000000 $t
-     /tmp/ccH4oDXT.s:513    .text.cureRingBuffer16Dequeue:0000000000000000 cureRingBuffer16Dequeue
-     /tmp/ccH4oDXT.s:558    .text.cureRingBuffer16GetElement:0000000000000000 $t
-     /tmp/ccH4oDXT.s:565    .text.cureRingBuffer16GetElement:0000000000000000 cureRingBuffer16GetElement
-     /tmp/ccH4oDXT.s:610    .text.cureRingBufferU32Free:0000000000000000 $t
-     /tmp/ccH4oDXT.s:617    .text.cureRingBufferU32Free:0000000000000000 cureRingBufferU32Free
-     /tmp/ccH4oDXT.s:654    .text.cureRingBufferU32Init:0000000000000000 $t
-     /tmp/ccH4oDXT.s:661    .text.cureRingBufferU32Init:0000000000000000 cureRingBufferU32Init
-     /tmp/ccH4oDXT.s:727    .text.cureRingBufferU32Enqueue:0000000000000000 $t
-     /tmp/ccH4oDXT.s:734    .text.cureRingBufferU32Enqueue:0000000000000000 cureRingBufferU32Enqueue
-     /tmp/ccH4oDXT.s:788    .text.cureRingBufferU32EnqueueIgnoreErr:0000000000000000 $t
-     /tmp/ccH4oDXT.s:795    .text.cureRingBufferU32EnqueueIgnoreErr:0000000000000000 cureRingBufferU32EnqueueIgnoreErr
-     /tmp/ccH4oDXT.s:829    .text.cureRingBufferU32Dequeue:0000000000000000 $t
-     /tmp/ccH4oDXT.s:836    .text.cureRingBufferU32Dequeue:0000000000000000 cureRingBufferU32Dequeue
-     /tmp/ccH4oDXT.s:881    .text.cureRingBufferU32GetElement:0000000000000000 $t
-     /tmp/ccH4oDXT.s:888    .text.cureRingBufferU32GetElement:0000000000000000 cureRingBufferU32GetElement
+     /tmp/ccYZCOLV.s:16     .text.cureRingBufferU8Free:0000000000000000 $t
+     /tmp/ccYZCOLV.s:23     .text.cureRingBufferU8Free:0000000000000000 cureRingBufferU8Free
+     /tmp/ccYZCOLV.s:61     .text.cureRingBufferU8Init:0000000000000000 $t
+     /tmp/ccYZCOLV.s:68     .text.cureRingBufferU8Init:0000000000000000 cureRingBufferU8Init
+     /tmp/ccYZCOLV.s:132    .text.cureRingBufferU8Enqueue:0000000000000000 $t
+     /tmp/ccYZCOLV.s:139    .text.cureRingBufferU8Enqueue:0000000000000000 cureRingBufferU8Enqueue
+     /tmp/ccYZCOLV.s:192    .text.cureRingBufferU8Dequeue:0000000000000000 $t
+     /tmp/ccYZCOLV.s:199    .text.cureRingBufferU8Dequeue:0000000000000000 cureRingBufferU8Dequeue
+     /tmp/ccYZCOLV.s:243    .text._cureRingBufferU8GetUsedSize:0000000000000000 $t
+     /tmp/ccYZCOLV.s:250    .text._cureRingBufferU8GetUsedSize:0000000000000000 _cureRingBufferU8GetUsedSize
+     /tmp/ccYZCOLV.s:285    .text.cureRingBuffer16Free:0000000000000000 $t
+     /tmp/ccYZCOLV.s:292    .text.cureRingBuffer16Free:0000000000000000 cureRingBuffer16Free
+     /tmp/ccYZCOLV.s:329    .text.cureRingBuffer16Init:0000000000000000 $t
+     /tmp/ccYZCOLV.s:336    .text.cureRingBuffer16Init:0000000000000000 cureRingBuffer16Init
+     /tmp/ccYZCOLV.s:402    .text.cureRingBuffer16Enqueue:0000000000000000 $t
+     /tmp/ccYZCOLV.s:409    .text.cureRingBuffer16Enqueue:0000000000000000 cureRingBuffer16Enqueue
+     /tmp/ccYZCOLV.s:464    .text.cureRingBuffer16EnqueueIgnoreErr:0000000000000000 $t
+     /tmp/ccYZCOLV.s:471    .text.cureRingBuffer16EnqueueIgnoreErr:0000000000000000 cureRingBuffer16EnqueueIgnoreErr
+     /tmp/ccYZCOLV.s:506    .text.cureRingBuffer16Dequeue:0000000000000000 $t
+     /tmp/ccYZCOLV.s:513    .text.cureRingBuffer16Dequeue:0000000000000000 cureRingBuffer16Dequeue
+     /tmp/ccYZCOLV.s:558    .text.cureRingBuffer16GetElement:0000000000000000 $t
+     /tmp/ccYZCOLV.s:565    .text.cureRingBuffer16GetElement:0000000000000000 cureRingBuffer16GetElement
+     /tmp/ccYZCOLV.s:610    .text.cureRingBufferU32Free:0000000000000000 $t
+     /tmp/ccYZCOLV.s:617    .text.cureRingBufferU32Free:0000000000000000 cureRingBufferU32Free
+     /tmp/ccYZCOLV.s:654    .text.cureRingBufferU32Init:0000000000000000 $t
+     /tmp/ccYZCOLV.s:661    .text.cureRingBufferU32Init:0000000000000000 cureRingBufferU32Init
+     /tmp/ccYZCOLV.s:727    .text.cureRingBufferU32Enqueue:0000000000000000 $t
+     /tmp/ccYZCOLV.s:734    .text.cureRingBufferU32Enqueue:0000000000000000 cureRingBufferU32Enqueue
+     /tmp/ccYZCOLV.s:788    .text.cureRingBufferU32EnqueueIgnoreErr:0000000000000000 $t
+     /tmp/ccYZCOLV.s:795    .text.cureRingBufferU32EnqueueIgnoreErr:0000000000000000 cureRingBufferU32EnqueueIgnoreErr
+     /tmp/ccYZCOLV.s:829    .text.cureRingBufferU32Dequeue:0000000000000000 $t
+     /tmp/ccYZCOLV.s:836    .text.cureRingBufferU32Dequeue:0000000000000000 cureRingBufferU32Dequeue
+     /tmp/ccYZCOLV.s:881    .text.cureRingBufferU32GetElement:0000000000000000 $t
+     /tmp/ccYZCOLV.s:888    .text.cureRingBufferU32GetElement:0000000000000000 cureRingBufferU32GetElement
 
 UNDEFINED SYMBOLS
 free
