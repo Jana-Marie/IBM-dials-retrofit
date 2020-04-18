@@ -8,5 +8,5 @@ Does currently not work, needs debugging.
 
  Todo:
 
-  [ ] Debug
-  [ ] Add example
+  - [ ] Debug
+  - [ ] Add example
